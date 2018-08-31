@@ -1,0 +1,62 @@
+{% extends 'base.jinja' %}
+{% block head %}
+    <script type="text/javascript" src="{{ static('js/scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{ static('js/fixed.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="hotels">
+    <div class="wrapper-inner">
+        <div class="hotels">
+            <div class="tour__name tour__name2 tour__name-mobile">Отели</div>
+            <div class="hotels__block-buttons clearfix">
+                <div class="hotels__button-one">Поиск</div>
+                <div class="hotels__button-two">Фильтр</div>
+            </div>
+            <div class="hotels__wrap clearfix">
+                {% include 'includes/hotels__side-bar.jinja' %}
+                <div class="hotels__content">
+                    <div class="hotels__content-top clearfix">
+                        <div class="hotels__content-search">
+                            <div class="hotels__search-position">
+                                <div class="hotels__search-fon">
+                                    <div class="hotels__search-form">
+                                        <div class="hotels__search-position">
+                                            <form name="forma-hotels-search" id="forma-hotels-search"><input
+                                                    name="hotels-search" id="hotels-search" type="search"
+                                                    placeholder="Поиск отеля" class="hotels__inp-serch"><input
+                                                    type="submit" value="" class="hotels__inp-sub"></form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-two"></div>
+                        </div>
+                        <div class="hotels__sort clearfix">
+                            <div class="hotels__sort-label">Выводить по:</div>
+                            <ul class="hotels__sort-ul">
+                                <li class="hotels__sort-li"><a href="#"
+                                                               class="hotels__sort-a hotels__sort-a-active">15</a></li>
+                                <li class="hotels__sort-li"><a href="#" class="hotels__sort-a">30</a></li>
+                                <li class="hotels__sort-li"><a href="#" class="hotels__sort-a">45</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hotels__part clearfix">
+                        {% include 'includes/hotels__build.jinja' %}
+                    </div>
+                    <div class="tour__switches">
+                        <ul class="tour__list clearfix">
+                            <li class="tour__item"><a href="#" class="tour__link tour__link-active">1</a></li>
+                            <li class="tour__item"><a href="#" class="tour__link">2</a></li>
+                            <li class="tour__item"><a href="#" class="tour__link">3</a></li>
+                        </ul>
+                        <a href="#" class="tour__transition-next"></a><a href="#" class="tour__transition-prev"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a id="menu3" href="#header" class="button-top default3 scrollto"></a>
+{% endblock %}

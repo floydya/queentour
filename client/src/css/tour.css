@@ -1,0 +1,408 @@
+.tour {
+  display: block;
+  min-width: 1110px;
+  background: url("../img/tour-fon.png") no-repeat;
+  background-position: top center;
+}
+.tour__name {
+  font-size: 60px;
+  color: #fff;
+  padding-top: 33px;
+  margin-left: 30px;
+}
+.tour__filter {
+  display: block;
+  margin-top: 22px;
+}
+.tour__type {
+  color: #fff;
+  margin-left: 30px;
+}
+.tour__insert {
+  display: inline-block;
+  width: 30%;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5px;
+  background: #fbfbfb url("../img/el.png") no-repeat;
+  background-position: 95% 52%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.tour__type-select {
+  width: 115%;
+  padding: 14px 19px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #000;
+}
+.tour__type-span {
+  font-size: 24px;
+  color: #fff;
+  margin-right: 35px;
+  vertical-align: middle;
+}
+.tour__part {
+  width: 100%;
+  margin: 20px 0;
+  padding: 32px;
+  background: url("../img/filter-fon.png") no-repeat;
+}
+.tour__block {
+  width: 32%;
+  float: left;
+  margin-right: 2%;
+}
+.tour__block:last-child {
+  margin-right: 0;
+}
+.tour__input {
+  width: 100%;
+  background: #fbfbfb;
+  border-radius: 5px;
+  border: none;
+  padding: 14px 19px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #343434;
+}
+.tour__select {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5px;
+  background: #fbfbfb url("../img/el.png") no-repeat;
+  background-position: 95% 52%;
+  overflow: hidden;
+}
+.tour__select select {
+  width: 110%;
+  background: transparent;
+  border: none;
+  padding: 14px 19px;
+  font-size: 16px;
+  color: #000;
+}
+.tour__price {
+  width: 47%;
+  background: #fbfbfb;
+  border-radius: 5px;
+  border: none;
+  padding: 14px 19px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.tour__price::-webkit-input-placeholder {
+  color: #000;
+}
+.tour__price::-moz-placeholder {
+  color: #000;
+}
+.tour__price:-moz-placeholder {
+  color: #000;
+}
+.tour__price:-ms-input-placeholder {
+  color: #000;
+}
+.tour__input::-webkit-input-placeholder {
+  color: #000;
+}
+.tour__input::-moz-placeholder {
+  color: #000;
+}
+.tour__input:-moz-placeholder {
+  color: #000;
+}
+.tour__input:-ms-input-placeholder {
+  color: #000;
+}
+.tour__span {
+  margin: 0 6px;
+  color: #fff;
+}
+.tour__days {
+  width: 47%;
+  float: left;
+  background: #fbfbfb url("../img/el.png") no-repeat;
+  background-position: 90.5% 52%;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+.tour__days-select {
+  width: 112%;
+  background: transparent;
+  border: none;
+  padding: 14px 19px;
+  font-size: 16px;
+  color: #000;
+}
+.tour__span2 {
+  float: left;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 14px;
+  color: #fff;
+}
+.tour__arrow {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+}
+.tour__submit {
+  width: 100%;
+  text-align: center;
+  color: #343434;
+  padding: 16px 0;
+  border-radius: 5px;
+  background: #ffc600;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+.tour__submit:hover {
+  cursor: pointer;
+  background: #ffd200;
+}
+.tour__search {
+  font-size: 18px;
+  padding: 17px 30px;
+  background: #fff;
+  color: #343434;
+}
+.tour__cena {
+  font-size: 20px;
+  font-weight: bold;
+}
+.tour__valuta {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.tour__switches {
+  margin-top: 22px;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+}
+.tour__list {
+  display: inline-block;
+  list-style: none;
+  background: #f3f3f3;
+  border-radius: 45px;
+}
+.tour__item {
+  width: 44px;
+  display: table-cell;
+}
+.tour__link {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: #342902;
+  padding: 12px 0;
+  text-decoration: none;
+}
+.tour__link:hover {
+  background: #ffc600;
+  border-radius: 35px;
+}
+.tour__link-active {
+  background: #ffc600;
+  border-radius: 35px;
+}
+.tour__transition-next {
+  width: 22px;
+  height: 44px;
+  background: url("../img/tour-right.svg");
+  position: absolute;
+  top: 0;
+  right: 25px;
+}
+.tour__transition-prev {
+  width: 22px;
+  height: 44px;
+  background: url("../img/tour-right.svg");
+  transform: rotate(180deg);
+  position: absolute;
+  top: 0;
+  left: 25px;
+}
+@media screen and (max-width: 1110px) {
+  .tour {
+    min-width: 960px;
+  }
+  .tour__content {
+    padding: 0 10px;
+  }
+  .tour__span,
+  .tour__span2 {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .tour__open-filter,
+  .tour__close-filter {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 960px) {
+  .tour {
+    min-width: 720px;
+  }
+  .tour__name,
+  .tour__type {
+    text-align: center;
+    margin-left: 0;
+  }
+  .tour__open-filter {
+    display: block;
+  }
+  .tour__close-filter {
+    display: none;
+  }
+  .tour__filter {
+    display: none;
+  }
+  .tour__open-filter,
+  .tour__close-filter {
+    width: 78%;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #ffc600;
+    folor: #000;
+    border-radius: 60px;
+    margin: 20px auto;
+  }
+  .tour__open-filter:hover,
+  .tour__close-filter:hover {
+    cursor: pointer;
+    background: #ffefb9;
+  }
+  .tour__insert {
+    display: block;
+    width: 78%;
+    margin: 15px auto 0;
+  }
+  .tour__select,
+  .tour__price,
+  .tour__input {
+    margin-bottom: 10px;
+  }
+  .tour__type-span {
+    margin-right: 0;
+  }
+  .tour__part {
+    background-size: cover;
+  }
+  .tour__block {
+    width: 85%;
+    float: none;
+    margin: 0 auto;
+  }
+  .tour__block:last-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tour__days {
+    background-position: 89% 52%;
+    margin-bottom: 10px;
+  }
+  .tour__span,
+  .tour__span2 {
+    margin-left: 13px;
+    margin-right: 13px;
+  }
+  .tour__arrow {
+    right: 27px;
+  }
+  .show-filter {
+    display: block;
+  }
+}
+@media screen and (max-width: 720px) {
+  .tour {
+    min-width: 480px;
+  }
+  .tour__name {
+    padding-top: 25px;
+  }
+  .tour__span {
+    display: none;
+  }
+  .tour__insert {
+    width: 86%;
+  }
+  .tour__open-filter,
+  .tour__close-filter {
+    width: 86%;
+  }
+  .tour__block,
+  .tour__select,
+  .tour__price,
+  .tour__input {
+    width: 100%;
+  }
+  .tour__arrow {
+    right: 19px;
+  }
+  .tour__search {
+    text-align: center;
+    margin-left: 54px;
+    margin-right: 54px;
+  }
+  .tour__days {
+    width: 45.8%;
+    background-position: 89% 52%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .tour {
+    min-width: 320px;
+  }
+  .tour__name {
+    font-size: 30px;
+    padding-top: 20px;
+    margin-bottom: 14px;
+  }
+  .tour__type-span {
+    font-size: 18px;
+  }
+  .tour__insert {
+    width: 94%;
+  }
+  .tour__open-filter,
+  .tour__close-filter {
+    width: 94%;
+  }
+  .tour__arrow {
+    right: 13px;
+  }
+  .tour__part {
+    padding: 12px;
+  }
+  .tour__search {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .tour__days {
+    width: 44%;
+  }
+  .tour__days-select {
+    width: 115%;
+  }
+  .tour__transition-prev {
+    left: 5px;
+  }
+  .tour__transition-next {
+    right: 5px;
+  }
+}

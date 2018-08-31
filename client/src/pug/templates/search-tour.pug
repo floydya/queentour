@@ -1,0 +1,19 @@
+extends layout.pug
+block title
+  title Найти тур
+append css 
+  link(rel="stylesheet" type="text/css" href="../css/search.css")
+block search-tour
+  .search-tour
+    .wrapper-inner
+      .tour__name.search-tour__name Найти тур
+      .search-tour__content
+        .search-tour__part.clearfix
+          .search-tour__block
+            .search-tour__modul
+              script(type="text/javascript" src="../js/search-tour.js")
+              script(type="text/javascript" src="http://www.otpusk.com/api/script?k=22616-4fcfe-18e02-be641-4c307")
+              script(type="text/javascript" src="http://export.otpusk.com/js")
+          .search-tour__banner
+            a.search-tour__link(href="#")
+              .search-tour__button Подробнее

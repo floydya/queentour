@@ -1,0 +1,45 @@
+extends layout.pug
+block title
+  title Новости
+append js 
+  script(type="text/javascript" src="../js/scrollto.js")
+  script(type="text/javascript" src="../js/fixed.js")
+block blog
+  .blog
+    .wrapper-inner
+      +AddBlogTitle('Новости и статьи')
+      .heading Рубрики
+      .blog__content
+        .blog__part.clearfix
+          .blog__left
+            .blog__left-part.clearfix
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+              include blog__wrap.pug
+            include switches.pug
+            
+          .blog__right
+            .blog__form
+              include block__heading.pug
+              .blog__delivery
+                form(name="heading" id="news-heading")
+                  .blog__form-title Подпишитесь
+                  .blog__form-decs на рассылку и получайте первыми горящие туры на свой e-mail
+                  .blog__form-evidence
+                    input.blog__form-email(type="email" name="email-for-heading" id="email-heading" placeholder="Ведите Ваш e-mail")
+                    .rest__help E-mail введен неверно!
+                    input.blog__form-submit(type="submit" value="Подписаться")
+            .blog__popular
+              include depiction__name.pug
+              include blog__popular-block.pug
+              include blog__popular-block.pug
+              include blog__popular-block.pug
+block button-top
+  a#menu3.button-top.default3.scrollto(href="#header")

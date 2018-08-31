@@ -1,0 +1,143 @@
+{% extends 'base.jinja' %}
+
+{% block head %}
+    <script type="text/javascript" src="{{ static('js/scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{ static('js/fixed.js') }}"></script>
+    <script defer src="{{ static('js/share.js') }}"></script>
+{% endblock %}
+{% block content %}
+<div class="blog">
+    <div class="wrapper-inner">
+        <div class="blog-one">
+            <div class="blog__title">Новости и статьи</div>
+            <div class="blog-one__nav">
+                <ul class="blog-one__ul clearfix">
+                    <li class="blog-one__li"><a href="index.html" class="blog-one__a">Lorem</a></li>
+                    <li class="blog-one__li"><span class="blog-one__a">/</span></li>
+                    <li class="blog-one__li"><a href="blog.html" class="blog-one__a"> Lorem</a></li>
+                    <li class="blog-one__li"><span class="blog-one__a">/</span></li>
+                    <li class="blog-one__li"><span class="blog-one__span">Lorem ipsum dolor sit amet</span></li>
+                </ul>
+            </div>
+            <div class="heading">Рубрики</div>
+            <div class="blog-one__content clearfix">
+                <div class="blog-one__left">
+                    <div class="blog-one__left-part">
+                        <div class="blog-one__main-picture">
+                            <div class="blog-one__description">
+                                <div class="blog-one__title">Lorem ipsum dolor sit</div>
+                                <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span>
+                                    <div class="blog-one__images clearfix"><a href="#"
+                                                                              class="blog-one__images-star"></a><a
+                                            href="#" class="blog-one__images-star"></a><a href="#"
+                                                                                          class="blog-one__images-star"></a><a
+                                            href="#" class="blog-one__images-star"></a><a href="#"
+                                                                                          class="blog-one__images-star"></a>
+                                    </div>
+                                </div>
+                                <div class="blog__hover-rating"><span class="blog__hover-span">Просмотров:</span><span
+                                        class="blog__hover-span2">214</span></div>
+                            </div>
+                        </div>
+                        <div class="blog-one__date">6 мая / Новости компании</div>
+                        <div class="blog-one__text"><p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+                            fuga, illum enim esse sed ea minima neque itaque molestiae, quasi velit praesentium corporis
+                            deleniti? Maxime ipsa porro modi neque provident et nesciunt illum amet ab doloremque! Eaque
+                            quisquam qui quas illum a nam quibusdam cumque excepturi quos eveniet, maxime esse vero quae
+                            ad ipsa error aut labore deleniti commodi obcaecati! Cupiditate magnam, maxime, quae
+                            corporis magni iste ipsum ex ratione, dolore ipsam neque nesciunt totam tempore nobis harum
+                            voluptatem in.</p>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum labore quis laborum
+                                eius, illo dicta architecto ipsa, aliquam accusantium ex recusandae iure! Quod ea
+                                dolores, odio nobis suscipit? Ipsa magnam culpa, voluptatem error eveniet pariatur omnis
+                                saepe, doloribus amet. Dolor quos quam adipisci. Fugiat, laudantium, assumenda facere
+                                laborum officia sunt vero eligendi quos mollitia aliquid eos quidem vel culpa sequi.</p>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veritatis molestiae quod
+                                atque maxime. Odit ipsa, iste quas accusamus beatae, animi veritatis libero, porro
+                                voluptates, fuga atque repellat eaque. Iure.</p></div>
+                        <div class="blog-one__country">Lorem</div>
+                        <div class="blog-one__text2"><p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+                            fuga, illum enim esse sed ea minima neque itaque molestiae, quasi velit praesentium corporis
+                            deleniti? Maxime ipsa porro modi neque provident et nesciunt illum amet ab doloremque!</p>
+                        </div>
+                        <div class="blog-one__country">Lorem</div>
+                        <div class="blog-one__text2"><p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+                            fuga, illum enim esse sed ea minima neque itaque molestiae, quasi velit praesentium cor</p>
+                        </div>
+                        <div class="blog-one__country">Lorem</div>
+                        <div class="blog-one__text2"><p> Lorem ipsum dolor sit amet, consectetur </p>
+                            <p>adipisicing elit. Sint fuga, illum enim esse </p>
+                            <p>sed ea minima neque</p></div>
+                        <div class="blog-one__network"><span
+                                class="blog-one__soc-label">Поделиться в социальных сетях:</span>
+                            <div data-url="http://domen.webcase.com.ua/blog_1.html" data-title="Lorem ipsum dolor sit"
+                                 class="social clearfix"><a data-id="gp"
+                                                            class="push google blog-one__soc blog-one__soc1"><i
+                                    class="fa fa-google-plus"></i></a><a data-id="fb"
+                                                                         class="push facebook blog-one__soc blog-one__soc2"><i
+                                    class="fa fa-facebook"></i></a><a data-id="vk"
+                                                                      class="push vkontakte blog-one__soc blog-one__soc3"><i
+                                    class="fa fa-vk"></i></a></div>
+                        </div>
+                        <div class="blog-one__navigation"><a href="#" class="blog-one__nav-left">Предыдущая статья</a><a
+                                href="#" class="blog-one__nav-right">Следующая статья</a><a href="#"
+                                                                                            class="blog-one__button">Назад
+                            к списку</a></div>
+                    </div>
+                    <div class="blog-one__form">
+                        <div class="blog-one__form-title">Подпишитесь на рассылку и получайте первыми горящие туры на
+                            свой E-mail
+                        </div>
+                        <div class="rest__forma clearfix">
+                            <form name="blog-distribution" id="distribution-tour">
+                                <div class="rest__part-form blog-one__part-form"><input name="telephone" type="email"
+                                                                                        required
+                                                                                        placeholder="Введите Ваш E-mail"
+                                                                                        class="rest__input rest__fon">
+                                    <div class="rest__help">E-mail телефона введен неверно!</div>
+                                </div>
+                                <div class="rest__part-form blog-one__part-form"><input type="submit"
+                                                                                        value="Подписаться"
+                                                                                        class="rest__inp-sub"></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="blog-one__left-part">
+                        <div class="depiction__name">Lorem ipsum</div>
+                        <div class="blog__left-part clearfix">
+                            {% include 'includes/blog__wrap.jinja' %}
+                            {% include 'includes/blog__wrap.jinja' %}
+                            {% include 'includes/blog__wrap.jinja' %}
+                            {% include 'includes/blog__wrap.jinja' %}
+                        </div>
+                        <a href="#" class="hot__button blog-one__bot-more">Показать еще</a></div>
+                </div>
+                <div class="blog-one__right clearfix">
+                    <div class="blog-one__baner">
+                        <div class="blog-one__baner-text">Каждый год собираетесь в отпуск, но обстоятельства
+                            складываются иначе? Подберите себе <span
+                                    class="blog-one__baner-span1">горящий тур </span><span
+                                    class="blog-one__baner-span2">прямо сейчас!</span></div>
+                        <a href="#" class="blog-one__baner-button">Посмотреть горящие туры</a></div>
+                    {% include 'includes/block__heading.jinja' %}
+                    <div class="blog-one__right-part">
+                        <div class="depiction__name">Lorem ipsum</div>
+                        <div class="blog-one__join clearfix"><a href="#" class="blog-one__join-soc blog-one__join-left"><span
+                                class="blog-one__join-span1">B</span><span class="blog-one__join-span2">вКонтакте</span></a><a
+                                href="#" class="blog-one__join-soc blog-one__join-right blog-one__join-active"><span
+                                class="blog-one__join-span1">f</span><span class="blog-one__join-span2">Facebook</span></a>
+                        </div>
+                        <div class="blog-one__group clearfix">
+                            <div class="blog-one__avatar"><img src="../img/avatar.png" class="blog-one__avatar--size">
+                            </div>
+                            <a href="#" class="blog-one__site">
+                                <div class="blog-one__voyage">ООО "Квин Тур Вояж"</div>
+                                <div class="blog-one__adr">www.queentour.com.ua</div>
+                            </a></div>
+                        <div class="blog-one__user"><img src="../img/soc-block.png" class="blog-one__user--size"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>{% endblock %}

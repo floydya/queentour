@@ -1,0 +1,101 @@
+doctype html
+html(lang="ru") 
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="title" content="")
+    meta(name="description" content="")
+    link(href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" type="text/css" href="../css/main.css")
+    link(rel="stylesheet" type="text/css" href="../css/bx-slider.css")
+    script(type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js")
+    script(type="text/javascript" src="../js/2.0.2.js")
+    script(type="text/javascript" src="../js/main.js")
+    script(type="text/javascript" src="../js/jquery.bxslider.min.js")
+    script(type="text/javascript" src="../js/bx-slider.js")
+    title Tour Voyage
+  body
+    include header.pug
+    .place
+      .wrapper-inner
+        .place__content
+          .tour__name.tour__name2 Зальцбург
+          .top-about__nav
+            nav.nav-block
+              ul.nav-block__ul.clearfix
+                li.nav-block__li 
+                  a.nav-block__a(href="index.html") Главная
+                li.nav-block__li
+                  span.nav-block__a /
+                li.nav-block__li 
+                  a.nav-block__a(href="country.html") Страны
+                li.nav-block__li
+                  span.nav-block__a /
+                li.nav-block__li
+                  a.nav-block__a(href="country_1.html") Австрия
+                li.nav-block__li
+                  span.nav-block__a /
+                li.nav-block__li 
+                  span.nav-block__span Зальцбург
+        .top-about__galery
+          .steps-galery2#steps
+            .main-galery
+              .bx-wrapper-galery2
+                .bx-viewport
+                  .items-galery
+                    .item-galery.bx-clone
+                      .item-galery__img
+                        a(href="#")
+                          img.item-galery__size(src="../img/city-main.png")
+                    .item-galery.bx-clone
+                      .item-galery__img
+                        a(href="#")
+                          img.item-galery__size(src="../img/city-main.png")
+                    .item-galery.bx-clone
+                      .item-galery__img
+                        a(href="#")
+                          img.item-galery__size(src="../img/city-main.png")
+              .link-galery.animation-block.galery-preview.clearfix
+                a.animate-me.animated.galery-preview__a(href="#")
+                  img.galery-icon.icon-2(src="../img/cit1.png")
+                a.animate-me.animated.galery-preview__a(href="#")
+                  img.galery-icon.icon-2(src="../img/cit2.png")
+                a.animate-me.animated.galery-preview__a(href="#")
+                  img.galery-icon.icon-2(src="../img/cit3.png")
+    .city
+      .wrapper-inner
+        .depiction__wrap.clearfix
+          .city__content
+            .city__desc
+              .depiction__name.depiction__denotation Описание
+              .city__descrription
+                p Город Моцарта Зальцбург носит и второе имя – «сцена мира». И это по праву, поскольку в таких жемчужинах культурной жизни, как Зальцбургский фестиваль, принимают участие звезды мировой величины. Живописный старый город Зальцбурга признан мировым культурным наследием ЮНЕСКО.
+                p Церкви, крепости, замки и дворцы составляют доминанту в картине этого города.  Его символ – крепость Хоэнзальцбург, одна из самых больших и хорошо сохранившихся в Европе. Посетите резиденцию эрцгерцога Зальцбургского, роскошное сооружение в стиле раннего барокко с пышными залами и картинной галереей.
+                p Недалеко расположенный Кафедральный собор Зальцбурга считается самым значимым сакральным сооружением города. Не менее примечателен и с размахом построенный в стиле барокко архитектором Лукасом фон Хильдебрандтом дворец Мирабель.
+                p У подножья горы Мёнхсберг вы обнаружите так называемый район Зальцбургского фестиваля, включающий в себя Малый и Большой фестивальные дворцы, а также Летнюю школу верховой езды, построенную в 1693 году по планам архитектора Фишера фон Эрлаха. Недалеко от города вас очарует загородный дворец Хельбрунн в стиле раннего барокко с его всемирно известными каскадами фонтанов.
+            .city__desc
+              .depiction__name Достопримечательности
+              .city__sight
+                .city__position
+                  .city__position-numb Первая:
+                  .city__marking1
+                  .city__marking2
+                  .depiction__text 
+                    p Город Моцарта Зальцбург носит и второе имя – «сцена мира». И это по праву, поскольку в таких жемчужинах культурной жизни, как Зальцбургский фестиваль, принимают участие звезды мировой величины. Живописный старый город Зальцбурга признан мировым культурным наследием ЮНЕСКО.
+              .city__sight
+                .city__position
+                  .city__position-numb Вторая:
+                  .city__marking1
+                  .city__marking2
+                  .depiction__text.depiction__text-2 
+                    p Город Моцарта Зальцбург носит и второе имя – «сцена мира». И это по праву, поскольку в таких жемчужинах культурной жизни, как Зальцбургский фестиваль, принимают участие звезды мировой величины. Живописный старый город Зальцбурга признан мировым культурным наследием ЮНЕСКО.
+                    p Церкви, крепости, замки и дворцы составляют доминанту в картине этого города.  Его символ – крепость Хоэнзальцбург, одна из самых больших и хорошо сохранившихся в Европе. Посетите резиденцию эрцгерцога Зальцбургского, роскошное сооружение в стиле раннего барокко с пышными залами и картинной галереей.
+                    p Недалеко расположенный Кафедральный собор Зальцбурга считается самым значимым сакральным сооружением города. Не менее примечателен и с размахом построенный в стиле барокко архитектором Лукасом фон Хильдебрандтом дворец Мирабель.
+                    p У подножья горы Мёнхсберг вы обнаружите так называемый район 
+          .city__side-bar
+            .depiction__name Туры
+            include city__part.pug
+    include questions.pug
+    include footer.pug
+    include popup-call.pug

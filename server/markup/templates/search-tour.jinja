@@ -1,0 +1,26 @@
+{% extends 'base.jinja' %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
+{% endblock %}
+{% block content %}
+<div class="search-tour">
+    <div class="wrapper-inner">
+        <div class="tour__name search-tour__name">Найти тур</div>
+        <div class="search-tour__content">
+            <div class="search-tour__part clearfix">
+                <div class="search-tour__block">
+                    <div class="search-tour__modul">
+                        <script type="text/javascript" src="../js/search-tour.js"></script>
+                        <script type="text/javascript"
+                                src="http://www.otpusk.com/api/script?k=22616-4fcfe-18e02-be641-4c307"></script>
+                        <script type="text/javascript" src="http://export.otpusk.com/js"></script>
+                    </div>
+                </div>
+                <div class="search-tour__banner"><a href="#" class="search-tour__link">
+                    <div class="search-tour__button">Подробнее</div>
+                </a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

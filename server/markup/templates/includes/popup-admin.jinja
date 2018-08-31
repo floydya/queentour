@@ -1,0 +1,54 @@
+<div class="popup-tour">
+    <div class="forma-selection forma-admin">
+        <div class="forma-selection__cover-sel"><img src="{{ static('img/select.png') }}"/></div>
+        <div class="forma__close"><img src="{{ static('img/close1.svg') }}"/></div>
+        <div class="forma__wrap-selection">
+            <div class="forma__name forma__m">Написать администрации</div>
+            <div class="forma__part">
+                <form name="admin" id="contacts-admin">
+                    <div class="forma__block">
+                        <input id="reportName" name="name" type="text" placeholder="Введите Ваше имя"
+                               required="required" class="forma__input"/>
+                        <div class="rest__help">Имя введено неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <input id="reportEmail" name="email" type="email" placeholder="Введите e-mail"
+                               required="required" class="forma__input"/>
+                        <div class="rest__help">E-mail введён неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <textarea id="reportMessage" name="message" placeholder="Сообщение"
+                                  class="forma__input forma__textarea"></textarea>
+                    </div>
+                    <div class="forma__block">
+                        <button type="button" class="forma__submit" id="reportForm">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sub"></div>
+</div>
+
+<script>
+    $('#reportForm').click(function () {
+        $.ajax({
+            url: '{{ url("report-view") }}',
+            type: 'post',
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'from_link': '{{ request.build_absolute_uri() }}',
+                'name': $('#reportName').val(),
+                'email': $('#reportEmail').val(),
+                'message': $('#reportMessage').val()
+            },
+            success: function (data) {
+                $(".popup-tour").fadeOut(300);
+                $("body").removeClass('load');
+            },
+            error: function (err) {
+                console.log(err.responseText)
+            }
+        })
+    })
+</script>

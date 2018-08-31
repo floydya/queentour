@@ -1,0 +1,24 @@
+.popup-tour
+  .forma-selection
+    .forma-selection__cover-sel
+      img(src="../img/select.png")
+    .forma__close
+      img(src="../img/close1.svg")
+    .forma__wrap-selection
+      .forma__name.forma__m Забронировать тур
+      .forma__part
+        form(name="reservations" id="book-tour")
+          .forma__block
+            input.forma__input(name="tour-name" type="text" placeholder="ФИО" required)
+            .rest__help Имя введено неверно!
+          .forma__block
+            input.forma__input(name="tour-number" type="text" placeholder="Введите номер телефона" required)
+            .rest__help Номер телефона введён неверно!
+          .forma__block
+            input.forma__input(name="tour-email" type="text" placeholder="Введите Ваш e-mail" required)
+            .rest__help E-mail введён неверно!
+          .forma__block
+            textarea.forma__input.forma__textarea(name="tour-comment" placeholder="Комментарий к заказу")
+          .forma__block
+            input.forma__submit(name="tour-submit" type="submit" value="Заказать тур")
+  .sub

@@ -1,0 +1,36 @@
+include /../mixins/name.pug
+include /../mixins/name2.pug
+include /../mixins/company-block-name.pug
+include /../mixins/blog__title.pug
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width")
+		meta(name="format-detection" content="telephone=no")
+		meta(name="title" content="")
+		meta(name="description" content="")
+		block css
+			link(href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css')
+			link(rel="stylesheet" type="text/css" href="../css/main.css")
+		block js
+			script(type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js")
+			script(type="text/javascript" src="../js/2.0.2.js")
+			script(type="text/javascript" src="../js/main.js")
+		block title
+	body
+		include header.pug
+		block hotels
+		block top-hotels-one
+		block hotels-one
+		block map
+		block company
+		block blog
+		block button-top
+		block documents
+		block reviews
+		block contacts
+		block sertificate
+		block search-tour
+		include footer.pug
+		include popup-call.pug

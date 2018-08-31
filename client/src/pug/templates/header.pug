@@ -1,0 +1,50 @@
+.header#header
+  .wrapper-inner
+    .header__content.clearfix
+      .header__logo
+        a(href="index.html")
+          img.header__logo--size(src="../img/logo.png" alt="Логотип")
+      .header__menu.header__none
+        nav.header__nav
+          ul.header__list
+            li.header__item
+              a.header__link(href="sertificate.html") Подарочный сертификат
+            li.header__item
+              a.header__link(href="documents.html") Визы и паспорта
+            li.header__item
+              a.header__link(href="blog.html") Новостьи и статьи
+            li.header__item
+              a.header__link(href="reviews.html") Отзывы
+      .header__call.header__none
+        .header__number 
+          img.header__number--tel(src="../img/tel1.svg")
+          img.header__number--strel(src="../img/strel1.png")
+          span.header__number--span 044 2235 838
+        .header__button.header__button-click Заказать звонок
+        .header__telephone
+          .header__tel 068 6594 950
+          .header__tel 066 0808 478
+      .header__adaptive-icon
+        img(src="../img/mob-menu.svg")
+      .header__adaptive-icon--hover
+        img(src="../img/mob-menu.svg")
+      include header-mobile.pug
+
+.navigation.header__none
+  .wrapper-inner
+    nav.navigation__nav
+      ul.navigation__ul
+        li.navigation__li
+          a.navigation__a(href="tour.html") Туры
+        li.navigation__li
+          a.navigation__a(href="country.html") Страны
+        li.navigation__li
+          a.navigation__a(href="hotels.html") Отели
+        li.navigation__li
+          a.navigation__a(href="search-tour.html") Найти тур
+        li.navigation__li
+          a.navigation__a(href="avia.html") Авиабилеты
+        li.navigation__li
+          a.navigation__a(href="company.html") О компании
+        li.navigation__li
+          a.navigation__a(href="contact.html") Контакты

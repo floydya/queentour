@@ -1,0 +1,21 @@
+.popup-tour
+  .forma-selection.forma-admin
+    .forma-selection__cover-sel
+      img(src="../img/select.png")
+    .forma__close
+      img(src="../img/close1.svg")
+    .forma__wrap-selection
+      .forma__name.forma__m Написать администрации
+      .forma__part
+        form(name="admin" id="contacts-admin")
+          .forma__block
+            input.forma__input(name="contact-name" type="text" placeholder="Введите Ваше имя" required)
+            .rest__help Имя введено неверно!
+          .forma__block
+            input.forma__input(name="contact-email" type="email" placeholder="Введите e-mail" required)
+            .rest__help E-mail введён неверно!
+          .forma__block
+            textarea.forma__input.forma__textarea(name="contact-message" placeholder="Сообщение")
+          .forma__block
+            input.forma__submit(name="admin-submit" type="submit" value="Отправить")
+  .sub

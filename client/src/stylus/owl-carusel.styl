@@ -1,0 +1,224 @@
+.owl-carousel .owl-wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0
+}
+.owl-carousel {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin 0 auto
+    -ms-touch-action: pan-y
+}
+#owl-demo {
+    height: 90px;
+    margin: 30px 0
+}
+#owl-demo .item {
+    margin: 0 15px
+}
+#owl-demo .item:hover .icon_hover {
+    display: block
+}
+
+
+
+
+.owl-carousel .owl-wrapper {
+    display: none;
+    position: relative;
+    -webkit-transform: translate3d(0px, 0px, 0px)
+}
+.owl-carousel .owl-wrapper-outer {
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+.owl-carousel .owl-wrapper-outer.autoHeight {
+    -webkit-transition: height 500ms ease-in-out;
+    -moz-transition: height 500ms ease-in-out;
+    -ms-transition: height 500ms ease-in-out;
+    -o-transition: height 500ms ease-in-out;
+    transition: height 500ms ease-in-out
+}
+.owl-carousel .owl-item {
+    float: left
+    
+}
+.owl-controls .owl-buttons div {
+    cursor: pointer
+}
+.owl-controls {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+.grabbing {
+    cursor: url(../img/grabbing.png) 8 8, move
+}
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+    text-align: center;
+    margin: 0 auto;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0)
+
+}
+#owl-demo .owl-prev {
+    background: url(../img/left2.svg) no-repeat bottom;
+    max-width: 30px;
+    height: 51px;
+    width 100%
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    left: -30px
+}
+#owl-demo .owl-prev:hover {
+    background: url(../img/left-hov.svg) no-repeat bottom;
+}
+#owl-demo .owl-next {
+    background: url(../img/right2.svg) no-repeat top;
+    max-width: 30px;
+    height: 51px;
+    width 100%
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    right: -38px
+}
+#owl-demo .owl-next:hover {
+   background: url(../img/right-hov.svg) no-repeat top; 
+}
+.owl-controls .owl-page {
+    display: inline-block;
+    z-index: 1;
+    cursor: pointer
+}
+.owl-theme .owl-controls {
+    text-align: left
+}
+
+
+.active span {
+    background: #009640!important
+}
+
+
+
+
+#owl-demo-one {
+    width: 94%;
+    margin: 0 auto;
+    height: 100px;
+}
+#owl-demo-one .item {
+    margin: 0 10px
+    height 100px 
+    display flex
+    display -webkit-flex
+    align-items center
+    -webkit-align-items center
+}
+
+#owl-demo-one .owl-prev {
+    background: url(../img/left2.svg) no-repeat;
+    width: 33px;
+    height: 62px;
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    left: -55px;
+}
+#owl-demo-one .owl-prev:hover {
+    background: url(../img/left-hov.svg) no-repeat bottom;
+}
+#owl-demo-one .owl-next {
+    background: url(../img/right2.svg) no-repeat;
+    max-width: 33px;
+    height: 62px;
+    width 100%
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    right: -20px;
+}
+#owl-demo-one .owl-next:hover {
+   background: url(../img/right-hov.svg) no-repeat top; 
+}
+.item-sert--img
+    max-width 190px 
+    max-height 100px
+
+#owl-demo-two {
+    width: 94%;
+    margin: 0 auto;
+    height: 280px;
+}
+#owl-demo-two .item {
+    margin: 0 10px
+    height 280px 
+}
+
+#owl-demo-two .owl-prev {
+    background: url(../img/left2.svg) no-repeat;
+    width: 33px;
+    height: 62px;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: -30px;
+}
+#owl-demo-two .owl-prev:hover {
+    background: url(../img/left-hov.svg) no-repeat bottom;
+}
+#owl-demo-two .owl-next {
+    background: url(../img/right2.svg) no-repeat;
+    max-width: 33px;
+    height: 62px;
+    width 100%
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    right: -20px;
+}
+#owl-demo-two .owl-next:hover {
+   background: url(../img/right-hov.svg) no-repeat top; 
+}
+
+@media screen and (max-width: 1110px)
+    #owl-demo-one .owl-prev
+        left -24px
+    .owl-carousel .owl-wrapper-outer
+        margin-left 30px
+    #owl-demo-two .owl-wrapper-outer
+        margin-left 0
+
+@media screen and (max-width: 960px)
+   #owl-demo-one .owl-prev
+        left -25px
+    .owl-carousel .owl-wrapper-outer
+        margin-left 50px
+        width 95%
+
+@media screen and (max-width: 720px)
+   .owl-carousel .owl-wrapper-outer
+       margin-left 0
+    #owl-demo-two .owl-wrapper-outer
+        margin-left 4px
+
+
+@media screen and (max-width: 480px)
+   .owl-carousel .owl-wrapper-outer
+        margin-left 30px
+

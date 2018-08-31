@@ -1,0 +1,217 @@
+.place {
+  display: block;
+  min-width: 1110px;
+  background: url("../img/city-fon.png") no-repeat;
+  background-position: top center;
+}
+.city {
+  display: block;
+  min-width: 1110px;
+  border-bottom: 1px solid #eaeaea;
+}
+.city__content {
+  width: 47%;
+  float: left;
+}
+.city__side-bar {
+  width: 47%;
+  float: right;
+}
+.city__descrription {
+  font-size: 15px;
+}
+.city__descrription p {
+  margin-bottom: 15px;
+}
+.city__block {
+  width: 100%;
+  padding: 23px 20px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+.city__picture {
+  float: left;
+}
+.city__picture--size {
+  max-width: 169px;
+  max-height: 157px;
+}
+.city__version {
+  margin-left: 194px;
+}
+.city__version-name {
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+.city__version-description {
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+.city__span2 {
+  font-size: 23px;
+}
+.city__version-link {
+  padding: 13px 26px 15px 26px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #fac500;
+  margin-left: 25px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 25px;
+}
+.city__version-link:hover {
+  background: #fad100;
+}
+.city__block-more {
+  width: 100%;
+  padding-top: 34px;
+  height: 105px;
+  position: relative;
+}
+.city__icon-one {
+  position: absolute;
+  left: 0;
+}
+.city__icon-one--size {
+  max-width: 25px;
+  max-height: 45px;
+}
+.city__icon-two {
+  position: absolute;
+  right: 0;
+}
+.city__yet {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #343434;
+  border: 1px solid #343434;
+  border-radius: 35px;
+}
+.city__yet:hover {
+  background: #fac500;
+}
+.city__position {
+  position: relative;
+}
+.city__marking1 {
+  display: block;
+  width: 14px;
+  height: 8px;
+  background: url("../img/strel2.png") no-repeat;
+  position: absolute;
+  top: 11px;
+  right: 0;
+}
+.city__marking2 {
+  display: none;
+  width: 14px;
+  height: 8px;
+  background: url("../img/strel3.png") no-repeat;
+  position: absolute;
+  top: 11px;
+  right: 0;
+}
+.city__position-numb {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.city__marking:hover {
+  cursor: pointer;
+}
+.city__text-2 p {
+  font-size: 15px;
+}
+@media screen and (max-width: 1110px) {
+  .place,
+  .city {
+    min-width: 960px;
+  }
+  .city__side-bar {
+    width: 55%;
+  }
+  .city__content {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .place,
+  .city {
+    min-width: 720px;
+  }
+  .city__side-bar,
+  .city__content {
+    width: 100%;
+    float: none;
+    margin-bottom: 25px;
+  }
+  .city__version-name {
+    font-size: 26px;
+  }
+  .city__version-link {
+    padding: 18px 60px;
+    margin-left: 40px;
+    border-radius: 45px;
+  }
+  .city__span2 {
+    font-size: 26px;
+  }
+  .city__block-more {
+    height: 85px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .place,
+  .city {
+    min-width: 480px;
+  }
+  .city__descrription p {
+    margin-bottom: 4px;
+  }
+  .city__version-name,
+  .city__span2 {
+    font-size: 16px;
+  }
+  .city__version-link {
+    padding: 10px 20px;
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .place,
+  .city {
+    min-width: 320px;
+  }
+  .city__descrription p {
+    font-size: 13px;
+    marfin-bottom: 5px;
+  }
+  .city__picture {
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .city__version {
+    margin-left: 0;
+  }
+  .city__picture--size {
+    max-width: 100%;
+    width: 100%;
+    max-height: 177px;
+  }
+  .depiction__denotation {
+    margin-top: -30px;
+  }
+  .city__yet {
+    width: 55%;
+  }
+}

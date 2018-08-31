@@ -1,0 +1,20 @@
+.popup-selection
+  .forma-selection
+    .forma-selection__cover-sel
+      img(src="../img/select.png")
+    .forma__close
+      img(src="../img/close1.svg")
+    .forma__wrap-selection
+      .forma__name Ничего не нашли?
+      .forma__description Оставьте свои контакты и наш менеджер свяжется с Вами для подбора индивидуального тура!
+      .forma__part
+        form(name="tour" id="tour-selection")
+          .forma__block
+            input.forma__input(name="call-name" type="text" placeholder="Введите Ваше Имя" maxlength="40" required)
+            .rest__help Имя введено неверно!
+          .forma__block
+            input.forma__input(name="soname-regist" type="text" placeholder="Введите номер телефона" required)
+            .rest__help Номер телефона введён неверно!
+          .forma__block
+            input.forma__submit(name="call-submit" type="submit" value="Подобрать тур")
+  .sub

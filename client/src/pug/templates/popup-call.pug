@@ -1,0 +1,20 @@
+.popup-call
+  .forma
+    .forma__cover
+      img(src="../img/popup-tel.png")
+    .forma__close
+      img(src="../img/close1.svg")
+    .forma__wrap
+      .forma__name Заказать звонок
+      .forma__description Оставьте свои контакты и наш менеджер свяжется с Вами в ближайшее время!
+      .forma__part
+        form(name="call" id="request-call")
+          .forma__block
+            input.forma__input(name="call-name" type="text" placeholder="Введите Ваше Имя" maxlength="40" required)
+            .rest__help Имя введено неверно!
+          .forma__block
+            input.forma__input(name="soname-regist" type="text" placeholder="Введите номер телефона" required)
+            .rest__help Номер телефона введён неверно!
+          .forma__block
+            input.forma__submit(name="call-submit" type="submit" value="Заказать звонок")
+  .sub

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ static('css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static('css/bx-slider.css') }}">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="{{ static('js/2.0.2.js') }}"></script>
+    <script type="text/javascript" src="{{ static('js/main.js') }}"></script>
+    {% block head %}{% endblock %}
+    <title>{% block title %}Tour Voyage{% endblock %}</title></head>
+<body>
+{% include 'includes/header.jinja' %}
+{% block content %}{% endblock %}
+{% include 'includes/footer.jinja' %}
+{% include 'includes/popup-call.jinja' %}
+</body>
+</html>

@@ -1,0 +1,51 @@
+<div class="popup-call">
+    <div class="forma">
+        <div class="forma__cover"><img src="{{ static('img/popup-tel.png') }}"/></div>
+        <div class="forma__close"><img src="{{ static('img/close1.svg') }}"/></div>
+        <div class="forma__wrap">
+            <div class="forma__name">Заказать звонок</div>
+            <div class="forma__description">Оставьте свои контакты и наш менеджер свяжется с Вами в ближайшее время!
+            </div>
+            <div class="forma__part">
+                <form name="call" id="request-call">
+                    <div class="forma__block">
+                        <input id="callName" name="name" type="text" placeholder="Введите Ваше Имя"
+                               maxlength="40" required="required" class="forma__input"/>
+                        <div class="rest__help">Имя введено неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <input id="callPhone" name="phone" type="text" placeholder="Введите номер телефона"
+                               required="required" class="forma__input"/>
+                        <div class="rest__help">Номер телефона введён неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <button type="button" class="forma__submit" id="callForm">Заказать звонок</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sub"></div>
+</div>
+
+<script>
+    $('#callForm').click(function () {
+        $.ajax({
+            url: '{{ url("call-view") }}',
+            type: 'post',
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'from_link': '{{ request.build_absolute_uri() }}',
+                'name': $('#callName').val(),
+                'phone': $('#callPhone').val()
+            },
+            success: function (data) {
+                $(".popup-call").fadeOut(300);
+                $("body").removeClass('load');
+            },
+            error: function (err) {
+                console.log(err.responseText)
+            }
+        })
+    })
+</script>

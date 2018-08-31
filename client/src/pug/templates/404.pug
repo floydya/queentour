@@ -1,0 +1,34 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width")
+		meta(name="format-detection" content="telephone=no")
+		meta(name="title" content="")
+		meta(name="description" content="")
+		link(href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" type="text/css" href="../css/main.css")
+		link(rel="stylesheet" type="text/css" href="../css/bx-slider.css")
+		script(type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js")
+		script(type="text/javascript" src="../js/main.js")
+		title Tour Voyage
+	body
+		include header.pug
+		.errow
+			.wrapper-inner
+				.errow__content.clearfix
+					.errow__text
+						.errow__404 404
+						.errow__no-page
+							p Ooops, такой страницы не 
+							p существует!
+					.errow__picture
+						img.errow__picture--size(src="../img/girl2.png")
+		.rest
+			.wrapper-inner
+				.rest__content 
+					.rest__name Возможно Вас заинтересует
+					include rest__part.pug
+					.rest-height
+		include footer.pug
+		include popup-call.pug

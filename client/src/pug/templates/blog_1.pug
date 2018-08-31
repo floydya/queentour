@@ -1,0 +1,112 @@
+extends layout.pug
+block title
+  title Новости
+append js 
+  script(type="text/javascript" src="../js/scrollto.js")
+  script(type="text/javascript" src="../js/fixed.js")
+  script( defer src="../js/share.js")
+block blog
+  .blog
+    .wrapper-inner
+      .blog-one
+        +AddBlogTitle('Новости и статьи')
+        .blog-one__nav
+          ul.blog-one__ul.clearfix
+            li.blog-one__li 
+              a.blog-one__a(href="index.html") Lorem
+            li.blog-one__li
+              span.blog-one__a /
+            li.blog-one__li 
+              a.blog-one__a(href="blog.html")  Lorem
+            li.blog-one__li
+              span.blog-one__a /
+            li.blog-one__li 
+              span.blog-one__span Lorem ipsum dolor sit amet
+        .heading Рубрики
+        .blog-one__content.clearfix
+          .blog-one__left
+            .blog-one__left-part
+              .blog-one__main-picture
+                .blog-one__description
+                  .blog-one__title Lorem ipsum dolor sit
+                  .blog__hover-rating
+                    span.blog__hover-span Рейтинг:
+                    .blog-one__images.clearfix
+                      a.blog-one__images-star(href="#")
+                      a.blog-one__images-star(href="#")
+                      a.blog-one__images-star(href="#")
+                      a.blog-one__images-star(href="#")
+                      a.blog-one__images-star(href="#")
+                  .blog__hover-rating
+                    span.blog__hover-span Просмотров:
+                    span.blog__hover-span2 214
+              .blog-one__date 6 мая / Новости компании
+              .blog-one__text 
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint fuga, illum enim esse sed ea minima neque itaque molestiae, quasi velit praesentium corporis deleniti? Maxime ipsa porro modi neque provident et nesciunt illum amet ab doloremque! Eaque quisquam qui quas illum a nam quibusdam cumque excepturi quos eveniet, maxime esse vero quae ad ipsa error aut labore deleniti commodi obcaecati! Cupiditate magnam, maxime, quae corporis magni iste ipsum ex ratione, dolore ipsam neque nesciunt totam tempore nobis harum voluptatem in.
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum labore quis laborum eius, illo dicta architecto ipsa, aliquam accusantium ex recusandae iure! Quod ea dolores, odio nobis suscipit? Ipsa magnam culpa, voluptatem error eveniet pariatur omnis saepe, doloribus amet. Dolor quos quam adipisci. Fugiat, laudantium, assumenda facere laborum officia sunt vero eligendi quos mollitia aliquid eos quidem vel culpa sequi.
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veritatis molestiae quod atque maxime. Odit ipsa, iste quas accusamus beatae, animi veritatis libero, porro voluptates, fuga atque repellat eaque. Iure.
+              .blog-one__country Lorem
+              .blog-one__text2 
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint fuga, illum enim esse sed ea minima neque itaque molestiae, quasi velit praesentium corporis deleniti? Maxime ipsa porro modi neque provident et nesciunt illum amet ab doloremque!
+              .blog-one__country Lorem
+              .blog-one__text2 
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint fuga, illum enim esse sed ea minima neque itaque molestiae, quasi velit praesentium cor
+              .blog-one__country Lorem
+              .blog-one__text2 
+                p  Lorem ipsum dolor sit amet, consectetur 
+                p adipisicing elit. Sint fuga, illum enim esse 
+                p sed ea minima neque
+              .blog-one__network
+                span.blog-one__soc-label Поделиться в социальных сетях:
+                .social.clearfix(data-url="http://domen.webcase.com.ua/blog_1.html" data-title="Lorem ipsum dolor sit")
+                    a.push.google.blog-one__soc.blog-one__soc1(data-id="gp")
+                      i.fa.fa-google-plus
+                    a.push.facebook.blog-one__soc.blog-one__soc2(data-id="fb")
+                      i.fa.fa-facebook
+                    a.push.vkontakte.blog-one__soc.blog-one__soc3(data-id="vk")
+                      i.fa.fa-vk
+              .blog-one__navigation
+                a.blog-one__nav-left(href="#") Предыдущая статья
+                a.blog-one__nav-right(href="#") Следующая статья
+                a.blog-one__button(href="#") Назад к списку
+            .blog-one__form 
+              .blog-one__form-title Подпишитесь на рассылку и получайте первыми горящие туры на свой E-mail
+              .rest__forma.clearfix 
+                form(name="blog-distribution" id="distribution-tour")
+                  .rest__part-form.blog-one__part-form
+                    input.rest__input.rest__fon(name="telephone" type="email" required placeholder="Введите Ваш E-mail")
+                    .rest__help E-mail телефона введен неверно!
+                  .rest__part-form.blog-one__part-form
+                    input.rest__inp-sub(type="submit" value="Подписаться")
+            .blog-one__left-part
+              include depiction__name.pug
+              .blog__left-part.clearfix
+                include blog__wrap.pug
+                include blog__wrap.pug
+                include blog__wrap.pug
+                include blog__wrap.pug
+              a.hot__button.blog-one__bot-more(href="#") Показать еще
+          .blog-one__right.clearfix
+            .blog-one__baner
+              .blog-one__baner-text Каждый год собираетесь в отпуск, но обстоятельства складываются иначе? Подберите себе 
+                span.blog-one__baner-span1 горящий тур 
+                span.blog-one__baner-span2 прямо сейчас!
+              a.blog-one__baner-button(href="#") Посмотреть горящие туры
+            include block__heading.pug
+            .blog-one__right-part
+              include depiction__name.pug
+              .blog-one__join.clearfix 
+                a.blog-one__join-soc.blog-one__join-left(href="#")
+                  span.blog-one__join-span1 B
+                  span.blog-one__join-span2 вКонтакте
+                a.blog-one__join-soc.blog-one__join-right.blog-one__join-active(href="#")
+                  span.blog-one__join-span1 f
+                  span.blog-one__join-span2 Facebook
+              .blog-one__group.clearfix
+                .blog-one__avatar
+                  img.blog-one__avatar--size(src="../img/avatar.png")
+                a.blog-one__site(href="#")
+                  .blog-one__voyage ООО "Квин Тур Вояж"
+                  .blog-one__adr www.queentour.com.ua
+              .blog-one__user
+                img.blog-one__user--size(src="../img/soc-block.png")

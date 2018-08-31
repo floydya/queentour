@@ -1,0 +1,43 @@
+extends layout.pug
+block title
+  title Контакты
+block contacts
+  .contacts
+    .wrapper-inner
+      +AddName('Контакты')
+      .contacts__wrap
+        .contacts__content.clearfix
+          .contacts__left
+            .contacts__block
+              .contacts__company Туристическая компания
+              .contacts__title "Квин Тур Вояж"
+              .contacts__adr Адрес: г. Киев, ул. Гоголевская 10, оф. 10а
+            .contacts__block
+              include hotels-one__description.pug 
+              .contacts__time 
+                p 
+                  span.contacts__span1 пн-пт:
+                  span.contacts__span с 10:00 до 19:00
+                p 
+                  span.contacts__span2 сб:
+                  span.contacts__span с 11:00 до 16:00
+            .contacts__block
+              include hotels-one__description.pug
+              .contacts__telephone
+                p +38 (044) 8888 88 88
+                p +38 (044) 8888 88 88
+                p +38 (044) 8888 88 88
+            .contacts__block
+              include hotels-one__description.pug
+              .contacts__email Lorem ipsum dolor sit
+            .contacts__block
+              include hotels-one__description.pug
+              .contacts__email Lorem ipsum dolor sit
+            .contacts__block
+              include hotels-one__description.pug
+              .contacts__email Lorem ipsum dolor sit
+            .contacts__button Написать администрации
+          .contacts__right
+            .contacts__dis
+            iframe.contacts__iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.539996706753!2d30.494990051401956!3d50.4496683952014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce8aa9bb9209%3A0xc72981c5592768cf!2z0LLRg9C7LiDQk9C-0LPQvtC70ZbQstGB0YzQutCwLCAxMCwg0JrQuNGX0LI!5e0!3m2!1sru!2sua!4v1466690698639" style="border:0" allowfullscreen="" frameborder="0")
+  include popup-admin.pug

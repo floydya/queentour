@@ -1,0 +1,223 @@
+.top-hotels-one {
+  display: block;
+  min-width: 1110px;
+  background: url("../img/hotels1.png") no-repeat;
+  background-position: top center;
+}
+.top-hotels-one__stars {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+.top-hotels-one__size {
+  max-width: 47px;
+  max-height: 45px;
+  margin-left: 3px;
+}
+.hotels-one {
+  display: block;
+  min-width: 1110px;
+}
+.hotels-one__content {
+  width: 47%;
+  float: left;
+}
+.hotels-one__description {
+  font-size: 19px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 18px;
+}
+.hotels-one__text {
+  margin-bottom: 35px;
+}
+.hotels-one__table {
+  width: 80%;
+  table-layout: fixed;
+}
+.hotels-one__td1 {
+  width: 60%;
+  font-size: 19px;
+  font-weight: bold;
+  border-bottom: 1px solid #e3e3e3;
+}
+.hotels-one__td2 {
+  width: 40%;
+}
+.hotels-one__a {
+  color: #000;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.hotels-one__a:hover {
+  text-decoration: none;
+}
+.hotels-one__more {
+  font-size: 15px;
+}
+.hotels-one__more p {
+  margin-bottom: 15px;
+}
+.hotels-one__span {
+  font-size: 15px;
+  font-weight: 100;
+}
+.hotels-one__list-part {
+  width: 100%;
+}
+.hotels-one__list-block {
+  width: 45%;
+  float: left;
+  margin-right: 4%;
+}
+.hotels-one__list-block:last-child {
+  margin-right: 0;
+}
+.hotels-one__list {
+  margin-left: 13px;
+}
+.hotels-one__item {
+  list-style-image: url("../img/link.png");
+  font-size: 15px;
+  padding-left: 10px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+}
+.hotels-one__item2 {
+  position: relative;
+}
+.hotels-one__hint {
+  display: none;
+  position: absolute;
+  top: 18px;
+  left: -25px;
+  width: 120%;
+  background: #fff;
+  padding: 10px;
+  z-index: 10;
+  border: 1px solid #e3e3e3;
+}
+.hotels-one__plus-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 12px;
+  background: url("../img/q-one.svg") no-repeat;
+}
+.hotels-one__item2:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.hotels-one__item2:hover .hotels-one__plus-icon {
+  background: url("../img/qw.svg") no-repeat;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.hotels-one__item2:hover .hotels-one__hint {
+  display: block;
+}
+.hotels-one__span2 {
+  font-size: 13px;
+}
+.hotels-one__map-content {
+  margin: 0 30px 30px 30px;
+}
+.hotels-one__map {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.hotels-one__dis {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.hotels-one__iframe {
+  width: 100%;
+  height: 400px;
+}
+@media screen and (max-width: 1110px) {
+  .top-hotels-one,
+  .hotels-one {
+    min-width: 960px;
+  }
+  .hotels-one__content {
+    width: 42%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .top-hotels-one,
+  .hotels-one {
+    min-width: 720px;
+  }
+  .hotels-one__content {
+    width: 100%;
+    float: none;
+  }
+  .hotels-one__table {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .hotels-one__text {
+    margin-bottom: 25px;
+  }
+  .top-hotels-one__stars {
+    top: 30px;
+  }
+  .top-hotels-one__size {
+    max-width: 27px;
+    max-height: 100%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .top-hotels-one,
+  .hotels-one {
+    min-width: 480px;
+  }
+  .top-hotels-one__stars {
+    top: 5px;
+  }
+  .hotels-one__text {
+    margin-bottom: 15px;
+  }
+  .hotels-one__description {
+    margin-bottom: 4px;
+  }
+  .hotels-one__map,
+  .hotels-one__iframe {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .top-hotels-one,
+  .hotels-one {
+    min-width: 320px;
+  }
+  .top-hotels-one__stars {
+    top: 5px;
+  }
+  .top-hotels-one__size {
+    max-width: 15px;
+  }
+  .hotels-one__map,
+  .hotels-one__iframe {
+    height: 250px;
+  }
+  .hotels-one__more {
+    font-size: 13px;
+  }
+  .hotels-one__description {
+    font-size: 15px;
+  }
+  .hotels-one__list-block {
+    width: 100%;
+    float: none;
+  }
+  .nav-block__span {
+    font-size: 13px;
+  }
+}

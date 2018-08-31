@@ -1,0 +1,171 @@
+.place
+	display block
+	min-width 1110px
+	background url(../img/city-fon.png) no-repeat
+	background-position top center
+.city 
+	display block
+	min-width 1110px
+	border-bottom 1px solid #EAEAEA
+	&__content
+		width 47%
+		float left 
+	&__side-bar
+		width 47%
+		float right
+	&__descrription
+		font-size 15px
+	&__descrription p 
+		margin-bottom 15px
+	&__block
+		width 100%
+		padding 23px 20px
+		background #F7F7F7
+		border-bottom 1px solid #DDDDDD
+	&__picture
+		float left
+		&--size
+			max-width 169px
+			max-height 157px
+	&__version
+		margin-left 194px
+	&__version-name
+		font-size 19px 
+		margin-bottom 15px
+	&__version-description
+		font-size 15px 
+		margin-bottom 22px
+	&__span2
+		font-size 23px
+	&__version-link
+		padding 13px 26px 15px 26px
+		font-size 14px
+		text-align center
+		text-transform uppercase
+		background #FAC500
+		margin-left 25px
+		text-decoration none
+		color #000
+		border-radius 25px
+	&__version-link:hover
+		background #FAD100
+	&__block-more
+		width 100%
+		padding-top 34px 
+		height 105px
+		position relative
+	&__icon-one
+		position absolute
+		left 0
+		&--size 
+			max-width 25px
+			max-height 45px
+	&__icon-two
+		position absolute
+		right 0
+	&__yet
+		display block 
+		width 30%
+		margin 0 auto 
+		padding-top 14px 
+		padding-bottom 16px
+		text-align center 
+		font-size 14px
+		text-transform uppercase 
+		text-decoration none
+		color #343434
+		border 1px solid #343434
+		border-radius 35px
+	&__yet:hover
+		background #FAC500
+	&__position
+		position relative
+	&__marking1
+		display block
+		width 14px
+		height 8px
+		background url(../img/strel2.png) no-repeat
+		position absolute
+		top 11px 
+		right 0
+	&__marking2
+		display none
+		width 14px
+		height 8px
+		background url(../img/strel3.png) no-repeat
+		position absolute
+		top 11px 
+		right 0
+	&__position-numb
+		font-size 15px 
+		font-weight bold
+		margin-bottom 15px
+	&__marking:hover
+		cursor pointer
+	&__text-2 p
+		font-size 15px
+
+
+@media screen and (max-width: 1110px)
+	.place, .city
+		min-width 960px
+	.city__side-bar
+		width 55%
+	.city__content
+		width 40%
+
+
+@media screen and (max-width: 960px)
+	.place, .city
+		min-width 720px
+	.city__side-bar
+	.city__content, .city__side-bar
+		width 100%
+		float none
+		margin-bottom 25px
+	.city__version-name
+		font-size 26px
+	.city__version-link
+		padding 18px 60px 
+		margin-left 40px
+		border-radius 45px
+	.city__span2
+		font-size 26px
+	.city__block-more
+		height 85px
+
+@media screen and (max-width: 720px)
+	.place, .city
+		min-width 480px
+	.city__descrription p
+		margin-bottom 4px
+	.city__version-name, .city__span2
+		font-size 16px
+	.city__version-link
+		padding 10px 20px
+		margin-left 15px 
+
+@media screen and (max-width: 480px)
+	.place, .city
+		min-width 320px
+	.city__descrription p
+		font-size 13px 
+		marfin-bottom 5px
+	.city__picture
+		float none 
+		width 100%
+		margin-bottom 10px
+	.city__version
+		margin-left 0
+	.city__picture--size
+		max-width 100%
+		width 100%
+		max-height 177px
+	.depiction__denotation
+		margin-top -30px
+	.city__yet
+		width 55%
+	
+		
+		
+	

@@ -1,0 +1,323 @@
+.tour 
+	display block
+	min-width 1110px 
+	background url(../img/tour-fon.png) no-repeat
+	background-position top center
+	&__name 
+		font-size 60px 
+		color #fff
+		padding-top 33px
+		margin-left 30px
+	&__filter 
+		display block
+		margin-top 22px
+	&__type
+		color #fff
+		margin-left 30px
+	&__insert
+		display inline-block
+		width 30%
+		border-radius 5px
+		border none
+		margin-bottom 5px
+		background #FBFBFB url(../img/el.png) no-repeat
+		background-position 95% 52%
+		overflow hidden	
+		vertical-align middle
+	&__type-select
+		width 115%
+		padding 14px 19px
+		background transparent
+		border none
+		font-size 16px
+		color #000
+		
+	&__type-span
+		font-size 24px
+		color #fff
+		margin-right 35px
+		vertical-align middle
+	&__part
+		width 100%
+		margin 20px 0
+		padding 32px
+		background url(../img/filter-fon.png) no-repeat
+	&__block
+		width 32%
+		float left 
+		margin-right 2%
+	&__block:last-child
+		margin-right 0
+	&__input
+		width 100%
+		background #FBFBFB
+		border-radius 5px
+		border none
+		padding 14px 19px
+		font-size 16px
+		margin-bottom 5px
+		color #343434
+	&__select
+		width 100%
+		border-radius 5px
+		border none
+		margin-bottom 5px
+		background #FBFBFB url(../img/el.png) no-repeat
+		background-position 95% 52%
+		overflow hidden
+	&__select select 
+		width 110%
+		background transparent
+		border none
+		padding 14px 19px
+		font-size font
+		color #000
+		
+	&__price
+		width 47%
+		background #FBFBFB
+		border-radius 5px
+		border none
+		padding 14px 19px
+		font-size 16px
+		margin-bottom 5px
+	&__price::-webkit-input-placeholder
+		color #000
+	&__price::-moz-placeholder
+		color #000
+	&__price:-moz-placeholder
+		color #000
+	&__price:-ms-input-placeholder
+		color #000
+	&__input::-webkit-input-placeholder
+		color #000
+	&__input::-moz-placeholder
+		color #000
+	&__input:-moz-placeholder
+		color #000
+	&__input:-ms-input-placeholder
+		color #000	
+	&__span 
+		margin 0 6px
+		color #fff
+	&__days
+		width 47%
+		float left
+		background #FBFBFB url(../img/el.png) no-repeat
+		background-position 90.5% 52%
+		border-radius 5px
+		border none
+		margin-bottom 5px
+		overflow hidden
+		
+	&__days-select
+		width 112%
+		background transparent
+		border none
+		padding 14px 19px
+		font-size 16px
+		color #000
+	&__span2
+		float left
+		margin-left 6px
+		margin-right 6px
+		margin-top 14px
+		color #fff
+	&__arrow
+		position absolute
+		top 12px 
+		right 15px
+	&__submit
+		width 100%
+		text-align center
+		color #343434
+		padding 16px 0
+		border-radius 5px
+		background #FFC600
+		text-transform uppercase
+		font-weight bold
+		border none
+		outline none
+		-webkit-appearance none
+	&__submit:hover
+		cursor pointer 
+		background #FFD200
+	&__search
+		font-size 18px
+		padding 17px 30px 
+		background #fff
+		color #343434
+	&__cena
+		font-size 20px
+		font-weight bold 
+	&__valuta
+		font-size 17px
+		text-transform uppercase
+	&__switches
+		margin-top 22px 
+		margin-bottom 40px
+		position relative
+		text-align center
+	&__list
+		display inline-block
+		list-style none
+		background #F3F3F3
+		border-radius 45px
+	&__item 
+		width 44px
+		display table-cell
+	&__link
+		display block
+		text-align center
+		font-size 18px 
+		color #342902
+		padding 12px 0
+		text-decoration none
+	&__link:hover
+		background #FFC600
+		border-radius 35px
+	&__link-active 
+		background #FFC600
+		border-radius 35px
+	&__transition-next
+		width 22px
+		height 44px
+		background url(../img/tour-right.svg)
+		position absolute 
+		top 0 
+		right 25px
+	&__transition-prev
+		width 22px
+		height 44px
+		background url(../img/tour-right.svg)
+		transform rotate(180deg)
+		position absolute 
+		top 0 
+		left 25px
+
+
+@media screen and (max-width: 1110px)
+	.tour 
+		min-width 960px
+		&__content 
+			padding 0 10px
+		&__span, &__span2
+			margin-left 5px
+			margin-right 5px
+
+@media screen and (min-width: 960px)
+	.tour__open-filter, .tour__close-filter
+		display none!important
+
+
+@media screen and (max-width: 960px)
+	.tour 
+		min-width 720px
+		&__name, &__type
+			text-align center
+			margin-left 0
+		&__open-filter
+			display block
+		&__close-filter
+			display none
+		&__filter 
+			display none
+		&__open-filter, &__close-filter
+			width 78%
+			padding-top 12px
+			padding-bottom 15px
+			text-align center
+			text-transform uppercase
+			background #ffc600
+			folor #000
+			border-radius 60px
+			margin 20px auto
+		&__open-filter:hover, &__close-filter:hover
+			cursor pointer
+			background #ffefb9
+		&__insert
+			display block
+			width 78%
+			margin 15px auto 0
+		&__select, &__price, &__input 
+			margin-bottom 10px
+		&__type-span
+			margin-right 0
+		&__part
+			background-size cover
+		&__block
+			width 85% 
+			float none
+			margin 0 auto
+		&__block:last-child 
+			margin-left auto 
+			margin-right auto
+		&__days
+			background-position 89% 52%
+			margin-bottom 10px
+		&__span, &__span2
+			margin-left 13px
+			margin-right 13px
+		&__arrow
+			right 27px
+	.show-filter
+		display block
+
+
+@media screen and (max-width: 720px)
+	.tour 
+		min-width 480px
+		&__name 
+			padding-top 25px
+		&__span 
+			display none 
+		&__insert
+			width 86%
+		&__open-filter, &__close-filter
+			width 86%
+		&__block, &__select, &__price, &__input
+			width 100%
+		&__arrow 
+			right 19px
+		&__search
+			text-align center
+			margin-left 54px
+			margin-right 54px
+		&__days 
+			width 45.8%
+			background-position 89% 52%
+
+
+@media screen and (max-width: 480px)
+	.tour 
+		min-width 320px
+		&__name 
+			font-size 30px
+			padding-top 20px
+			margin-bottom 14px
+		&__type-span
+			font-size 18px
+		&__insert
+			width 94%
+		&__open-filter, &__close-filter
+			width 94%
+		&__arrow
+			right 13px
+		&__part 
+			padding 12px
+		&__search 
+			margin-left 0
+			margin-right 0
+			padding-left 50px
+			padding-right 50px
+		&__days 
+			width 44%
+		&__days-select
+			width 115%
+		&__transition-prev
+			left 5px
+		&__transition-next
+			right 5px
+		
+		
+	

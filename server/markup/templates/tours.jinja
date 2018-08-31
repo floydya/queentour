@@ -1,0 +1,103 @@
+{% extends 'base.jinja' %}
+{% block head %}
+    <script type="text/javascript" src="{{ static('js/jquery-ui.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ static('css/jqury-ui-1.10.3.custom.css') }}">
+    <script type="text/javascript" src="{{ static('js/datepicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static('js/calendar.js') }}"></script>
+{% endblock %}
+{% block content %}
+<div class="tour">
+    <div class="wrapper-inner">
+        <div class="tour__content">
+            <div class="tour__name">Туры</div>
+            <div class="tour__open-filter">Показать фильтр</div>
+            <div class="tour__close-filter">Скрыть фильтр</div>
+            <div class="tour__filter">
+                <form name="filter-one" id="round-filter" method="post">
+                    <div class="tour__type"><span class="tour__type-span">Выберите вид тура:</span>
+                        <div class="tour__insert"><select size="1" name="type" required class="tour__type-select">
+                            <option value="type1">Свадебный тур</option>
+                            <option value="type2">Вип тур</option>
+                            <option value="type3">Авиа тур</option>
+                            <option value="type4">Шоппинг тур</option>
+                            <option value="type5">Автобусный тур</option>
+                        </select></div>
+                    </div>
+                    <div class="tour__part clearfix">
+                        <div class="tour__block">
+                            <div class="tour__select"><select size="1" name="country" required>
+                                <option value="country1">Египет1</option>
+                                <option value="country2">Египет2</option>
+                                <option value="country3">Египет3</option>
+                                <option value="country">Египет4</option>
+                                <option value="country">Египет5</option>
+                            </select></div>
+                            <input type="text" name="price-from" id="price-from" placeholder="Цена от" required
+                                   class="tour__price"><span class="tour__span">-</span><input type="text"
+                                                                                               name="price-to"
+                                                                                               id="price-to"
+                                                                                               placeholder="Цена до"
+                                                                                               required
+                                                                                               class="tour__price">
+                        </div>
+                        <div class="tour__block clearfix">
+                            <div class="tour__days"><select size="1" name="days" required class="tour__days-select">
+                                <option value="">Дней</option>
+                                <option value="days1">1</option>
+                                <option value="days2">2</option>
+                                <option value="days3">3</option>
+                                <option value="days4">4</option>
+                                <option value="days5">5</option>
+                                <option value="days6">6</option>
+                                <option value="days7">7</option>
+                                <option value="days8">8</option>
+                                <option value="days9">9</option>
+                                <option value="days10">10</option>
+                                <option value="days11">11</option>
+                                <option value="days12">12</option>
+                                <option value="days13">13</option>
+                                <option value="days14">14</option>
+                            </select></div>
+                            <span class="tour__span2">-</span>
+                            <div class="tour__days"><select size="1" name="nights" required class="tour__days-select">
+                                <option value="">Ночей</option>
+                                <option value="nights1">1</option>
+                                <option value="nightss2">2</option>
+                                <option value="nights3">3</option>
+                                <option value="nights4">4</option>
+                                <option value="nights5">5</option>
+                                <option value="nights6">6</option>
+                                <option value="nights7">7</option>
+                                <option value="nights8">8</option>
+                                <option value="nights">9</option>
+                                <option value="nights10">10</option>
+                                <option value="nights11">11</option>
+                                <option value="nights12">12</option>
+                                <option value="nights13">13</option>
+                                <option value="nights14">14</option>
+                            </select></div>
+                            <div class="tour__select"><select size="1" name="stars" required>
+                                <option value="country2">Звезд</option>
+                                <option value="country2">1</option>
+                                <option value="country3">2</option>
+                                <option value="country">3</option>
+                                <option value="country">4</option>
+                            </select></div>
+                        </div>
+                        <div class="tour__block">
+                            <div class="tour__days2"><input type="text" name="date" placeholder="Даты" id="date_range"
+                                                            readonly class="tour__input">
+                                <div class="tour__arrow"><img src="../img/el.png"></div>
+                            </div>
+                            <input type="submit" value="Фильтровать" class="tour__submit"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="tour__search">Найдено 1 193 туров от <span class="tour__cena">8 723 </span>
+                <span class="tour__valuta">UAH</span></div>
+            {% include 'includes/hot__part.jinja' %}
+            {% include 'includes/switches.jinja' %}
+        </div>
+    </div>
+</div>
+{% endblock %}

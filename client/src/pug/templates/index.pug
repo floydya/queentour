@@ -1,0 +1,272 @@
+include /../mixins/index.pug
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width")
+		meta(name="format-detection" content="telephone=no")
+		meta(name="title" content="")
+		meta(name="description" content="")
+		link(href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" type="text/css" href="../css/main.css")
+		link(rel="stylesheet" type="text/css" href="../css/bx-slider.css")
+		script(type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js")
+		script(type="text/javascript" src="../js/2.0.2.js")
+		script(type="text/javascript" src="../js/jquery.bxslider.min.js")
+		script(type="text/javascript" src="../js/bx-slider.js")
+		script(type="text/javascript" src="../js/main.js")
+		script(type="text/javascript" language="javascript" src="../js/jquery.dotdotdot.js")
+		script(type="text/javascript" language="javascript" src="../js/dot.js")
+		script(type="text/javascript" src="../js/owl.carosel.min.js")
+		script(type="text/javascript" src="../js/owl-slider.js")
+		title Tour Voyage
+	body
+		include header.pug
+		.slider
+			.wrapper-inner
+				.slider__block.clearfix 
+					.slider__text
+						p Римские
+						p Каникулы
+					a.slider__button(href="#") Узнать больше
+			.steps#steps
+				.center-wrapper
+					.bx-wrapper
+						.bx-viewport
+							.slider__shadow
+							.items
+								.item.bx-clone
+									.item-img
+										a(href="#")
+											img.item-img--size(src="../img/main-slide1.png")
+								.item.bx-clone
+									.item-img
+										a(href="#")
+											img.item-img--size(src="../img/main-slide2.png")
+								.item.bx-clone
+									.item-img
+										a(href="#")
+											img.item-img--size(src="../img/main-slide2.png")
+								.item.bx-clone
+									.item-img
+										a(href="#")
+											img.item-img--size(src="../img/main-slide1.png")
+								.item.bx-clone
+									.item-img
+										a(href="#")
+											img.item-img--size(src="../img/main-slide2.png")
+					.pager.animation-block.clearfix
+						a.animate-me.animated(href="#")
+							img.page-icon.icon-2(src="../img/prew1.png")
+						a.animate-me.animated(href="#")
+							img.page-icon.icon-2(src="../img/prew2.png")
+						a.animate-me.animated(href="#")
+							img.page-icon.icon-2(src="../img/prew3.png")
+						a.animate-me.animated.page_active(href="#")
+							img.page-icon.icon-2(src="../img/prew4.png")
+						a.animate-me.animated(href="#")
+							img.page-icon.icon-2(src="../img/prew5.png")
+		.rest
+			.wrapper-inner
+				.rest__content 
+					.rest__name Выберите наиболее интересующий Вас вид отдыха
+					include rest__part.pug
+					.rest__banner
+						.rest__ban-top Хочешь чего-то 
+							span.rest__ban-top--span1 Незабываемого 
+							span.rest__ban-top--span и 
+							span.rest__ban-top--span2 НЕСТАНДАРТНОГО?
+						.rest__ban-bot 
+							p Оставь контактные данные и наш менеджер
+							p подберет самый лучший и незабываемый тур
+						.rest__forma.clearfix 
+							form(name="tour-in-main" id="pickup-in-main")
+								.rest__part-form
+									input.rest__input(name="name" type="text" required placeholder="Введите Ваше Имя")
+									.rest__help Имя введено неверно!
+								.rest__part-form
+									input.rest__input.rest__fon(name="telephone" type="text" required placeholder="Введите Ваш телефон")
+									.rest__help Номер телефона введен неверно!
+								.rest__part-form
+									input.rest__inp-sub(type="submit" value="Подберите мне лучший тур")
+		.hot 
+			.wrapper-inner 
+				.hot__content 
+					.rest__name 
+						img.rest__name--img(src="../img/og.svg")
+						span.rest__name--span Горящие туры
+					.hot__part.clearfix
+						.hot__block
+							a.hot__block-link(href="#")
+								.hot__icon-one
+									img.hot__icon-one--size(src="../img/icon-1.png")
+								.hot__icon-two 999 999 
+									span.hot__icon-two--span UAH
+								.hot__picture 
+									img.hot__picture--size(src="../img/hot-1.png")
+								.hot__description
+									.hot__desc-top
+										.hot__desc-title Dreams Vacation Resort 5*	
+									.hot__desc-more
+										p Отель: Dreams Vacation Resort 5*
+										p Страна: Китай
+										.hot__desc-button Узнать больше
+						.hot__block
+							a.hot__block-link(href="#")
+								.hot__icon-one
+									img.hot__icon-one--size(src="../img/icon-1.png")
+								.hot__icon-two 999 999 
+									span.hot__icon-two--span UAH
+								.hot__picture 
+									img.hot__picture--size(src="../img/hot-2.png")
+								.hot__description
+									.hot__desc-top
+										.hot__desc-title Dreams Vacation Resort 5*	
+									.hot__desc-more
+										p Отель: Dreams Vacation Resort 5*
+										p Страна: Китай
+										.hot__desc-button Узнать больше
+						.hot__block
+							a.hot__block-link(href="#")
+								.hot__icon-one
+									img.hot__icon-one--size(src="../img/icon-1.png")
+								.hot__icon-two 999 999 
+									span.hot__icon-two--span UAH
+								.hot__picture 
+									img.hot__picture--size(src="../img/hot-3.png")
+								.hot__description
+									.hot__desc-top
+										.hot__desc-title Dreams Vacation Resort 5*	
+									.hot__desc-more
+										p Отель: Dreams Vacation Resort 5*
+										p Страна: Китай
+										.hot__desc-button Узнать больше
+						.hot__block
+							a.hot__block-link(href="#")
+								.hot__icon-one
+									img.hot__icon-one--size(src="../img/icon-1.png")
+								.hot__icon-two 999 999 
+									span.hot__icon-two--span UAH
+								.hot__picture 
+									img.hot__picture--size(src="../img/hot-4.png")
+								.hot__description
+									.hot__desc-top
+										.hot__desc-title Dreams Vacation Resort 5*	
+									.hot__desc-more
+										p Отель: Dreams Vacation Resort 5*
+										p Страна: Китай
+										.hot__desc-button Узнать больше
+						.hot__block
+							a.hot__block-link(href="#")
+								.hot__icon-one
+									img.hot__icon-one--size(src="../img/icon-1.png")
+								.hot__icon-two 999 999 
+									span.hot__icon-two--span UAH
+								.hot__picture 
+									img.hot__picture--size(src="../img/hot-5.png")
+								.hot__description
+									.hot__desc-top
+										.hot__desc-title Dreams Vacation Resort 5*	
+									.hot__desc-more
+										p Отель: Dreams Vacation Resort 5*
+										p Страна: Китай
+										.hot__desc-button Узнать больше
+						.hot__block
+							a.hot__block-link(href="#")
+								.hot__icon-one
+									img.hot__icon-one--size(src="../img/icon-1.png")
+								.hot__icon-two 999 999 
+									span.hot__icon-two--span UAH
+								.hot__picture 
+									img.hot__picture--size(src="../img/hot-6.png")
+								.hot__description
+									.hot__desc-top
+										.hot__desc-title Dreams Vacation Resort 5*	
+									.hot__desc-more
+										p Отель: Dreams Vacation Resort 5*
+										p Страна: Китай
+										.hot__desc-button Узнать больше
+					a.hot__button(href="#") Показать еще
+		.news
+			.wrapper-inner
+				.hot__content 
+					.rest__name.rest__left Новости и статьи
+					a.rest__all-news(href="#") Все новости
+					.news__part.clearfix
+						.news__wrap.clearfix
+							.news__block
+								a.news__block-link(href="#") 
+									.news__picture
+									.news__title 26 мая 2016 / Рубрика
+									.news__description.dot2 10 обязательных к посещению городов Европы Правительство решает расформировать самый подготовленный и боеспособный отряд, предназначенный для выполнения миссий любой сложности и секретности - команду Итана "Миссия невыполнима". Однако в тоже время самому Итану удается обнаружить неизвестный и таинственный синдикат, о котором
+							.news__block
+								a.news__block-link(href="#") 
+									.news__picture
+									.news__title 26 мая 2016 / Рубрика
+									.news__description.dot2 Благословенная Адриатика - топ-5 направлений "спокойного" моря
+						.news__wrap
+								.news__picture.news__picture-main
+								.news__main
+									a.news__main-link(href="#")
+										.news__main-title 26 мая 2016 / Рубрика 
+										.news__main-description Двухкилометровую пиццу приготовили в Неаполе
+										.dot1.news__main-text Правительство решает расформировать самый подготовленный и боеспособный отряд, предназначенный для выполнения миссий любой сложности и секретности - команду Итана "Миссия невыполнима". Однако в тоже время самому Итану удается обнаружить неизвестный и таинственный синдикат, о котором только ходили слухи. Как оказалось этот синдикат состоит из изгоев и таких же специалистов высокого класса, как и сама группа Итана. Правительство решает расформировать самый подготовленный и боеспособный отряд, предназначенный для выполнения миссий любой сложности и секретности - команду Итана "Миссия невыполнима". Однако в тоже время самому Итану удается обнаружить неизвестный и таинственный синдикат, о котором только ходили слухи. Как оказалось этот синдикат состоит из изгоев и таких же специалистов высокого класса, как и сама группа Итана.
+						.news__wrap.clearfix
+							.news__block
+								a.news__block-link(href="#") 
+									.news__picture
+									.news__title 26 мая 2016 / Рубрика
+									.news__description.dot2 Лучшие места для гурмэ-выходных в Европе
+							.news__block
+								a.news__block-link(href="#")
+									.news__picture
+									.news__title 26 мая 2016 / Рубрика
+									.news__description.dot2 Самые укромные уголки Средиземноморья
+		.partners
+			.wrapper-inner
+				.hot__content 
+					.rest__name Туристы рекомендуют
+					.owl-carousel#owl-demo-one
+						.item
+							.item-sert
+								a(href="#")
+									img.item-sert--img(src="../img/anex.png")
+						.item
+							.item-sert
+								a(href="#")
+									img.item-sert--img(src="../img/join.png")
+						.item
+							.item-sert
+								a(href="#")
+									img.item-sert--img(src="../img/trg.png")
+						.item
+							.item-sert
+								a(href="#")
+									img.item-sert--img(src="../img/tez.png")
+						.item
+							.item-sert
+								a(href="#")
+									img.item-sert--img(src="../img/pegas.png")
+						.item
+							.item-sert
+								a(href="#")
+									img.item-sert--img(src="../img/coral.png")
+		.map
+			.map__dis
+			iframe.map__block(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.539996706753!2d30.494990051401956!3d50.4496683952014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce8aa9bb9209%3A0xc72981c5592768cf!2z0LLRg9C7LiDQk9C-0LPQvtC70ZbQstGB0YzQutCwLCAxMCwg0JrQuNGX0LI!5e0!3m2!1sru!2sua!4v1466690698639" style="border:0" allowfullscreen="" frameborder="0")
+		.capture
+		include footer.pug
+		include popup-call.pug
+		include popup-selection.pug
+
+
+
+
+
+
+
+
+
+
+

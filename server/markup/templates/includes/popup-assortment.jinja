@@ -1,0 +1,81 @@
+<div class="popup-assortment">
+    <div class="forma-selection forma-assortment">
+        <div class="forma-selection__cover-sel"><img src="{{ static('img/select.png') }}"/></div>
+        <div class="forma__close"><img src="{{ static('img/close1.svg') }}"/></div>
+        <div class="forma__wrap-selection">
+            <div class="forma__name forma__m">Подбор тура</div>
+            <div class="forma__part">
+                <form name="assortment" id="assortment-tour">
+                    <div class="forma__block">
+                        <select size="1" id="countryAssortment" name="country" required="required"
+                                class="forma__input forma__inp-assortment">
+                            {% for country in countries %}
+                                <option value="{{ country.pk }}">{{ country.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="forma__block">
+                        <input type="text" name="duration" placeholder="Продолжительность тура"
+                               id="durationAssortment" required="required" class="forma__input"/>
+                        <div class="rest__help">Продолжительность тура введена неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <input name="number_of_persons" type="number" placeholder="Кол-во человек"
+                               id="number_of_personsAssortment" required="required" class="forma__input"/>
+                        <div class="rest__help">Кол-во человек неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <input name="name" type="text" placeholder="Ваше имя"
+                               id="nameAssortment" required="required" class="forma__input"/>
+                        <div class="rest__help">Имя введено неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <input name="phone" type="text" placeholder="Телефон"
+                               id="phoneAssortment" required="required" class="forma__input"/>
+                        <div class="rest__help">Телефон введен неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <input name="email" type="email" placeholder="Ваш e-mail"
+                               id="emailAssortment" required="required" class="forma__input"/>
+                        <div class="rest__help">E-mail введен неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <textarea name="comment" placeholder="Дополнительная информация" id="commentAssortment"
+                                  class="forma__input forma__textarea"></textarea>
+                    </div>
+                    <div class="forma__block">
+                        <button type="button" id="pickingForm" class="forma__submit">Заказать подбор</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sub"></div>
+</div>
+
+<script>
+    $('#pickingForm').click(function () {
+        $.ajax({
+            url: '{{ url("picking-view") }}',
+            type: 'post',
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'from_link': '{{ request.build_absolute_uri() }}',
+                'country': $('#countryAssortment').val(),
+                'duration': $('#durationAssortment').val(),
+                'number_of_persons': $('#number_of_personsAssortment').val(),
+                'name': $('#nameAssortment').val(),
+                'phone': $('#phoneAssortment').val(),
+                'email': $('#emailAssortment').val(),
+                'comment': $('#commentAssortment').val()
+            },
+            success: function (data) {
+                $(".popup-assortment").fadeOut(300);
+                $("body").removeClass('load');
+            },
+            error: function (err) {
+                console.log(err.responseText)
+            }
+        })
+    })
+</script>

@@ -1,0 +1,52 @@
+<div class="popup-tour">
+    <div class="forma-selection forma-sertificate">
+        <div class="forma-selection__cover-sel"><img src="{{ static('img/select.png') }}"/></div>
+        <div class="forma__close"><img src="{{ static('img/close1.svg') }}"/></div>
+        <div class="forma__wrap-selection">
+            <div class="forma__name forma__m forma__serf">Заказать сертификат</div>
+            <div class="forma__description">Заполните контактные данные и наш специалист свяжется с нами в течении 15
+                минут:
+            </div>
+            <div class="forma__part">
+                <form name="sertificate" id="form-sertificate">
+                    <div class="forma__block">
+                        <input id="sertificateName" name="name" type="text" placeholder="Введите Ваше Имя"
+                               maxlength="40" required="required" class="forma__input"/>
+                        <div class="rest__help">Имя введено неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <input id="sertificatePhone" name="phone" type="text" placeholder="Введите номер телефона"
+                               required="required" class="forma__input"/>
+                        <div class="rest__help">Номер телефона введён неверно!</div>
+                    </div>
+                    <div class="forma__block">
+                        <button type="button" class="forma__submit thank" id="sertificateForm">Заказать сертификат</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sub"></div>
+</div>
+
+<script>
+    $('#sertificateForm').click(function () {
+        $.ajax({
+            url: '{{ url("sertificate-view") }}',
+            type: 'post',
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'from_link': '{{ request.build_absolute_uri() }}',
+                'name': $('#sertificateName').val(),
+                'phone': $('#sertificatePhone').val()
+            },
+            success: function (data) {
+                $(".popup-tour").fadeOut(300);
+                $("body").removeClass('load');
+            },
+            error: function (err) {
+                console.log(err.responseText)
+            }
+        })
+    })
+</script>

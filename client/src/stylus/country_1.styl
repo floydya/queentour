@@ -1,0 +1,272 @@
+.region
+	display block
+	min-width 1110px
+	background url(../img/country_1-fon.png) no-repeat
+	background-position top center
+.anchor
+	display block
+	&__navigation
+		width 100%
+		background #F6F6F6
+		box-shadow 0 2px 4px rgba(0, 0, 0, .2)
+	&__navigation2
+		box-shadow none
+	&__ul 
+		width 100%
+		padding 20px 30px
+	&__li
+		list-style none
+		float left
+		margin-right 35px
+	&__li:last-child 
+		margin-right 0
+	&__a 
+		font-size 17px
+		color #656464
+		text-decoration none
+	&__a:hover
+		color #212121
+	&__none
+		display none
+		height 30px
+.anchor__a-active
+	color #000
+
+.depiction
+	display block
+	min-width 1110px
+	&__wrap
+		width 100%
+		margin-bottom 10px
+		padding 0 30px
+	&__desc
+		margin-top 27px 
+		padding-bottom 40px
+		border-bottom 1px solid #DCDCDC
+	&__desc:last-child 
+		border-bottom none
+	&__content
+		width 65%
+		float left
+		color #000
+	&__name
+		font-size 27px
+		margin-bottom 25px
+	&__text
+		font-size 15px
+	&__text p 
+		margin-bottom 15px
+	&__data p
+		font-size 19px
+		margin-bottom 5px
+	&__data span 
+		font-size 16px
+	&__indent
+		margin-top 14px
+	&__block-holidays
+		width 47%
+		float left
+		margin-right 3%
+	&__block-holidays p
+		font-size 16px
+		margin-bttom 5px
+	&__block-holidays span 
+		font-size 15px
+	&__side-bar
+		width 29%
+		float right
+		margin-top 27px
+	&__list
+		width 100%
+	&__item 
+		list-style none
+		background #FAC500
+		border-bottom 1px solid #D9AB00
+	&__item:hover
+		background #FAD100
+	&__link
+		display block
+		padding 12px 18px 12px 16px 
+		text-transform uppercase
+		color #000
+		vertical-align middle
+	&__city
+		float left
+		font-size 13px
+		font-weight bold
+		text-decoration underline
+		padding-top 5px
+	&__price
+		float right
+	&__span2 
+		font-size 20px
+	&__span1 
+		font-size 15px 
+	&__span3 
+		text-transform uppercase
+		font-size 14px
+	&__desc2 
+		padding-bottom 32px
+	&__serch
+		font-size 17px
+		position absolute
+		right 0
+		top 57px
+.questions
+	display block
+	min-width 1110px
+	&__picture
+		float left
+		&--size 
+			max-width 405px
+			max-height 369px
+	&__block
+		margin-left 42%
+		margin-top 50px
+	&__text
+		font-size 27px
+		margin-bottom 35px
+	&__button
+		width 60%
+
+#menu2
+	width 100%
+.default2
+	width 100%
+.fixed2
+	display block
+	position fixed 
+	top 0 
+	left 0
+	z-index 1000
+	width 100%
+	background #F6F6F6
+	box-shadow 0 2px 4px rgba(0, 0, 0, .2)
+	height 60px
+#top1
+	position absolute 
+	top -15px
+
+@media screen and (max-width: 1110px)
+	.region, .anchor, .depiction, .questions
+		min-width 960px
+
+
+@media screen and (max-width: 960px)
+	.region, .anchor, .depiction, .questions
+		min-width 720px
+	.anchor
+		display none
+	.depiction__content, .depiction__side-bar
+		width 100%
+		float none
+	.depiction__side-bar
+		margin-top 0
+		margin-bottom 30px
+	.depiction__desc2
+		padding-bottom 20px
+	.depiction__city
+		font-size 16px
+	.depiction__serch
+		position static 
+		text-align center
+		margin-top -30px 
+		margin-bottom 20px
+	.questions__text
+		font-size 20px
+	.questions__picture--size
+		max-width 300px
+	.questions__button
+		width 80%
+	.anchor__none
+		height 1px
+
+@media screen and (max-width: 720px)
+	.region, .anchor, .depiction, .questions
+		min-width 480px
+	.depiction__wrap
+		padding-left 15px
+		padding-right 15px
+	.depiction__desc
+		margin-top 15px 
+		padding-bottom 20px
+	.depiction__name
+		margin-bottom 12px
+	.depiction__text p
+		margin-bottom 10px
+	.depiction__indent
+		margin-top 10px
+	.depiction__city
+		font-size 13px
+	.questions__picture--size
+		max-width 150px
+	.questions__text
+		font-size 16px 
+		margin-bottom 15px
+	.questions__block
+		margin-left 32%
+		margin-top 10px
+	.questions__sub
+		font-size 13px 
+		padding 10px 0
+		margin-bottom 15px
+	
+
+@media screen and (max-width: 480px)
+	.region, .anchor, .depiction, .questions
+		min-width 320px
+	.tour__name2
+		margin-left 5px
+	.depiction__desc
+		margin-top 10px
+	.depiction__name
+		font-size 22px 
+		margin-bottom 8px
+		text-align center
+	.depiction__text p
+		font-size 13px
+		margin-bottom 5px
+	.depiction__data p
+		font-size 14px 
+	.depiction__data span
+		font-size 13px
+	.depiction__indent
+		margin-top 5px
+	.depiction__content
+		margin-top -20px
+	.depiction__span2
+		font-size 14px
+	.depiction__span1
+		font-size 13px
+	.depiction__span2
+		font-size 13px
+	.depiction__link
+		padding-top 8px 
+		padding-bottom 8px
+	.depiction__block-holidays
+		width 100%
+		margin-right 0
+		float none
+	.depiction__serch
+		margin-top 0
+	.questions__picture
+		display none
+	.questions__block
+		margin-left 0
+		padding 0 10px
+		width 100%
+	.questions__button
+		width 100%
+
+
+		
+	
+
+	
+	
+	
+		
+	
+	
+	
+	

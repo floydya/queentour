@@ -1,0 +1,20 @@
+.popup-tour
+  .forma-selection.forma-sertificate
+    .forma-selection__cover-sel
+      img(src="../img/select.png")
+    .forma__close
+      img(src="../img/close1.svg")
+    .forma__wrap-selection
+      .forma__name.forma__m.forma__serf Заказать сертификат
+      .forma__description Заполните контактные данные и наш специалист свяжется с нами в течении 15 минут:
+      .forma__part
+        form(name="sertificate" id="form-sertificate")
+          .forma__block
+            input.forma__input(name="sertificate-name" type="text" placeholder="Введите Ваше имя" required)
+            .rest__help Имя введено неверно!
+          .forma__block
+            input.forma__input(name="sertificate-number" type="text" placeholder="Введите номер телефона" required)
+            .rest__help Номер телефона введён неверно!
+          .forma__block
+            input.forma__submit.thank(name="sertificate-submit" type="submit" value="Заказать сертификат")
+  .sub

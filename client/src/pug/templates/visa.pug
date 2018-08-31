@@ -1,0 +1,247 @@
+extends layout.pug
+block title
+  title Визы и паспорта
+block documents
+  .documents
+    .wrapper-inner
+      +AddBlogTitle('Документы для путешествий')
+      .documents__wrap
+        .documents__content
+          .documents__type
+            a.documents__button(href="documents.html") Паспорта
+            a.documents__button.documents__active(href="visa.html") Визы
+          .documents__description.visa__description
+            p Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других областей Украины
+            p Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других областей Украины
+            p Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других областей Украины
+            p Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других областей Украины
+            p Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других областей Украины
+            p Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других областей Украины
+          //table for mobile version
+          .documents__hat.documents__visa-hat
+            table.documents__table.documents__visa-table
+              tr.documents__tr
+                td.visa__td.visa__fon страна
+                td.visa__td.visa__fon Стоимость
+                td.visa__td.visa__fon тип визы
+                td.visa__td.visa__fon срок оформления
+                td.visa__td.visa__fon необходимые документы
+              tr.documents__tr
+                td.visa__td.visa__td2 Греция
+                td.visa__td.visa__td2 460
+                td.visa__td.visa__td2
+                  p 180 
+                  p 360
+                td.visa__td.visa__td2 срок оформления
+                td.visa__td.visa__td2 необходимые документы
+              tr.documents__tr
+                td.visa__td.visa__td2.visa__td-red(rowspan="3") Литва
+                td.visa__td.visa__td2.visa__td-red 320 езженый
+                td.visa__td.visa__td2.visa__td-red пол года
+                td.visa__td.visa__td2(rowspan="3") 10 дней
+                td.visa__td.visa__td2(rowspan="3") минимальный пакет документов
+              tr.documents__tr
+                td.visa__td.visa__td2.visa__td-red 340 чистый
+                td.visa__td.visa__td2.visa__td-red пол года
+              tr.documents__tr
+                td.visa__td.visa__td2.visa__td-red 
+                  p 420 езженый
+                  p 440 чистый
+                td.visa__td.visa__td2.visa__td-red год
+              tr.documents__tr
+                td.visa__td.visa__td2(rowspan="2") Испания
+                td.visa__td.visa__td2 450
+                td.visa__td.visa__td2 90/180
+                td.visa__td.visa__td2(rowspan="2") 10 дней
+                td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+              tr.documents__tr
+                td.visa__td.visa__td2 450
+                td.visa__td.visa__td2 180
+              tr.documents__tr
+                td.visa__td.visa__td2(rowspan="2") Венгрия
+                td.visa__td.visa__td2 450
+                td.visa__td.visa__td2 90/180
+                td.visa__td.visa__td2(rowspan="2") 10 дней
+                td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+              tr.documents__tr
+                td.visa__td.visa__td2 450
+                td.visa__td.visa__td2 180
+              tr.documents__tr
+                td.visa__td.visa__td2.visa__td-red(rowspan="2") Словакия
+                td.visa__td.visa__td2.visa__td-red 340
+                td.visa__td.visa__td2.visa__td-red 
+                  p пол года 
+                  p год
+                td.visa__td.visa__td2(rowspan="2") 10 дней
+                td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+              tr.documents__tr
+                td.visa__td.visa__td2 123
+                td.visa__td.visa__td2 180
+              tr.documents__tr
+                td.visa__td.visa__td2(rowspan="2") Польша
+                td.visa__td.visa__td2 450
+                td.visa__td.visa__td2 90/180
+                td.visa__td.visa__td2(rowspan="2") 10 дней
+                td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+              tr.documents__tr
+                td.visa__td.visa__td2 450
+                td.visa__td.visa__td2 180
+              tr.documents__tr
+                td.visa__td.visa__td2 Италия
+                td.visa__td.visa__td2 Стоимость
+                td.visa__td.visa__td2 7
+                td.visa__td.visa__td2 срок оформления
+                td.visa__td.visa__td2 необходимые документы
+
+          //table for mobile version
+          .documents__mobile
+            .documents__all-block
+              .documents__mobile-block
+                .documents__mobile-top
+                  .documents__td1-title2 Греция
+                .documents__open.documents__visa-open  
+                .documents__close.documents__visa-close
+                .documents__mobile-wrap
+                  table.documents__mobile-table
+                    tr.documents__tr
+                      td.visa__td.visa__fon Стоимость
+                      td.visa__td.visa__fon тип визы
+                      td.visa__td.visa__fon срок оформления
+                      td.visa__td.visa__fon необходимые документы
+                    tr.documents__tr
+                      td.visa__td.visa__td2 460
+                      td.visa__td.visa__td2
+                        p 180 
+                        p 360
+                      td.visa__td.visa__td2 срок оформления
+                      td.visa__td.visa__td2 необходимые документы
+            .documents__all-block
+              .documents__mobile-block
+                .documents__mobile-top
+                  .documents__td1-title2 Литва
+                .documents__open.documents__visa-open  
+                .documents__close.documents__visa-close
+                .documents__mobile-wrap
+                  table.documents__mobile-table
+                    tr.documents__tr
+                      td.visa__td.visa__fon Стоимость
+                      td.visa__td.visa__fon тип визы
+                      td.visa__td.visa__fon срок оформления
+                      td.visa__td.visa__fon необходимые документы
+                    tr.documents__tr
+                      td.visa__td.visa__td2.visa__td-red 320 езженый
+                      td.visa__td.visa__td2.visa__td-red пол года
+                      td.visa__td.visa__td2(rowspan="3") 10 дней
+                      td.visa__td.visa__td2(rowspan="3") минимальный пакет документов
+                    tr.documents__tr
+                      td.visa__td.visa__td2.visa__td-red 340 чистый
+                      td.visa__td.visa__td2.visa__td-red пол года
+                    tr.documents__tr
+                      td.visa__td.visa__td2.visa__td-red 
+                        p 420 езженый
+                        p 440 чистый
+                      td.visa__td.visa__td2.visa__td-red год
+            .documents__all-block
+              .documents__mobile-block
+                .documents__mobile-top
+                  .documents__td1-title2 Испания
+                .documents__open.documents__visa-open  
+                .documents__close.documents__visa-close
+                .documents__mobile-wrap
+                  table.documents__mobile-table
+                    tr.documents__tr
+                      td.visa__td.visa__fon Стоимость
+                      td.visa__td.visa__fon тип визы
+                      td.visa__td.visa__fon срок оформления
+                      td.visa__td.visa__fon необходимые документы
+                    tr.documents__tr
+                      td.visa__td.visa__td2 450
+                      td.visa__td.visa__td2 90/180
+                      td.visa__td.visa__td2(rowspan="2") 10 дней
+                      td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+                    tr.documents__tr
+                      td.visa__td.visa__td2 450
+                      td.visa__td.visa__td2 180
+            .documents__all-block
+              .documents__mobile-block
+                .documents__mobile-top
+                  .documents__td1-title2 Венгрия
+                .documents__open.documents__visa-open 
+                .documents__close.documents__visa-close
+                .documents__mobile-wrap
+                  table.documents__mobile-table
+                    tr.documents__tr
+                      td.visa__td.visa__fon Стоимость
+                      td.visa__td.visa__fon тип визы
+                      td.visa__td.visa__fon срок оформления
+                      td.visa__td.visa__fon необходимые документы
+                    tr.documents__tr
+                      td.visa__td.visa__td2 450
+                      td.visa__td.visa__td2 90/180
+                      td.visa__td.visa__td2(rowspan="2") 10 дней
+                      td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+                    tr.documents__tr
+                      td.visa__td.visa__td2 450
+                      td.visa__td.visa__td2 180
+            .documents__all-block
+              .documents__mobile-block
+                .documents__mobile-top
+                  .documents__td1-title2 Словакия
+                .documents__open.documents__visa-open  
+                .documents__close.documents__visa-close
+                .documents__mobile-wrap
+                  table.documents__mobile-table
+                    tr.documents__tr
+                      td.visa__td.visa__fon Стоимость
+                      td.visa__td.visa__fon тип визы
+                      td.visa__td.visa__fon срок оформления
+                      td.visa__td.visa__fon необходимые документы
+                    tr.documents__tr
+                      td.visa__td.visa__td2.visa__td-red 340
+                      td.visa__td.visa__td2.visa__td-red 
+                        p пол года 
+                        p год
+                      td.visa__td.visa__td2(rowspan="2") 10 дней
+                      td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+                    tr.documents__tr
+                      td.visa__td.visa__td2 123
+                      td.visa__td.visa__td2 180
+            .documents__all-block
+              .documents__mobile-block
+                .documents__mobile-top
+                  .documents__td1-title2 Польша
+                .documents__open.documents__visa-open  
+                .documents__close.documents__visa-close
+                .documents__mobile-wrap
+                  table.documents__mobile-table
+                    tr.documents__tr
+                      td.visa__td.visa__fon Стоимость
+                      td.visa__td.visa__fon тип визы
+                      td.visa__td.visa__fon срок оформления
+                      td.visa__td.visa__fon необходимые документы
+                    tr.documents__tr
+                      td.visa__td.visa__td2 450
+                      td.visa__td.visa__td2 90/180
+                      td.visa__td.visa__td2(rowspan="2") 10 дней
+                      td.visa__td.visa__td2(rowspan="2") минимальный пакет документов
+                    tr.documents__tr
+                      td.visa__td.visa__td2 450
+                      td.visa__td.visa__td2 180
+            .documents__all-block
+              .documents__mobile-block
+                .documents__mobile-top
+                  .documents__td1-title2 Италия
+                .documents__open.documents__visa-open  
+                .documents__close.documents__visa-close
+                .documents__mobile-wrap
+                  table.documents__mobile-table
+                    tr.documents__tr
+                      td.visa__td.visa__fon Стоимость
+                      td.visa__td.visa__fon тип визы
+                      td.visa__td.visa__fon срок оформления
+                      td.visa__td.visa__fon необходимые документы
+                    tr.documents__tr
+                      td.visa__td.visa__td2 Стоимость
+                      td.visa__td.visa__td2 7
+                      td.visa__td.visa__td2 срок оформления
+                      td.visa__td.visa__td2 необходимые документы
