@@ -1,6 +1,5 @@
 from django.db import models
 
-from apps.locations.models import Hotel
 from shared.utils.slugger import slugger
 from django.utils.translation import gettext_lazy as _
 
@@ -52,7 +51,7 @@ class TourXcludes(models.Model):
 class Tour(models.Model):
 
     type = models.ForeignKey(TourType, on_delete=models.CASCADE, related_name='tours', verbose_name=_("Tour's Type"))
-    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='tours', verbose_name=_("Tour's Hotel"))
+    hotel = models.ForeignKey('locations.Hotel', on_delete=models.CASCADE, related_name='tours', verbose_name=_("Tour's Hotel"))
     sending_from = models.CharField(max_length=50, verbose_name=_("Sending from"))
     duration_days = models.PositiveSmallIntegerField(verbose_name=_("Days duration"))
     duration_nights = models.PositiveSmallIntegerField(verbose_name=_("Night duration"))

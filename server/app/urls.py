@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^forms/', include('apps.reports.urls')),
     path('', include('apps.core.urls')),
     path('', include('apps.blog.urls')),
+    path('', include('apps.locations.urls')),
 ]
 
 if 'rosetta' in settings.INSTALLED_APPS:

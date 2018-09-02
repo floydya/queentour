@@ -56,8 +56,8 @@ INSTALLED_APPS = PROJECT_APPS + [
 
     'apps.core',
     'apps.blog',
-    'apps.locations',
     'apps.tours',
+    'apps.locations',
     'apps.reports',
 ]
 

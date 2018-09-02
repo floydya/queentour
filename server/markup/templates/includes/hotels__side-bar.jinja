@@ -1,6 +1,6 @@
 <div class="hotels__side-bar">
     <div class="hotels__side-position">
-        <div class="hotels__side-hide"><img src="../img/close1.svg"/></div>
+        <div class="hotels__side-hide"><img src="{{ static('img/close1.svg') }}"/></div>
         <div class="hotels__side-form">
             <form name="hotels" id="serch-hotels">
                 <div class="hotels__form">
@@ -9,94 +9,13 @@
                         <div class="hotels__open"></div>
                         <div class="hotels__close"></div>
                         <div class="hotels__meaning">
-                            <div class="hotels__choice"><input type="checkbox" name="country1" id="country1"
-                                                               class="hotels__input"/><label for="country1"
-                                                                                             class="hotels__label">Австрия</label>
+                            {% for country in countries %}
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="{{ country.slug }}" id="country{{ country.pk }}"
+                                                               class="hotels__input"/>
+                                <label for="country{{ country.pk }}" class="hotels__label">{{ country.name }}</label>
                             </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country2" id="country2"
-                                                               class="hotels__input"/><label for="country2"
-                                                                                             class="hotels__label">Андора</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country3" id="country3"
-                                                               class="hotels__input"/><label for="country3"
-                                                                                             class="hotels__label">Болгария</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country4" id="country4"
-                                                               class="hotels__input"/><label for="country4"
-                                                                                             class="hotels__label">Великобритания</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country5" id="country5"
-                                                               class="hotels__input"/><label for="country5"
-                                                                                             class="hotels__label">Венгрия</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country6" id="country6"
-                                                               class="hotels__input"/><label for="country6"
-                                                                                             class="hotels__label">Вьетнам</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country7" id="country7"
-                                                               class="hotels__input"/><label for="country7"
-                                                                                             class="hotels__label">Германия</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country8" id="country8"
-                                                               class="hotels__input"/><label for="country8"
-                                                                                             class="hotels__label">Греция</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country9" id="country9"
-                                                               class="hotels__input"/><label for="country9"
-                                                                                             class="hotels__label">Грузия</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country10" id="country10"
-                                                               class="hotels__input"/><label for="country10"
-                                                                                             class="hotels__label">Доминикана</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country11" id="country11"
-                                                               class="hotels__input"/><label for="country11"
-                                                                                             class="hotels__label">Египет</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country12" id="country12"
-                                                               class="hotels__input"/><label for="country12"
-                                                                                             class="hotels__label">Израиль</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country13" id="country13"
-                                                               class="hotels__input"/><label for="country13"
-                                                                                             class="hotels__label">Индия</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country14" id="country14"
-                                                               class="hotels__input"/><label for="country14"
-                                                                                             class="hotels__label">Индонезия</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country15" id="country15"
-                                                               class="hotels__input"/><label for="country15"
-                                                                                             class="hotels__label">Иордания</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country16" id="country16"
-                                                               class="hotels__input"/><label for="country16"
-                                                                                             class="hotels__label">Испания</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country17" id="country17"
-                                                               class="hotels__input"/><label for="country17"
-                                                                                             class="hotels__label">Италия</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country18" id="country18"
-                                                               class="hotels__input"/><label for="country18"
-                                                                                             class="hotels__label">Кипр</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country19" id="country19"
-                                                               class="hotels__input"/><label for="country19"
-                                                                                             class="hotels__label">Китай</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country20" id="country20"
-                                                               class="hotels__input"/><label for="country20"
-                                                                                             class="hotels__label">Куба</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country21" id="country21"
-                                                               class="hotels__input"/><label for="country21"
-                                                                                             class="hotels__label">Маврикий</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="country22" id="country22"
-                                                               class="hotels__input"/><label for="country22"
-                                                                                             class="hotels__label">Мальдивы</label>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -106,30 +25,14 @@
                         <div class="hotels__open"></div>
                         <div class="hotels__close"></div>
                         <div class="hotels__meaning">
-                            <div class="hotels__choice"><input type="checkbox" name="resort1" id="resort1"
-                                                               class="hotels__input"/><label for="resort1"
-                                                                                             class="hotels__label">Dreams
-                                Vacation Resort 5*</label></div>
-                            <div class="hotels__choice"><input type="checkbox" name="resort2" id="resort2"
-                                                               class="hotels__input"/><label for="resort2"
-                                                                                             class="hotels__label">Dreams
-                                Vacation Resort 2*</label></div>
-                            <div class="hotels__choice"><input type="checkbox" name="resort3" id="resort3"
-                                                               class="hotels__input"/><label for="resort3"
-                                                                                             class="hotels__label">Dreams
-                                Vacation Resort 4*</label></div>
-                            <div class="hotels__choice"><input type="checkbox" name="resort4" id="resort4"
-                                                               class="hotels__input"/><label for="resort4"
-                                                                                             class="hotels__label">Dreams
-                                Vacation Resort 5*</label></div>
-                            <div class="hotels__choice"><input type="checkbox" name="resort5" id="resort5"
-                                                               class="hotels__input"/><label for="resort5"
-                                                                                             class="hotels__label">Dreams
-                                Vacation Resort</label></div>
-                            <div class="hotels__choice"><input type="checkbox" name="resort6" id="resort6"
-                                                               class="hotels__input"/><label for="resort6"
-                                                                                             class="hotels__label">Dreams
-                                Vacation Resort 4*</label></div>
+                            {% for resort in resorts %}
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="{{ resort.slug }}" id="resort{{ resort.pk }}" class="hotels__input"/>
+                                <label for="resort{{ resort.pk }}" class="hotels__label">
+                                    {{ resort.name }}
+                                </label>
+                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -139,25 +42,25 @@
                         <div class="hotels__open"></div>
                         <div class="hotels__close"></div>
                         <div class="hotels__meaning">
-                            <div class="hotels__choice"><input type="checkbox" name="star1" id="star1"
-                                                               class="hotels__input"/><label for="star1"
-                                                                                             class="hotels__label">1</label>
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="star1" id="star1" class="hotels__input"/>
+                                <label for="star1" class="hotels__label">1</label>
                             </div>
-                            <div class="hotels__choice"><input type="checkbox" name="star2" id="star2"
-                                                               class="hotels__input"/><label for="star2"
-                                                                                             class="hotels__label">2</label>
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="star2" id="star2" class="hotels__input"/>
+                                <label for="star2" class="hotels__label">2</label>
                             </div>
-                            <div class="hotels__choice"><input type="checkbox" name="star3" id="star3"
-                                                               class="hotels__input"/><label for="star3"
-                                                                                             class="hotels__label">3</label>
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="star3" id="star3" class="hotels__input"/>
+                                <label for="star3" class="hotels__label">3</label>
                             </div>
-                            <div class="hotels__choice"><input type="checkbox" name="star4" id="star4"
-                                                               class="hotels__input"/><label for="star4"
-                                                                                             class="hotels__label">4</label>
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="star4" id="star4" class="hotels__input"/>
+                                <label for="star4" class="hotels__label">4</label>
                             </div>
-                            <div class="hotels__choice"><input type="checkbox" name="star5" id="star5"
-                                                               class="hotels__input"/><label for="star5"
-                                                                                             class="hotels__label">5</label>
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="star5" id="star5" class="hotels__input"/>
+                                <label for="star5" class="hotels__label">5</label>
                             </div>
                         </div>
                     </div>
@@ -168,33 +71,24 @@
                         <div class="hotels__open"></div>
                         <div class="hotels__close"></div>
                         <div class="hotels__meaning">
-                            <div class="hotels__choice"><input type="checkbox" name="hotel-type1" id="hotel-type1"
-                                                               class="hotels__input"/><label for="hotel-type1"
-                                                                                             class="hotels__label">5</label>
+                            {% for type in hotel_types %}
+                            <div class="hotels__choice">
+                                <input type="checkbox" name="{{ type.slug }}" id="hotel-type{{ type.pk }}" class="hotels__input"/>
+                                <label for="hotel-type{{ type.pk }}" class="hotels__label">{{ type.name }}</label>
                             </div>
-                            <div class="hotels__choice"><input type="checkbox" name="hotel-type2" id="hotel-type2"
-                                                               class="hotels__input"/><label for="hotel-type2"
-                                                                                             class="hotels__label">5</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="hotel-type3" id="hotel-type3"
-                                                               class="hotels__input"/><label for="hotel-type3"
-                                                                                             class="hotels__label">5</label>
-                            </div>
-                            <div class="hotels__choice"><input type="checkbox" name="hotel-type4" id="hotel-type4"
-                                                               class="hotels__input"/><label for="hotel-type4"
-                                                                                             class="hotels__label">5</label>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
                 <div class="hotels__form">
                     <div class="hotels__division hotels__division2">
-                        <div class="hotels__choice"><input type="checkbox" name="vip-hotels" id="vip-hotels"
-                                                           class="hotels__input"/><label for="vip-hotels"
-                                                                                         class="hotels__label2">ВИП
-                            отели</label></div>
+                        <div class="hotels__choice">
+                            <input type="checkbox" name="hot" id="vip-hotels" class="hotels__input"/>
+                            <label for="vip-hotels" class="hotels__label2">ВИП отели</label>
+                        </div>
                     </div>
-                    <div class="hotels__block-submit"><input type="submit" value="Фильтровать" class="hotels__submit"/>
+                    <div class="hotels__block-submit">
+                        <input type="submit" value="Фильтровать" class="hotels__submit"/>
                     </div>
                 </div>
             </form>

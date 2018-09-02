@@ -96,7 +96,7 @@ $(document).ready(function () {
     };
   });
 
-  $('.galery__show').click(function () {
+  $('.galery__show').unbind().click(function () {
     $('.galery-preview-open__a ').toggle();
     $('.anchor__none').toggle();
   });

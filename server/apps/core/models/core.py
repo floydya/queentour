@@ -15,8 +15,6 @@ class PhoneNumbers(models.Model):
 
 
 class IndexSettings(SingletonModel):
-    location_x = models.FloatField(default=0.0, verbose_name=_("Location Z"))
-    location_y = models.FloatField(default=0.0, verbose_name=_("Location Y"))
     phone_numbers = models.ManyToManyField(PhoneNumbers, verbose_name=_("Phone Numbers"))
     address = models.CharField(max_length=144, verbose_name=_("Address"))
     instagram = models.URLField(default='http://instagram.com/', verbose_name=_("Instagram.com"))
@@ -46,4 +44,5 @@ class Comment(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='comments', verbose_name=_("Hotel"))
 
     comment = RichTextField(blank=True, null=True)
-    youtube = models.URLField(verbose_name=_("YouTube Video URL"), blank=True, null=True)
+    youtube = models.URLField(verbose_name=_("YouTube Video URL"), blank=True, null=True,
+                              help_text=_("Use embed link"))

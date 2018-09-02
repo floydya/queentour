@@ -1,13 +1,67 @@
-<div class="hotels__build"><a href="#" class="hotels__build-link">
-    <div class="hotels__build-picture"><img src="../img/hot1.png" class="hotels__build-picture--size"/>
-        <div class="hotels__build-icon"><img src="../img/icon-1.png" class="hot__icon-one--size"/></div>
+
+<div class="hotels__content-top clearfix">
+
+    <div class="hotels__content-search">
+        <div class="hotels__search-position">
+            <div class="hotels__search-fon">
+                <div class="hotels__search-form">
+                    <div class="hotels__search-position">
+
+                        <form name="forma-hotels-search" id="forma-hotels-search"
+                              action="{{ url('hotel-list') }}" method="get">
+
+                            <input name="search" id="hotels-search" type="search" value="{{ request.GET.get('search') }}"
+                                   placeholder="Поиск отеля" class="hotels__inp-serch">
+
+                            <input type="submit" class="hotels__inp-sub">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-two"></div>
     </div>
-    <div class="hotels__build-name">Akka Alinda Hotel Dolce Premier</div>
-    <div class="hotels__build-desk">Германия, Берлин</div>
-    <div class="hotels__build-desk"><span class="hotels__build-category">Категория отеля:</span><img
-            src="../img/stars2.png" class="hotels__build-stars"/><img src="../img/stars2.png"
-                                                                      class="hotels__build-stars"/><img
-            src="../img/stars2.png" class="hotels__build-stars"/><img src="../img/stars2.png"
-                                                                      class="hotels__build-stars"/><img
-            src="../img/stars2.png" class="hotels__build-stars"/></div>
-</a></div>
+
+    <div class="hotels__sort clearfix">
+        <div class="hotels__sort-label">Выводить по:</div>
+        <ul class="hotels__sort-ul">
+            <li class="hotels__sort-li">
+                <a id="paginate_by15" href="#" class="hotels__sort-a {% if 'paginate_by' not in request.GET or request.GET.paginate_by == '15' %}hotels__sort-a-active{% endif %}">15</a>
+            </li>
+            <li class="hotels__sort-li">
+                <a id="paginate_by30" href="#" class="hotels__sort-a {% if request.GET.paginate_by == '30' %}hotels__sort-a-active{% endif %}">30</a>
+            </li>
+            <li class="hotels__sort-li">
+                <a id="paginate_by45" href="#" class="hotels__sort-a {% if request.GET.paginate_by == '45' %}hotels__sort-a-active{% endif %}">45</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="hotels__part clearfix">
+    {% for hotel in object_list %}
+        <div class="hotels__build">
+            <a href="#" class="hotels__build-link">
+                <div class="hotels__build-picture">
+                    <img src="{{ hotel.images.first().image.url }}" class="hotels__build-picture--size"/>
+                    {% if hotel.hot %}
+                        <div class="hotels__build-icon">
+                            <img src="{{ static('img/icon-1.png') }}" class="hot__icon-one--size"/>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="hotels__build-name">{{ hotel.name }}</div>
+                <div class="hotels__build-desk">{{ hotel.resort.country }}, {{ hotel.resort }}</div>
+                <div class="hotels__build-desk">
+                    <span class="hotels__build-category">Категория отеля:</span>
+                    {% for stars in range(hotel.stars) %}
+                        <img src="{{ static('img/stars2.png') }}" class="hotels__build-stars"/>
+                    {% endfor %}
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% include 'includes/switches.jinja' %}

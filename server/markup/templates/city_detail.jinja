@@ -5,122 +5,81 @@
     <script type="text/javascript" src="{{ static('js/bx-slider.js') }}"></script>
 {% endblock %}
 
+{% block title %}{{ object.name }} | {{ super() }}{% endblock %}
+
 {% block content %}
 
-<div class="place">
-    <div class="wrapper-inner">
-        <div class="place__content">
-            <div class="tour__name tour__name2">Зальцбург</div>
-            <div class="top-about__nav">
-                <nav class="nav-block">
-                    <ul class="nav-block__ul clearfix">
-                        <li class="nav-block__li"><a href="index.html" class="nav-block__a">Главная</a></li>
-                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                        <li class="nav-block__li"><a href="country.html" class="nav-block__a">Страны</a></li>
-                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                        <li class="nav-block__li"><a href="country_1.html" class="nav-block__a">Австрия</a></li>
-                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                        <li class="nav-block__li"><span class="nav-block__span">Зальцбург</span></li>
-                    </ul>
-                </nav>
+    <div class="place">
+        <div class="wrapper-inner">
+            <div class="place__content">
+                <div class="tour__name tour__name2">Зальцбург</div>
+                <div class="top-about__nav">
+                    <nav class="nav-block">
+                        <ul class="nav-block__ul clearfix">
+                            <li class="nav-block__li"><a href="/" class="nav-block__a">Главная</a></li>
+                            <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                            <li class="nav-block__li"><a href="{{ url('country-list') }}" class="nav-block__a">Страны</a></li>
+                            <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                            <li class="nav-block__li"><a href="{{ url('country-detail', slug=object.country.slug) }}" class="nav-block__a">{{ object.country.name }}</a></li>
+                            <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                            <li class="nav-block__li"><span class="nav-block__span">{{ object.name }}</span></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </div>
-        <div class="top-about__galery">
-            <div id="steps" class="steps-galery2">
-                <div class="main-galery">
-                    <div class="bx-wrapper-galery2">
-                        <div class="bx-viewport">
-                            <div class="items-galery">
-                                <div class="item-galery bx-clone">
-                                    <div class="item-galery__img"><a href="#"><img src="../img/city-main.png"
-                                                                                   class="item-galery__size"></a></div>
-                                </div>
-                                <div class="item-galery bx-clone">
-                                    <div class="item-galery__img"><a href="#"><img src="../img/city-main.png"
-                                                                                   class="item-galery__size"></a></div>
-                                </div>
-                                <div class="item-galery bx-clone">
-                                    <div class="item-galery__img"><a href="#"><img src="../img/city-main.png"
-                                                                                   class="item-galery__size"></a></div>
+            <div class="top-about__galery">
+                <div id="steps" class="steps-galery2">
+                    <div class="main-galery">
+                        <div class="bx-wrapper-galery2">
+                            <div class="bx-viewport">
+                                <div class="items-galery">
+                                    {% for image in object.images.all() %}
+                                        <div class="item-galery bx-clone">
+                                            <div class="item-galery__img">
+                                                <a href="#">
+                                                    <img src="{{ image.image.url }}" class="item-galery__size">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="link-galery animation-block galery-preview clearfix"><a href="#"
-                                                                                        class="animate-me animated galery-preview__a"><img
-                            src="../img/cit1.png" class="galery-icon icon-2"></a><a href="#"
-                                                                                    class="animate-me animated galery-preview__a"><img
-                            src="../img/cit2.png" class="galery-icon icon-2"></a><a href="#"
-                                                                                    class="animate-me animated galery-preview__a"><img
-                            src="../img/cit3.png" class="galery-icon icon-2"></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="city">
-    <div class="wrapper-inner">
-        <div class="depiction__wrap clearfix">
-            <div class="city__content">
-                <div class="city__desc">
-                    <div class="depiction__name depiction__denotation">Описание</div>
-                    <div class="city__descrription"><p>Город Моцарта Зальцбург носит и второе имя – «сцена мира». И это
-                        по праву, поскольку в таких жемчужинах культурной жизни, как Зальцбургский фестиваль, принимают
-                        участие звезды мировой величины. Живописный старый город Зальцбурга признан мировым культурным
-                        наследием ЮНЕСКО.</p>
-                        <p>Церкви, крепости, замки и дворцы составляют доминанту в картине этого города.  Его символ –
-                            крепость Хоэнзальцбург, одна из самых больших и хорошо сохранившихся в Европе. Посетите
-                            резиденцию эрцгерцога Зальцбургского, роскошное сооружение в стиле раннего барокко с пышными
-                            залами и картинной галереей.</p>
-                        <p>Недалеко расположенный Кафедральный собор Зальцбурга считается самым значимым сакральным
-                            сооружением города. Не менее примечателен и с размахом построенный в стиле барокко
-                            архитектором Лукасом фон Хильдебрандтом дворец Мирабель.</p>
-                        <p>У подножья горы Мёнхсберг вы обнаружите так называемый район Зальцбургского фестиваля,
-                            включающий в себя Малый и Большой фестивальные дворцы, а также Летнюю школу верховой езды,
-                            построенную в 1693 году по планам архитектора Фишера фон Эрлаха. Недалеко от города вас
-                            очарует загородный дворец Хельбрунн в стиле раннего барокко с его всемирно известными
-                            каскадами фонтанов.</p></div>
-                </div>
-                <div class="city__desc">
-                    <div class="depiction__name">Достопримечательности</div>
-                    <div class="city__sight">
-                        <div class="city__position">
-                            <div class="city__position-numb">Первая:</div>
-                            <div class="city__marking1"></div>
-                            <div class="city__marking2"></div>
-                            <div class="depiction__text"><p>Город Моцарта Зальцбург носит и второе имя – «сцена мира». И
-                                это по праву, поскольку в таких жемчужинах культурной жизни, как Зальцбургский
-                                фестиваль, принимают участие звезды мировой величины. Живописный старый город Зальцбурга
-                                признан мировым культурным наследием ЮНЕСКО.</p></div>
-                        </div>
-                    </div>
-                    <div class="city__sight">
-                        <div class="city__position">
-                            <div class="city__position-numb">Вторая:</div>
-                            <div class="city__marking1"></div>
-                            <div class="city__marking2"></div>
-                            <div class="depiction__text depiction__text-2"><p>Город Моцарта Зальцбург носит и второе имя
-                                – «сцена мира». И это по праву, поскольку в таких жемчужинах культурной жизни, как
-                                Зальцбургский фестиваль, принимают участие звезды мировой величины. Живописный старый
-                                город Зальцбурга признан мировым культурным наследием ЮНЕСКО.</p>
-                                <p>Церкви, крепости, замки и дворцы составляют доминанту в картине этого города.  Его
-                                    символ – крепость Хоэнзальцбург, одна из самых больших и хорошо сохранившихся в
-                                    Европе. Посетите резиденцию эрцгерцога Зальцбургского, роскошное сооружение в стиле
-                                    раннего барокко с пышными залами и картинной галереей.</p>
-                                <p>Недалеко расположенный Кафедральный собор Зальцбурга считается самым значимым
-                                    сакральным сооружением города. Не менее примечателен и с размахом построенный в
-                                    стиле барокко архитектором Лукасом фон Хильдебрандтом дворец Мирабель.</p>
-                                <p>У подножья горы Мёнхсберг вы обнаружите так называемый район </p></div>
+                        <div class="link-galery animation-block galery-preview clearfix">
+                            {% for image in object.images.all() %}
+                                <a href="#" class="animate-me animated galery-preview__a">
+                                    <img src="{{ image.image.url }}" class="galery-icon icon-2">
+                                </a>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="city__side-bar">
-                <div class="depiction__name">Туры</div>
-                {% include 'includes/city__part.jinja' %}
+        </div>
+    </div>
+    <div class="city">
+        <div class="wrapper-inner">
+            <div class="depiction__wrap clearfix">
+                <div class="city__content">
+                    <div class="city__desc">
+                        <div class="depiction__name depiction__denotation">Описание</div>
+                        <div class="city__descrription">
+                            {{ object.about|safe }}
+                        </div>
+                    </div>
+                    <div class="city__desc">
+                        <div class="depiction__name">Достопримечательности</div>
+                        <div class="city__sight">
+                            {{ object.sights|safe }}
+                        </div>
+                    </div>
+                </div>
+                <div class="city__side-bar">
+                    <div class="depiction__name">Туры</div>
+                    {% include 'includes/city__part.jinja' %}
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% include 'includes/questions.jinja' %}
+    {% include 'includes/questions.jinja' %}
 {% endblock %}
