@@ -1,358 +1,732 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-<div class="documents">
-    <div class="wrapper-inner">
-        <div class="blog__title">Документы для путешествий</div>
-        <div class="documents__wrap">
-            <div class="documents__content">
-                <div class="documents__type"><a href="documents.html" class="documents__button documents__active">Паспорта</a><a
-                        href="visa.html" class="documents__button">Визы</a></div>
-                <div class="documents__description">Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева,
-                    Киевской обл., других областей Украины
-                </div>
-                <div class="documents__hat">
-                    <table class="documents__hat-table">
-                        <tr class="documents__hat-tr">
-                            <td class="documents__hat-td documents__hat-td1">Наименование услуг</td>
-                            <td class="documents__hat-td documents__hat-td2">Срок оформления (раб.дней)</td>
-                            <td class="documents__hat-td documents__hat-td3">Стоимость (грн.)</td>
-                            <td class="documents__hat-td documents__hat-td4">Необходимые документы</td>
-                        </tr>
-                    </table>
-                </div><!--table for standard version-->
-                <div class="documents__block">
-                    <table class="documents__table">
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">
-                                <div class="documents__td1-title"><p>БИОМЕТРИЧЕСКИЙ</p>
-                                    <p>заграничный паспорт</p></div>
-                                <div class="documents__td1-desc">Киев, Киевская обл., другие области Украины</div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon">
-                                <div class="documents__td1-title">Сроки</div>
-                            </td>
-                            <td class="documents__td documents__td3">
-                                <div class="documents__td1-title">Новый</div>
-                            </td>
-                            <td class="documents__td documents__td3">
-                                <div class="documents__td1-title">Второй</div>
-                            </td>
-                            <td rowspan="6" class="documents__td documents__td4 documents__td-fon">
-                                <div class="documents__td4-list"><p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p></div>
-                                <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
-                                </p>
-                                    <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
-                                    </p></div>
-                            </td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">Киев</td>
-                            <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
-                            <td class="documents__td documents__td3">1300</td>
-                            <td class="documents__td documents__td3">1300</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">Киев</td>
-                            <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
-                            <td class="documents__td documents__td3">1300</td>
-                            <td class="documents__td documents__td3">1300</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1 documents__td-fon">
-                                <div class="documents__td1-title">Срочный</div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
-                            <td class="documents__td documents__td3">1300</td>
-                            <td class="documents__td documents__td3">1300</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">
-                                <div class="documents__td1-title">Суперрочный</div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
-                            <td class="documents__td documents__td3">1300</td>
-                            <td class="documents__td documents__td3">1300</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">
-                                <div class="documents__td1-title">Новая услуга</div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
-                            <td class="documents__td documents__td3">1300</td>
-                            <td class="documents__td documents__td3">1300</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">
-                                <div class="documents__td1-title"><p>ДЕТСКИЙ</p>
-                                    <p>заграничный паспорт</p></div>
-                                <div class="documents__td1-desc documents__td1-top"> Киев, Киевская обл., другие области
-                                    Украины
+    <div class="documents">
+        <div class="wrapper-inner">
+            <div class="blog__title">Документы для путешествий</div>
+            <div class="documents__wrap">
+                <div class="documents__content tabs">
+                    <div class="documents__type tabs__caption">
+                        <a class="documents__button documents__active">Паспорта</a>
+                        <a class="documents__button">Визы</a>
+                    </div>
+
+                    <div class="tabs__content activated">
+                        <div class="documents__description">Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева,
+                            Киевской обл., других областей Украины
+                        </div>
+                        <div class="documents__hat">
+                            <table class="documents__hat-table">
+                                <tr class="documents__hat-tr">
+                                    <td class="documents__hat-td documents__hat-td1">Наименование услуг</td>
+                                    <td class="documents__hat-td documents__hat-td2">Срок оформления (раб.дней)</td>
+                                    <td class="documents__hat-td documents__hat-td3">Стоимость (грн.)</td>
+                                    <td class="documents__hat-td documents__hat-td4">Необходимые документы</td>
+                                </tr>
+                            </table>
+                        </div><!--table for standard version-->
+                        <div class="documents__block">
+                            <table class="documents__table">
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">
+                                        <div class="documents__td1-title"><p>БИОМЕТРИЧЕСКИЙ</p>
+                                            <p>заграничный паспорт</p></div>
+                                        <div class="documents__td1-desc">Киев, Киевская обл., другие области Украины
+                                        </div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon">
+                                        <div class="documents__td1-title">Сроки</div>
+                                    </td>
+                                    <td class="documents__td documents__td3">
+                                        <div class="documents__td1-title">Новый</div>
+                                    </td>
+                                    <td class="documents__td documents__td3">
+                                        <div class="documents__td1-title">Второй</div>
+                                    </td>
+                                    <td rowspan="6" class="documents__td documents__td4 documents__td-fon">
+                                        <div class="documents__td4-list"><p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p></div>
+                                        <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
+                                        </p>
+                                            <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
+                                            </p></div>
+                                    </td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">Киев</td>
+                                    <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">Киев</td>
+                                    <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1 documents__td-fon">
+                                        <div class="documents__td1-title">Срочный</div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">
+                                        <div class="documents__td1-title">Суперрочный</div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">
+                                        <div class="documents__td1-title">Новая услуга</div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">
+                                        <div class="documents__td1-title"><p>ДЕТСКИЙ</p>
+                                            <p>заграничный паспорт</p></div>
+                                        <div class="documents__td1-desc documents__td1-top"> Киев, Киевская обл., другие
+                                            области
+                                            Украины
+                                        </div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon documents__td1-top"></td>
+                                    <td class="documents__td documents__td3 documents__td1-top">
+                                        <div class="documents__td1-title">Новый</div>
+                                    </td>
+                                    <td class="documents__td documents__td3 documents__td1-top">
+                                        <div class="documents__td1-title">Второй</div>
+                                    </td>
+                                    <td rowspan="5"
+                                        class="documents__td documents__td4 documents__td-fon documents__td1-top">
+                                        <div class="documents__td1-title">До 12 лет</div>
+                                        <div class="documents__td4-list"><p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p>
+                                            <p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p>
+                                            <p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p></div>
+                                        <div class="documents__td1-title">После 12 лет</div>
+                                        <div class="documents__td4-list documents__hidden"><p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p>
+                                            <p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p>
+                                            <p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p>
+                                            <p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p>
+                                            <p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p>
+                                            <p>1. Lorem ipsum dolor</p>
+                                            <p>2. Lorem ipsum dolor sit amet</p></div>
+                                        <div class="documents__show">Раскрыть</div>
+                                    </td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">Киев</td>
+                                    <td class="documents__td documents__td2 documents__td-fon">БИО</td>
+                                    <td class="documents__td documents__td3">1100</td>
+                                    <td class="documents__td documents__td3">1200</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">Киев</td>
+                                    <td class="documents__td documents__td2 documents__td-fon">БИО</td>
+                                    <td class="documents__td documents__td3">1100</td>
+                                    <td class="documents__td documents__td3">1200</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1 documents__td-fon">
+                                        <div class="documents__td1-title">Срочный</div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">
+                                        <div class="documents__td1-title">Суперрочный</div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                    <td class="documents__td documents__td3">1300</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="documents__td documents__td1">
+                                        <div class="documents__td1-title"><p>Вклеивание ребенка в</p>
+                                            <p>заграничный паспорт родителей</p></div>
+                                        <div class="documents__td1-desc">Киев, Киевская обл., другие области Украины
+                                        </div>
+                                    </td>
+                                    <td class="documents__td documents__td2 documents__td-fon documents__td1-top"></td>
+                                    <td class="documents__td documents__td3 documents__td1-top">
+                                        <div class="documents__td1-title">Новый</div>
+                                    </td>
+                                    <td class="documents__td documents__td3 documents__td1-top">
+                                        <div class="documents__td1-title">Второй</div>
+                                    </td>
+                                    <td class="documents__td documents__td4 documents__td-fon documents__td1-top">
+                                        <div class="documents__td4-list"><p>1) <strong>2 матовые </strong><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                        </p>
+                                            <p>2) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga,
+                                                saepe!</p>
+                                            <p>3) Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                                            <p>4) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga,
+                                                saepe!</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div><!--table for mobile version-->
+                        <div class="documents__mobile">
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2"><p>БИОМЕТРИЧЕСКИЙ</p>
+                                            <p>заграничный паспорт</p></div>
+                                        <div class="documents__td1-desc2">Киев, Киевская обл., другие области Украины
+                                        </div>
+                                    </div>
+                                    <div class="documents__open"></div>
+                                    <div class="documents__close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1"></td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">
+                                                    <div class="documents__td1-title">Сроки</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">
+                                                    <div class="documents__td1-title">Новый</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">
+                                                    <div class="documents__td1-title">Второй</div>
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1">Киев</td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1">Киев</td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1">
+                                                    <div class="documents__td1-title">Срочный</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                            <tr class="documents__mobile-tr">
+                                                <td class="documents__td documents__mobile-td1">
+                                                    <div class="documents__td1-title">Суперсрочный</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                            <tr class="documents__mobile-tr">
+                                                <td class="documents__td documents__mobile-td1">
+                                                    <div class="documents__td1-title">Новая услуга</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                        </table>
+                                        <div class="documents__mobile-description">
+                                            <div class="documents__td4-list documents__td4-list2"><p>1. Lorem ipsum
+                                                dolor</p>
+                                                <p>2. Lorem ipsum dolor sit amet</p></div>
+                                            <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
+                                            </p>
+                                                <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
+                                                </p></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon documents__td1-top"></td>
-                            <td class="documents__td documents__td3 documents__td1-top">
-                                <div class="documents__td1-title">Новый</div>
-                            </td>
-                            <td class="documents__td documents__td3 documents__td1-top">
-                                <div class="documents__td1-title">Второй</div>
-                            </td>
-                            <td rowspan="5" class="documents__td documents__td4 documents__td-fon documents__td1-top">
-                                <div class="documents__td1-title">До 12 лет</div>
-                                <div class="documents__td4-list"><p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p>
-                                    <p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p>
-                                    <p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p></div>
-                                <div class="documents__td1-title">После 12 лет</div>
-                                <div class="documents__td4-list documents__hidden"><p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p>
-                                    <p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p>
-                                    <p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p>
-                                    <p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p>
-                                    <p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p>
-                                    <p>1. Lorem ipsum dolor</p>
-                                    <p>2. Lorem ipsum dolor sit amet</p></div>
-                                <div class="documents__show">Раскрыть</div>
-                            </td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">Киев</td>
-                            <td class="documents__td documents__td2 documents__td-fon">БИО</td>
-                            <td class="documents__td documents__td3">1100</td>
-                            <td class="documents__td documents__td3">1200</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">Киев</td>
-                            <td class="documents__td documents__td2 documents__td-fon">БИО</td>
-                            <td class="documents__td documents__td3">1100</td>
-                            <td class="documents__td documents__td3">1200</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1 documents__td-fon">
-                                <div class="documents__td1-title">Срочный</div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
-                            <td class="documents__td documents__td3">1300</td>
-                            <td class="documents__td documents__td3">1300</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">
-                                <div class="documents__td1-title">Суперрочный</div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon">1 месяц</td>
-                            <td class="documents__td documents__td3">1300</td>
-                            <td class="documents__td documents__td3">1300</td>
-                        </tr>
-                        <tr class="documents__tr">
-                            <td class="documents__td documents__td1">
-                                <div class="documents__td1-title"><p>Вклеивание ребенка в</p>
-                                    <p>заграничный паспорт родителей</p></div>
-                                <div class="documents__td1-desc">Киев, Киевская обл., другие области Украины</div>
-                            </td>
-                            <td class="documents__td documents__td2 documents__td-fon documents__td1-top"></td>
-                            <td class="documents__td documents__td3 documents__td1-top">
-                                <div class="documents__td1-title">Новый</div>
-                            </td>
-                            <td class="documents__td documents__td3 documents__td1-top">
-                                <div class="documents__td1-title">Второй</div>
-                            </td>
-                            <td class="documents__td documents__td4 documents__td-fon documents__td1-top">
-                                <div class="documents__td4-list"><p>1) <strong>2 матовые </strong><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-                                </p>
-                                    <p>2) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, saepe!</p>
-                                    <p>3) Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                                    <p>4) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, saepe!</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div><!--table for mobile version-->
-                <div class="documents__mobile">
-                    <div class="documents__all-block">
-                        <div class="documents__mobile-block">
-                            <div class="documents__mobile-top">
-                                <div class="documents__td1-title2"><p>БИОМЕТРИЧЕСКИЙ</p>
-                                    <p>заграничный паспорт</p></div>
-                                <div class="documents__td1-desc2">Киев, Киевская обл., другие области Украины</div>
                             </div>
-                            <div class="documents__open"></div>
-                            <div class="documents__close"></div>
-                            <div class="documents__mobile-wrap">
-                                <table class="documents__mobile-table">
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1"></td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">
-                                            <div class="documents__td1-title">Сроки</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td3">
-                                            <div class="documents__td1-title">Новый</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td3">
-                                            <div class="documents__td1-title">Второй</div>
-                                        </td>
-                                    </tr>
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1">Киев</td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1">Киев</td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1">
-                                            <div class="documents__td1-title">Срочный</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                    <tr class="documents__mobile-tr">
-                                        <td class="documents__td documents__mobile-td1">
-                                            <div class="documents__td1-title">Суперсрочный</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                    <tr class="documents__mobile-tr">
-                                        <td class="documents__td documents__mobile-td1">
-                                            <div class="documents__td1-title">Новая услуга</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                </table>
-                                <div class="documents__mobile-description">
-                                    <div class="documents__td4-list documents__td4-list2"><p>1. Lorem ipsum dolor</p>
-                                        <p>2. Lorem ipsum dolor sit amet</p></div>
-                                    <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
-                                    </p>
-                                        <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
-                                        </p></div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2"><p>ДЕТСКИЙ</p>
+                                            <p>заграничный паспорт</p></div>
+                                        <div class="documents__td1-desc2">Киев, Киевская обл., другие области Украины
+                                        </div>
+                                    </div>
+                                    <div class="documents__open"></div>
+                                    <div class="documents__close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1"></td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">
+                                                    <div class="documents__td1-title">Сроки</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">
+                                                    <div class="documents__td1-title">Новый</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">
+                                                    <div class="documents__td1-title">Второй</div>
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1">Киев</td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1">Киев</td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1">
+                                                    <div class="documents__td1-title">Срочный</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                            <tr class="documents__mobile-tr">
+                                                <td class="documents__td documents__mobile-td1">
+                                                    <div class="documents__td1-title">Суперсрочный</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                        </table>
+                                        <div class="documents__mobile-description">
+                                            <div class="documents__td4-list documents__td4-list2"><p>1. Lorem ipsum
+                                                dolor</p>
+                                                <p>2. Lorem ipsum dolor sit amet</p></div>
+                                            <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
+                                            </p>
+                                                <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
+                                                </p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2"><p>Вклеивание ребенка в заграничный</p>
+                                            <p>паспорт родителей</p></div>
+                                        <div class="documents__td1-desc2">Киев, Киевская обл., другие области Украины
+                                        </div>
+                                    </div>
+                                    <div class="documents__open"></div>
+                                    <div class="documents__close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1"></td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">
+                                                    <div class="documents__td1-title">Сроки</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">
+                                                    <div class="documents__td1-title">Новый</div>
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">
+                                                    <div class="documents__td1-title">Второй</div>
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="documents__td documents__mobile-td1">Киев</td>
+                                                <td class="documents__td documents__mobile-td2 documents__td-fon">1
+                                                    месяц
+                                                </td>
+                                                <td class="documents__td documents__mobile-td3">1300</td>
+                                                <td class="documents__td documents__mobile-td3"> 1300</td>
+                                            </tr>
+                                        </table>
+                                        <div class="documents__mobile-description">
+                                            <div class="documents__td4-list documents__td4-list2"><p>1. Lorem ipsum
+                                                dolor</p>
+                                                <p>2. Lorem ipsum dolor sit amet</p></div>
+                                            <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
+                                            </p>
+                                                <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
+                                                </p></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="documents__all-block">
-                        <div class="documents__mobile-block">
-                            <div class="documents__mobile-top">
-                                <div class="documents__td1-title2"><p>ДЕТСКИЙ</p>
-                                    <p>заграничный паспорт</p></div>
-                                <div class="documents__td1-desc2">Киев, Киевская обл., другие области Украины</div>
+
+                    <div class="tabs__content">
+                        <div class="documents__description visa__description"><p>Оформление БИОМЕТРИЧЕСКОГО
+                            загранпаспорта для
+                            жителей Киева, Киевской обл., других областей Украины</p>
+                            <p>Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других
+                                областей
+                                Украины</p>
+                            <p>Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других
+                                областей
+                                Украины</p>
+                            <p>Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других
+                                областей
+                                Украины</p>
+                            <p>Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других
+                                областей
+                                Украины</p>
+                            <p>Оформление БИОМЕТРИЧЕСКОГО загранпаспорта для жителей Киева, Киевской обл., других
+                                областей
+                                Украины</p></div><!--table for mobile version-->
+                        <div class="documents__hat documents__visa-hat">
+                            <table class="documents__table documents__visa-table">
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__fon">страна</td>
+                                    <td class="visa__td visa__fon">Стоимость</td>
+                                    <td class="visa__td visa__fon">тип визы</td>
+                                    <td class="visa__td visa__fon">срок оформления</td>
+                                    <td class="visa__td visa__fon">необходимые документы</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2">Греция</td>
+                                    <td class="visa__td visa__td2">460</td>
+                                    <td class="visa__td visa__td2"><p>180 </p>
+                                        <p>360</p></td>
+                                    <td class="visa__td visa__td2">срок оформления</td>
+                                    <td class="visa__td visa__td2">необходимые документы</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td rowspan="3" class="visa__td visa__td2 visa__td-red">Литва</td>
+                                    <td class="visa__td visa__td2 visa__td-red">320 езженый</td>
+                                    <td class="visa__td visa__td2 visa__td-red">пол года</td>
+                                    <td rowspan="3" class="visa__td visa__td2">10 дней</td>
+                                    <td rowspan="3" class="visa__td visa__td2">минимальный пакет документов</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2 visa__td-red">340 чистый</td>
+                                    <td class="visa__td visa__td2 visa__td-red">пол года</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2 visa__td-red"><p>420 езженый</p>
+                                        <p>440 чистый</p></td>
+                                    <td class="visa__td visa__td2 visa__td-red">год</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td rowspan="2" class="visa__td visa__td2">Испания</td>
+                                    <td class="visa__td visa__td2">450</td>
+                                    <td class="visa__td visa__td2">90/180</td>
+                                    <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                    <td rowspan="2" class="visa__td visa__td2">минимальный пакет документов</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2">450</td>
+                                    <td class="visa__td visa__td2">180</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td rowspan="2" class="visa__td visa__td2">Венгрия</td>
+                                    <td class="visa__td visa__td2">450</td>
+                                    <td class="visa__td visa__td2">90/180</td>
+                                    <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                    <td rowspan="2" class="visa__td visa__td2">минимальный пакет документов</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2">450</td>
+                                    <td class="visa__td visa__td2">180</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td rowspan="2" class="visa__td visa__td2 visa__td-red">Словакия</td>
+                                    <td class="visa__td visa__td2 visa__td-red">340</td>
+                                    <td class="visa__td visa__td2 visa__td-red"><p>пол года </p>
+                                        <p>год</p></td>
+                                    <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                    <td rowspan="2" class="visa__td visa__td2">минимальный пакет документов</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2">123</td>
+                                    <td class="visa__td visa__td2">180</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td rowspan="2" class="visa__td visa__td2">Польша</td>
+                                    <td class="visa__td visa__td2">450</td>
+                                    <td class="visa__td visa__td2">90/180</td>
+                                    <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                    <td rowspan="2" class="visa__td visa__td2">минимальный пакет документов</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2">450</td>
+                                    <td class="visa__td visa__td2">180</td>
+                                </tr>
+                                <tr class="documents__tr">
+                                    <td class="visa__td visa__td2">Италия</td>
+                                    <td class="visa__td visa__td2">Стоимость</td>
+                                    <td class="visa__td visa__td2">7</td>
+                                    <td class="visa__td visa__td2">срок оформления</td>
+                                    <td class="visa__td visa__td2">необходимые документы</td>
+                                </tr>
+                            </table>
+                        </div><!--table for mobile version-->
+                        <div class="documents__mobile">
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2">Греция</div>
+                                    </div>
+                                    <div class="documents__open documents__visa-open"></div>
+                                    <div class="documents__close documents__visa-close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__fon">Стоимость</td>
+                                                <td class="visa__td visa__fon">тип визы</td>
+                                                <td class="visa__td visa__fon">срок оформления</td>
+                                                <td class="visa__td visa__fon">необходимые документы</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">460</td>
+                                                <td class="visa__td visa__td2"><p>180 </p>
+                                                    <p>360</p></td>
+                                                <td class="visa__td visa__td2">срок оформления</td>
+                                                <td class="visa__td visa__td2">необходимые документы</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="documents__open"></div>
-                            <div class="documents__close"></div>
-                            <div class="documents__mobile-wrap">
-                                <table class="documents__mobile-table">
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1"></td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">
-                                            <div class="documents__td1-title">Сроки</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td3">
-                                            <div class="documents__td1-title">Новый</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td3">
-                                            <div class="documents__td1-title">Второй</div>
-                                        </td>
-                                    </tr>
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1">Киев</td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1">Киев</td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1">
-                                            <div class="documents__td1-title">Срочный</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                    <tr class="documents__mobile-tr">
-                                        <td class="documents__td documents__mobile-td1">
-                                            <div class="documents__td1-title">Суперсрочный</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                </table>
-                                <div class="documents__mobile-description">
-                                    <div class="documents__td4-list documents__td4-list2"><p>1. Lorem ipsum dolor</p>
-                                        <p>2. Lorem ipsum dolor sit amet</p></div>
-                                    <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
-                                    </p>
-                                        <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
-                                        </p></div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2">Литва</div>
+                                    </div>
+                                    <div class="documents__open documents__visa-open"></div>
+                                    <div class="documents__close documents__visa-close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__fon">Стоимость</td>
+                                                <td class="visa__td visa__fon">тип визы</td>
+                                                <td class="visa__td visa__fon">срок оформления</td>
+                                                <td class="visa__td visa__fon">необходимые документы</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2 visa__td-red">320 езженый</td>
+                                                <td class="visa__td visa__td2 visa__td-red">пол года</td>
+                                                <td rowspan="3" class="visa__td visa__td2">10 дней</td>
+                                                <td rowspan="3" class="visa__td visa__td2">минимальный пакет
+                                                    документов
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2 visa__td-red">340 чистый</td>
+                                                <td class="visa__td visa__td2 visa__td-red">пол года</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2 visa__td-red"><p>420 езженый</p>
+                                                    <p>440 чистый</p></td>
+                                                <td class="visa__td visa__td2 visa__td-red">год</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2">Испания</div>
+                                    </div>
+                                    <div class="documents__open documents__visa-open"></div>
+                                    <div class="documents__close documents__visa-close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__fon">Стоимость</td>
+                                                <td class="visa__td visa__fon">тип визы</td>
+                                                <td class="visa__td visa__fon">срок оформления</td>
+                                                <td class="visa__td visa__fon">необходимые документы</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">450</td>
+                                                <td class="visa__td visa__td2">90/180</td>
+                                                <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                                <td rowspan="2" class="visa__td visa__td2">минимальный пакет
+                                                    документов
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">450</td>
+                                                <td class="visa__td visa__td2">180</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2">Венгрия</div>
+                                    </div>
+                                    <div class="documents__open documents__visa-open"></div>
+                                    <div class="documents__close documents__visa-close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__fon">Стоимость</td>
+                                                <td class="visa__td visa__fon">тип визы</td>
+                                                <td class="visa__td visa__fon">срок оформления</td>
+                                                <td class="visa__td visa__fon">необходимые документы</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">450</td>
+                                                <td class="visa__td visa__td2">90/180</td>
+                                                <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                                <td rowspan="2" class="visa__td visa__td2">минимальный пакет
+                                                    документов
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">450</td>
+                                                <td class="visa__td visa__td2">180</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2">Словакия</div>
+                                    </div>
+                                    <div class="documents__open documents__visa-open"></div>
+                                    <div class="documents__close documents__visa-close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__fon">Стоимость</td>
+                                                <td class="visa__td visa__fon">тип визы</td>
+                                                <td class="visa__td visa__fon">срок оформления</td>
+                                                <td class="visa__td visa__fon">необходимые документы</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2 visa__td-red">340</td>
+                                                <td class="visa__td visa__td2 visa__td-red"><p>пол года </p>
+                                                    <p>год</p></td>
+                                                <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                                <td rowspan="2" class="visa__td visa__td2">минимальный пакет
+                                                    документов
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">123</td>
+                                                <td class="visa__td visa__td2">180</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2">Польша</div>
+                                    </div>
+                                    <div class="documents__open documents__visa-open"></div>
+                                    <div class="documents__close documents__visa-close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__fon">Стоимость</td>
+                                                <td class="visa__td visa__fon">тип визы</td>
+                                                <td class="visa__td visa__fon">срок оформления</td>
+                                                <td class="visa__td visa__fon">необходимые документы</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">450</td>
+                                                <td class="visa__td visa__td2">90/180</td>
+                                                <td rowspan="2" class="visa__td visa__td2">10 дней</td>
+                                                <td rowspan="2" class="visa__td visa__td2">минимальный пакет
+                                                    документов
+                                                </td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">450</td>
+                                                <td class="visa__td visa__td2">180</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents__all-block">
+                                <div class="documents__mobile-block">
+                                    <div class="documents__mobile-top">
+                                        <div class="documents__td1-title2">Италия</div>
+                                    </div>
+                                    <div class="documents__open documents__visa-open"></div>
+                                    <div class="documents__close documents__visa-close"></div>
+                                    <div class="documents__mobile-wrap">
+                                        <table class="documents__mobile-table">
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__fon">Стоимость</td>
+                                                <td class="visa__td visa__fon">тип визы</td>
+                                                <td class="visa__td visa__fon">срок оформления</td>
+                                                <td class="visa__td visa__fon">необходимые документы</td>
+                                            </tr>
+                                            <tr class="documents__tr">
+                                                <td class="visa__td visa__td2">Стоимость</td>
+                                                <td class="visa__td visa__td2">7</td>
+                                                <td class="visa__td visa__td2">срок оформления</td>
+                                                <td class="visa__td visa__td2">необходимые документы</td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="documents__all-block">
-                        <div class="documents__mobile-block">
-                            <div class="documents__mobile-top">
-                                <div class="documents__td1-title2"><p>Вклеивание ребенка в заграничный</p>
-                                    <p>паспорт родителей</p></div>
-                                <div class="documents__td1-desc2">Киев, Киевская обл., другие области Украины</div>
-                            </div>
-                            <div class="documents__open"></div>
-                            <div class="documents__close"></div>
-                            <div class="documents__mobile-wrap">
-                                <table class="documents__mobile-table">
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1"></td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">
-                                            <div class="documents__td1-title">Сроки</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td3">
-                                            <div class="documents__td1-title">Новый</div>
-                                        </td>
-                                        <td class="documents__td documents__mobile-td3">
-                                            <div class="documents__td1-title">Второй</div>
-                                        </td>
-                                    </tr>
-                                    <tr class="documents__tr">
-                                        <td class="documents__td documents__mobile-td1">Киев</td>
-                                        <td class="documents__td documents__mobile-td2 documents__td-fon">1 месяц</td>
-                                        <td class="documents__td documents__mobile-td3">1300</td>
-                                        <td class="documents__td documents__mobile-td3"> 1300</td>
-                                    </tr>
-                                </table>
-                                <div class="documents__mobile-description">
-                                    <div class="documents__td4-list documents__td4-list2"><p>1. Lorem ipsum dolor</p>
-                                        <p>2. Lorem ipsum dolor sit amet</p></div>
-                                    <div class="documents__td-4-clarification"><p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea. Praesentium, pariatur! Nostrum temporibus nesciunt praesentium voluptates magni vel distinctio soluta ea.</span>
-                                    </p>
-                                        <p><strong>Lorem </strong><span>ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, pariatur! Nostrum</span>
-                                        </p></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <script>
+        (function ($) {
+            $(function () {
+
+                $('div.tabs__caption').on('click', 'a:not(.documents__active)', function () {
+                    $(this)
+                        .addClass('documents__active').siblings().removeClass('documents__active')
+                        .closest('.tabs').find('.tabs__content').removeClass('activated').eq($(this).index()).addClass('activated');
+                });
+
+            });
+        })(jQuery);
+    </script>
 {% endblock %}

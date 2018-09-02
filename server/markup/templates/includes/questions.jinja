@@ -1,12 +1,15 @@
 <div class="questions">
     <div class="wrapper-inner">
         <div class="questions__content clearfix">
-            <div class="questions__picture"><img src="../img/girl.png" class="questions__picture--size"/></div>
+            <div class="questions__picture"><img src="{{ static('img/girl.png') }}" class="questions__picture--size"/></div>
             <div class="questions__block">
                 <div class="questions__text"><p>Есть вопросы по данной стране?</p>
                     <p>Задайте их менеджеру по телефонам:</p></div>
-                <div class="questions__text"><p>+38 (044) 2235 838, +38 (067) 6594 950,</p>
-                    <p>+38 (066) 0808 478</p></div>
+                <div class="questions__text">
+                    {% for i in global_settings.phone_numbers.all() %}
+                    <p>+38 ({{ i.phone.split(" ")[0] }}) {{ i.phone.split(" ")[1] }} {{ i.phone.split(" ")[2] }}{% if not loop.last %},{% endif %}</p>
+                    {% endfor %}
+                </div>
                 <div class="questions__button header__button-click">
                     <div class="forma__submit questions__sub">Заказать бесплатный звонок</div>
                 </div>

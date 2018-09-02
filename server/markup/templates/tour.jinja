@@ -1,290 +1,292 @@
 {% extends 'base.jinja' %}
 {% block head %}
-    <script type="text/javascript" src="{{ static('js/jquery.bxslider.min.js') }}"></script>
-    <script type="text/javascript" src="{{ static('js/bx-slider.js') }}"></script>
-    <script type="text/javascript" src="{{ static('js/fixed.js') }}"></script>
-    <script type="text/javascript" src="{{ static('js/scrollto.js') }}"></script>
+<script type="text/javascript" src="{{ static('js/jquery.bxslider.min.js') }}"></script>
+<script type="text/javascript" src="{{ static('js/bx-slider.js') }}"></script>
+<script type="text/javascript" src="{{ static('js/fixed.js') }}"></script>
+<script type="text/javascript" src="{{ static('js/scrollto.js') }}"></script>
 {% endblock %}
 {% block content %}
-    <div class="top-about">
-        <div class="wrapper-inner">
-            <div class="tour__name tour__name2">Египет</div>
-            <div class="top-about__nav">
-                <nav class="nav-block">
-                    <ul class="nav-block__ul clearfix">
-                        <li class="nav-block__li"><a href="index.html" class="nav-block__a">Главная</a></li>
-                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                        <li class="nav-block__li"><a href="tour.html" class="nav-block__a">Туры</a></li>
-                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                        <li class="nav-block__li"><a href="tour.html" class="nav-block__a">Египет</a></li>
-                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                        <li class="nav-block__li"><span class="nav-block__span">Dream Vacation Resort 5*</span></li>
-                    </ul>
-                </nav>
-            </div>
-            {% include 'includes/galery.jinja' %}
+<div class="top-about">
+    <div class="wrapper-inner">
+        <div class="tour__name tour__name2">Египет</div>
+        <div class="top-about__nav">
+            <nav class="nav-block">
+                <ul class="nav-block__ul clearfix">
+                    <li class="nav-block__li"><a href="index.html" class="nav-block__a">Главная</a></li>
+                    <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                    <li class="nav-block__li"><a href="tour.html" class="nav-block__a">Туры</a></li>
+                    <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                    <li class="nav-block__li"><a href="tour.html" class="nav-block__a">Египет</a></li>
+                    <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                    <li class="nav-block__li"><span class="nav-block__span">Dream Vacation Resort 5*</span></li>
+                </ul>
+            </nav>
         </div>
+        {% include 'includes/galery.jinja' %}
     </div>
-    <div id="menu" class="fixed-menu default">
-        <div class="wrapper-inner">
-            <div class="fixed-menu__content clearfix">
-                <div class="fixed-menu__block clearfix">
-                    <div class="fixed-menu__picture"><img src="../img/pl1.svg"></div>
-                    <div class="fixed-menu__description"><a href="#"
-                                                            class="fixed-menu__link">ШАРМ-ЭЛЬ-ШЕЛЬХ,</a><span> </span><a
-                            href="#" class="fixed-menu__link">Египет</a>
-                        <div class="fixed-menu__label">21 июня - 25 июля</div>
-                    </div>
-                </div>
-                <div class="fixed-menu__block clearfix">
-                    <div class="fixed-menu__picture"><img src="../img/pl2.svg"></div>
-                    <div class="fixed-menu__description"><a href="#" class="fixed-menu__link">Dreams Vacation Resort
-                        5*</a>
-                        <div class="fixed-menu__label">питание</div>
-                    </div>
-                </div>
-                <div class="fixed-menu__block clearfix">
-                    <div class="fixed-menu__picture"><img src="../img/pl3.svg"></div>
-                    <div class="fixed-menu__description">
-                        <div class="fixed-menu__label2">Вылет из:</div>
-                        <a href="#" class="fixed-menu__link fixed-menu__link2">Киев</a></div>
-                </div>
-                <div class="fixed-menu__block">
-                    <div class="fixed-menu__price">47 500 <span class="fixed-menu__price--span">uan</span></div>
-                </div>
-                <div class="fixed-menu__block">
-                    <div class="forma__submit fixed-menu__submit fixed-menu__submit-push">Забронировать тур</div>
+</div>
+<div id="menu" class="fixed-menu default">
+    <div class="wrapper-inner">
+        <div class="fixed-menu__content clearfix">
+            <div class="fixed-menu__block clearfix">
+                <div class="fixed-menu__picture"><img src="../img/pl1.svg"></div>
+                <div class="fixed-menu__description"><a href="#"
+                                                        class="fixed-menu__link">ШАРМ-ЭЛЬ-ШЕЛЬХ,</a><span> </span><a
+                        href="#" class="fixed-menu__link">Египет</a>
+                    <div class="fixed-menu__label">21 июня - 25 июля</div>
                 </div>
             </div>
+            <div class="fixed-menu__block clearfix">
+                <div class="fixed-menu__picture"><img src="../img/pl2.svg"></div>
+                <div class="fixed-menu__description"><a href="#" class="fixed-menu__link">Dreams Vacation Resort
+                    5*</a>
+                    <div class="fixed-menu__label">питание</div>
+                </div>
+            </div>
+            <div class="fixed-menu__block clearfix">
+                <div class="fixed-menu__picture"><img src="../img/pl3.svg"></div>
+                <div class="fixed-menu__description">
+                    <div class="fixed-menu__label2">Вылет из:</div>
+                    <a href="#" class="fixed-menu__link fixed-menu__link2">Киев</a></div>
+            </div>
+            <div class="fixed-menu__block">
+                <div class="fixed-menu__price">47 500 <span class="fixed-menu__price--span">uan</span></div>
+            </div>
+            <div class="fixed-menu__block">
+                <div class="forma__submit fixed-menu__submit fixed-menu__submit-push">Забронировать тур</div>
+            </div>
         </div>
     </div>
-    <div class="about">
-        <div class="wrapper-inner">
-            <div class="about__content clearfix">
-                <div class="about__left">
-                    <div class="about__name about__name-margin">Описание тура</div>
-                    <div class="about__block-table">
-                        <table class="about__table">
-                            <tr class="about__tr">
-                                <td class="about__td1">ID тура:</td>
-                                <td class="about__td2"></td>
-                                <td class="about__td3">458963</td>
-                            </tr>
-                            <tr class="about__tr">
-                                <td class="about__td1">Тип тура:</td>
-                                <td class="about__td2"></td>
-                                <td class="about__td3"><a href="#" class="about__link">Египет</a></td>
-                            </tr>
-                            <tr class="about__tr">
-                                <td class="about__td1">Страна:</td>
-                                <td class="about__td2"></td>
-                                <td class="about__td3"><a href="#" class="about__link">Египет</a></td>
-                            </tr>
-                            <tr class="about__tr">
-                                <td class="about__td1">Курорт:</td>
-                                <td class="about__td2"></td>
-                                <td class="about__td3"><a href="#" class="about__link">Шарм-эль-шельх</a></td>
-                            </tr>
-                            <tr class="about__tr">
-                                <td class="about__td1">Отель:</td>
-                                <td class="about__td2"></td>
-                                <td class="about__td3"><a href="#" class="about__link">Dreams vacation resort 5*</a>
-                                </td>
-                            </tr>
-                            <tr class="about__tr">
-                                <td class="about__td1">Отправка из:</td>
-                                <td class="about__td2"></td>
-                                <td class="about__td3 about__td3-upper">Киев</td>
-                            </tr>
-                            <tr class="about__tr">
-                                <td class="about__td1">Продолжительность (д/н):</td>
-                                <td class="about__td2"></td>
-                                <td class="about__td3">7/7</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="about__desc">Описание отеля:</div>
-                    <div class="about__text-all"><p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх - курортный город
-                        Египта
-                        на побережье Красного моря, на самой оконечности Синая. Не первый десяток лет считающися местом
-                        всеобщего расслабления, царство шведских столов, валяния на пляже, необузданного шоппинга и
-                        многого
+</div>
+<div class="about">
+    <div class="wrapper-inner">
+        <div class="about__content clearfix">
+            <div class="about__left">
+                <div class="about__name about__name-margin">Описание тура</div>
+                <div class="about__block-table">
+                    <table class="about__table">
+                        <tr class="about__tr">
+                            <td class="about__td1">ID тура:</td>
+                            <td class="about__td2"></td>
+                            <td class="about__td3">458963</td>
+                        </tr>
+                        <tr class="about__tr">
+                            <td class="about__td1">Тип тура:</td>
+                            <td class="about__td2"></td>
+                            <td class="about__td3"><a href="#" class="about__link">Египет</a></td>
+                        </tr>
+                        <tr class="about__tr">
+                            <td class="about__td1">Страна:</td>
+                            <td class="about__td2"></td>
+                            <td class="about__td3"><a href="#" class="about__link">Египет</a></td>
+                        </tr>
+                        <tr class="about__tr">
+                            <td class="about__td1">Курорт:</td>
+                            <td class="about__td2"></td>
+                            <td class="about__td3"><a href="#" class="about__link">Шарм-эль-шельх</a></td>
+                        </tr>
+                        <tr class="about__tr">
+                            <td class="about__td1">Отель:</td>
+                            <td class="about__td2"></td>
+                            <td class="about__td3"><a href="#" class="about__link">Dreams vacation resort 5*</a>
+                            </td>
+                        </tr>
+                        <tr class="about__tr">
+                            <td class="about__td1">Отправка из:</td>
+                            <td class="about__td2"></td>
+                            <td class="about__td3 about__td3-upper">Киев</td>
+                        </tr>
+                        <tr class="about__tr">
+                            <td class="about__td1">Продолжительность (д/н):</td>
+                            <td class="about__td2"></td>
+                            <td class="about__td3">7/7</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="about__desc">Описание отеля:</div>
+                <div class="about__text-all"><p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх - курортный город
+                    Египта
+                    на побережье Красного моря, на самой оконечности Синая. Не первый десяток лет считающися местом
+                    всеобщего расслабления, царство шведских столов, валяния на пляже, необузданного шоппинга и
+                    многого
+                    другого, так милого сердцу неискушенного туриста.</p>
+                    <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
+                        занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
+                        даже
+                        тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
+                        если
+                        быть точным Шарм-эш-Шейх - курортный город Египта на побережье <span
+                                class="about__text-span1">Красного моря, на самой оконечности Синая. Не первый</span><span
+                                class="about__text-span2">десяток лет считающися местом всеобщего расслабления, царство шведских столов, </span><span
+                                class="about__text-span3">валяния на пляже, необузданного шоппинга и многого другого, </span><span
+                                class="about__text-span4">так милого сердцу неискушенного туриста.</span></p></div>
+                <div class="about__text-all about__text-hide"><p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх -
+                    курортный город Египта на побережье Красного моря, на самой оконечности Синая. Не первый десяток
+                    лет
+                    считающися местом всеобщего расслабления, царство шведских столов, валяния на пляже,
+                    необузданного
+                    шоппинга и многого другого, так милого сердцу неискушенного туриста.</p>
+                    <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
+                        занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
+                        даже
+                        тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
+                        если
+                        быть точным Шарм-эш-Шейх - курортный город Египта на побережье</p>
+                    <p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх - курортный город Египта на побережье Красного
+                        моря, на самой оконечности Синая. Не первый десяток лет считающися местом всеобщего
+                        расслабления, царство шведских столов, валяния на пляже, необузданного шоппинга и многого
                         другого, так милого сердцу неискушенного туриста.</p>
-                        <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
-                            занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
-                            даже
-                            тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
-                            если
-                            быть точным Шарм-эш-Шейх - курортный город Египта на побережье <span
-                                    class="about__text-span1">Красного моря, на самой оконечности Синая. Не первый</span><span
-                                    class="about__text-span2">десяток лет считающися местом всеобщего расслабления, царство шведских столов, </span><span
-                                    class="about__text-span3">валяния на пляже, необузданного шоппинга и многого другого, </span><span
-                                    class="about__text-span4">так милого сердцу неискушенного туриста.</span></p></div>
-                    <div class="about__text-all about__text-hide"><p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх -
-                        курортный город Египта на побережье Красного моря, на самой оконечности Синая. Не первый десяток
-                        лет
-                        считающися местом всеобщего расслабления, царство шведских столов, валяния на пляже,
-                        необузданного
-                        шоппинга и многого другого, так милого сердцу неискушенного туриста.</p>
-                        <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
-                            занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
-                            даже
-                            тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
-                            если
-                            быть точным Шарм-эш-Шейх - курортный город Египта на побережье</p>
-                        <p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх - курортный город Египта на побережье Красного
-                            моря, на самой оконечности Синая. Не первый десяток лет считающися местом всеобщего
-                            расслабления, царство шведских столов, валяния на пляже, необузданного шоппинга и многого
-                            другого, так милого сердцу неискушенного туриста.</p>
-                        <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
-                            занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
-                            даже
-                            тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
-                            если
-                            быть точным Шарм-эш-Шейх - курортный город Египта на побережье</p></div>
-                    <div class="about__more">Подбробнее</div>
+                    <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
+                        занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
+                        даже
+                        тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
+                        если
+                        быть точным Шарм-эш-Шейх - курортный город Египта на побережье</p></div>
+                <div class="about__more">Подбробнее</div>
+            </div>
+            <div class="about__right">
+                <div class="about__forma">
+                    <form name="date" id="choice-of-dates">
+                        <div class="about__forma-top clearfix">
+                            <div class="about__date">
+                                <div class="about__desc">Дата тура:</div>
+                            </div>
+                            <div class="about__change"><select size="1" name="about-date" required
+                                                               class="about__change-select">
+                                <option value="about-date1">21 июня - 25 июля</option>
+                                <option value="about-date1">18 июня - 5 июля</option>
+                                <option value="about-date1">16 июня - 2 июля</option>
+                                <option value="about-date1">2 июня - 30 июля</option>
+                                <option value="about-date1">9 июня - 9 июля</option>
+                            </select></div>
+                        </div>
+                        <div class="about__bottom clearfix">
+                            <div class="about__text">
+                                <div class="about__desc">Стоимость тура:</div>
+                                <div class="about__people">на одного человека</div>
+                                <div class="about__kol">45 500 <span class="about__kol--span">UAH</span></div>
+                            </div>
+                            <div class="about__push">
+                                <div class="fixed-menu__submit-push forma__submit">Забронировать тур</div>
+                            </div>
+                        </div>
+                        <div class="about__part-list clearfix">
+                            <div class="about__part-block">
+                                <div class="about__desc">В стоимость входит:</div>
+                                <ul class="about__plus-ul">
+                                    <li class="about__plus-li">Перелет
+                                        <div class="about__plus-icon"></div>
+                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
+                                            <p>- Экскурсии в Табе</p>
+                                            <p>- Экскурсии в Дахабе</p>
+                                            <p>- Экскурсии в Нувейбе</p></div>
+                                    </li>
+                                    <li class="about__plus-li">Питание
+                                        <div class="about__plus-icon"></div>
+                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
+                                            <p>- Экскурсии в Табе</p>
+                                            <p>- Экскурсии в Дахабе</p>
+                                            <p>- Экскурсии в Нувейбе</p></div>
+                                    </li>
+                                    <li class="about__plus-li">Виза
+                                        <div class="about__plus-icon"></div>
+                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
+                                            <p>- Экскурсии в Табе</p>
+                                            <p>- Экскурсии в Дахабе</p>
+                                            <p>- Экскурсии в Нувейбе</p></div>
+                                    </li>
+                                    <li class="about__plus-li">Страховка</li>
+                                </ul>
+                            </div>
+                            <div class="about__part-block">
+                                <div class="about__desc">В стоимость не входит:</div>
+                                <ul class="about__plus-ul">
+                                    <li class="about__plus-li about__min-li">Экскурсии
+                                        <div class="about__plus-icon"></div>
+                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
+                                            <p>- Экскурсии в Табе</p>
+                                            <p>- Экскурсии в Дахабе</p>
+                                            <p>- Экскурсии в Нувейбе</p></div>
+                                    </li>
+                                    <li class="about__plus-li about__min-li">Трансфер</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="about__right">
-                    <div class="about__forma">
-                        <form name="date" id="choice-of-dates">
-                            <div class="about__forma-top clearfix">
-                                <div class="about__date">
-                                    <div class="about__desc">Дата тура:</div>
-                                </div>
-                                <div class="about__change"><select size="1" name="about-date" required
-                                                                   class="about__change-select">
-                                    <option value="about-date1">21 июня - 25 июля</option>
-                                    <option value="about-date1">18 июня - 5 июля</option>
-                                    <option value="about-date1">16 июня - 2 июля</option>
-                                    <option value="about-date1">2 июня - 30 июля</option>
-                                    <option value="about-date1">9 июня - 9 июля</option>
-                                </select></div>
-                            </div>
-                            <div class="about__bottom clearfix">
-                                <div class="about__text">
-                                    <div class="about__desc">Стоимость тура:</div>
-                                    <div class="about__people">на одного человека</div>
-                                    <div class="about__kol">45 500 <span class="about__kol--span">UAH</span></div>
-                                </div>
-                                <div class="about__push">
-                                    <div class="fixed-menu__submit-push forma__submit">Забронировать тур</div>
-                                </div>
-                            </div>
-                            <div class="about__part-list clearfix">
-                                <div class="about__part-block">
-                                    <div class="about__desc">В стоимость входит:</div>
-                                    <ul class="about__plus-ul">
-                                        <li class="about__plus-li">Перелет
-                                            <div class="about__plus-icon"></div>
-                                            <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                                <p>- Экскурсии в Табе</p>
-                                                <p>- Экскурсии в Дахабе</p>
-                                                <p>- Экскурсии в Нувейбе</p></div>
-                                        </li>
-                                        <li class="about__plus-li">Питание
-                                            <div class="about__plus-icon"></div>
-                                            <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                                <p>- Экскурсии в Табе</p>
-                                                <p>- Экскурсии в Дахабе</p>
-                                                <p>- Экскурсии в Нувейбе</p></div>
-                                        </li>
-                                        <li class="about__plus-li">Виза
-                                            <div class="about__plus-icon"></div>
-                                            <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                                <p>- Экскурсии в Табе</p>
-                                                <p>- Экскурсии в Дахабе</p>
-                                                <p>- Экскурсии в Нувейбе</p></div>
-                                        </li>
-                                        <li class="about__plus-li">Страховка</li>
-                                    </ul>
-                                </div>
-                                <div class="about__part-block">
-                                    <div class="about__desc">В стоимость не входит:</div>
-                                    <ul class="about__plus-ul">
-                                        <li class="about__plus-li about__min-li">Экскурсии
-                                            <div class="about__plus-icon"></div>
-                                            <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                                <p>- Экскурсии в Табе</p>
-                                                <p>- Экскурсии в Дахабе</p>
-                                                <p>- Экскурсии в Нувейбе</p></div>
-                                        </li>
-                                        <li class="about__plus-li about__min-li">Трансфер</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
+                <div class="about__consult clearfix">
+                    <div class="about__consult-picture"><img src="../img/girls.png" class="about__consult-size">
+                        <div class="about__consult-icon"><img src="../img/yell.svg"></div>
                     </div>
-                    <div class="about__consult clearfix">
-                        <div class="about__consult-picture"><img src="../img/girls.png" class="about__consult-size">
-                            <div class="about__consult-icon"><img src="../img/yell.svg"></div>
+                    <div class="about__consult-desc">
+                        <div class="about__consult-text">Не подошла дата или возникли трудности с подбором и/или
+                            заказом? Тогда просто позвоните нашим менеджерам по телефонам, указанным ниже, и мы Вам
+                            поможем!
                         </div>
-                        <div class="about__consult-desc">
-                            <div class="about__consult-text">Не подошла дата или возникли трудности с подбором и/или
-                                заказом? Тогда просто позвоните нашим менеджерам по телефонам, указанным ниже, и мы Вам
-                                поможем!
-                            </div>
-                            <div class="about__tel"><p>+38 (044) 2235 838</p>
-                                <p>+38 (067) 6594 950</p>
-                                <p>+38 (066) 0808 478</p></div>
-                            <div class="about__consult-text about__consult-position">или</div>
-                            <div class="about__button-form">заполните форму для подбора тура</div>
+                        <div class="about__tel">
+                            {% for i in global_settings.phone_numbers.all() %}
+                            <p>+38 ({{ i.phone.split(" ")[0] }}) {{ i.phone.split(" ")[1] }} {{ i.phone.split(" ")[2] }}</p>
+                            {% endfor %}
                         </div>
+                        <div class="about__consult-text about__consult-position">или</div>
+                        <div class="about__button-form">заполните форму для подбора тура</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="supply">
-        <div class="wrapper-inner">
-            <div class="rest__name">Похожие предложения</div>
-            <div class="hot__content">
-                <div class="hot__part clearfix">
-                    <div class="hot__block"><a href="#" class="hot__block-link">
-                        <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
-                        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-                        <div class="hot__picture"><img src="../img/hot-1.png" class="hot__picture--size"></div>
-                        <div class="hot__description">
-                            <div class="hot__desc-top">
-                                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-                            </div>
-                            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                                <p>Страна: Китай</p>
-                                <div class="hot__desc-button">Узнать больше</div>
-                            </div>
+</div>
+<div class="supply">
+    <div class="wrapper-inner">
+        <div class="rest__name">Похожие предложения</div>
+        <div class="hot__content">
+            <div class="hot__part clearfix">
+                <div class="hot__block"><a href="#" class="hot__block-link">
+                    <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
+                    <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
+                    <div class="hot__picture"><img src="../img/hot-1.png" class="hot__picture--size"></div>
+                    <div class="hot__description">
+                        <div class="hot__desc-top">
+                            <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
                         </div>
-                    </a></div>
-                    <div class="hot__block"><a href="#" class="hot__block-link">
-                        <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
-                        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-                        <div class="hot__picture"><img src="../img/hot-2.png" class="hot__picture--size"></div>
-                        <div class="hot__description">
-                            <div class="hot__desc-top">
-                                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-                            </div>
-                            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                                <p>Страна: Китай</p>
-                                <div class="hot__desc-button">Узнать больше</div>
-                            </div>
+                        <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
+                            <p>Страна: Китай</p>
+                            <div class="hot__desc-button">Узнать больше</div>
                         </div>
-                    </a></div>
-                    <div class="hot__block"><a href="#" class="hot__block-link">
-                        <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
-                        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-                        <div class="hot__picture"><img src="../img/hot-3.png" class="hot__picture--size"></div>
-                        <div class="hot__description">
-                            <div class="hot__desc-top">
-                                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-                            </div>
-                            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                                <p>Страна: Китай</p>
-                                <div class="hot__desc-button">Узнать больше</div>
-                            </div>
+                    </div>
+                </a></div>
+                <div class="hot__block"><a href="#" class="hot__block-link">
+                    <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
+                    <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
+                    <div class="hot__picture"><img src="../img/hot-2.png" class="hot__picture--size"></div>
+                    <div class="hot__description">
+                        <div class="hot__desc-top">
+                            <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
                         </div>
-                    </a></div>
-                </div>
-                <a href="#" class="hot__button">Показать еще</a></div>
-        </div>
+                        <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
+                            <p>Страна: Китай</p>
+                            <div class="hot__desc-button">Узнать больше</div>
+                        </div>
+                    </div>
+                </a></div>
+                <div class="hot__block"><a href="#" class="hot__block-link">
+                    <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
+                    <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
+                    <div class="hot__picture"><img src="../img/hot-3.png" class="hot__picture--size"></div>
+                    <div class="hot__description">
+                        <div class="hot__desc-top">
+                            <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
+                        </div>
+                        <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
+                            <p>Страна: Китай</p>
+                            <div class="hot__desc-button">Узнать больше</div>
+                        </div>
+                    </div>
+                </a></div>
+            </div>
+            <a href="#" class="hot__button">Показать еще</a></div>
     </div>
-    {% include 'includes/popup-tour.jinja' %}
-    {% include 'includes/popup-assortment.jinja' %}
+</div>
+{% include 'includes/popup-tour.jinja' %}
+{% include 'includes/popup-assortment.jinja' %}
 {% endblock %}

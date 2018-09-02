@@ -10,20 +10,29 @@
                     <div class="contacts__block">
                         <div class="contacts__company">Туристическая компания</div>
                         <div class="contacts__title">"Квин Тур Вояж"</div>
-                        <div class="contacts__adr">Адрес: г. Киев, ул. Гоголевская 10, оф. 10а</div>
+                        <div class="contacts__adr">Адрес: {{ global_settings.address }}</div>
                     </div>
                     <div class="contacts__block">
-                        <div class="hotels-one__description">Lorem:</div>
-                        <div class="contacts__time"><p><span class="contacts__span1">пн-пт:</span><span
-                                class="contacts__span">с 10:00 до 19:00</span></p>
-                            <p><span class="contacts__span2">сб:</span><span
-                                    class="contacts__span">с 11:00 до 16:00</span></p></div>
+                        <div class="hotels-one__description">Время работы:</div>
+                        <div class="contacts__time">
+                            <p>
+                                <span class="contacts__span1">пн-пт:</span>
+                                <span class="contacts__span">с 10:00 до 19:00</span>
+                            </p>
+                            <p>
+                                <span class="contacts__span2">сб:</span>
+                                <span class="contacts__span">с 11:00 до 16:00</span>
+                            </p>
+                        </div>
                     </div>
                     <div class="contacts__block">
-                        <div class="hotels-one__description">Lorem:</div>
-                        <div class="contacts__telephone"><p>+38 (044) 8888 88 88</p>
-                            <p>+38 (044) 8888 88 88</p>
-                            <p>+38 (044) 8888 88 88</p></div>
+                        <div class="hotels-one__description">Телефонные номера:</div>
+                        <div class="contacts__telephone">
+                            {% for i in global_settings.phone_numbers.all() %}
+                            <p>+38 ({{ i.phone.split(" ")[0] }}) {{ i.phone.split(" ")[1] }} {{ i.phone.split(" ")[2] }}
+                                {% if not loop.last %},{% endif %}</p>
+                            {% endfor %}
+                        </div>
                     </div>
                     <div class="contacts__block">
                         <div class="hotels-one__description">Lorem:</div>
@@ -41,13 +50,12 @@
                 </div>
                 <div class="contacts__right">
                     <div class="contacts__dis"></div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.539996706753!2d30.494990051401956!3d50.4496683952014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce8aa9bb9209%3A0xc72981c5592768cf!2z0LLRg9C7LiDQk9C-0LPQvtC70ZbQstGB0YzQutCwLCAxMCwg0JrQuNGX0LI!5e0!3m2!1sru!2sua!4v1466690698639"
-                            style="border:0" allowfullscreen="" frameborder="0" class="contacts__iframe"></iframe>
+                    <iframe src="https://maps.google.com/maps?q={{ global_settings.address|urlencode }}&t=&z=19&ie=UTF8&iwloc=&output=embed"
+                            style="border: 0;" allowfullscreen="" frameborder="0" class="contacts__iframe"></iframe>
                 </div>
             </div>
         </div>
     </div>
 </div>
 {% include 'includes/popup-admin.jinja' %}
-
 {% endblock %}

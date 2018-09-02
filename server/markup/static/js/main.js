@@ -15,7 +15,7 @@ module.exports = __webpack_require__(7);
 
 
 $(document).ready(function () {
-  $('.header__number--strel, .header__number--tel').click(function () {
+  $('.header__number--strel, .header__number--tel').unbind().click(function () {
     $('.header__telephone').toggle();
   });
 
@@ -198,7 +198,7 @@ $(document).ready(function () {
     $('.sub-show').removeClass('sub-show');
   });
 
-  $('.blog__label').click(function () {
+  $('.blog__label').unbind().click(function () {
     $(this).toggleClass('blog__label-active');
   });
 

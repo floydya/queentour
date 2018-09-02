@@ -1,6 +1,19 @@
-<div class="reviews__client">
-    <div class="reviews__client-name">Дана Борисова(36 лет)</div>
-    <div class="reviews__status">преподаватель английского языка</div>
-    <div class="reviews__date"><span class="reviews__span">10.07.2016</span><a href="#" class="reviews__link">Египет</a><a
-            href="#" class="reviews__link">Шарм-Ель-Шельх</a></div>
+<div class="reviews__block">
+    <div class="reviews__client">
+        <div class="reviews__client-name">{{ comment.name }}({{ comment.age }} лет)</div>
+        <div class="reviews__status">{{ comment.description }}</div>
+        <div class="reviews__date"><span class="reviews__span">{{ comment.datetime.strftime("%m %B %Y") }}</span>
+            <a href="#" class="reviews__link">{{ comment.hotel }}</a>
+        </div>
+    </div>
+    {% if comment.comment %}
+        <div class="reviews__text">
+            {{ comment.comment|safe }}
+        </div>
+    {% endif %}
+    {% if comment.youtube %}
+        <div class="reviews__video">
+            <iframe src="{{ comment.youtube }}" allowfullscreen="" frameborder="0" class="reviews__iframe"></iframe>
+        </div>
+    {% endif %}
 </div>

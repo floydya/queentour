@@ -56,6 +56,7 @@ INSTALLED_APPS = PROJECT_APPS + [
 
     'apps.core',
     'apps.blog',
+    'apps.locations',
     'apps.tours',
     'apps.reports',
 ]
@@ -244,3 +245,5 @@ CELERY_BROKER_URL = env.str('CELERY_BROKER_URL')
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_SCHEME', 'https')
+
+handler404 = 'apps.core.views.handler404'

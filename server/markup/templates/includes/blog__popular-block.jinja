@@ -1,7 +1,10 @@
-<div class="blog__popular-block"><a href="#" class="blog__popular-link">
-    <div class="blog__popular-picture"><img src="../img/blog1.png" class="blog__popular-picture--size"/></div>
+<div class="blog__popular-block">
+    <a href="{{ rand_item.get_absolute_url() }}" class="blog__popular-link">
+    <div class="blog__popular-picture">
+        <img src="{{ rand_item.images.first().image.url }}" class="blog__popular-picture--size"/>
+    </div>
     <div class="blog__popular-text">
-        <div class="blog__popular-date">6 мая 2016 / Акции</div>
-        <div class="blog__popular-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+        <div class="blog__popular-date">{{ rand_item.date.strftime("%d %B") }} / {{ rand_item.heading.name }}</div>
+        <div class="blog__popular-news">{{ rand_item.title }}</div>
     </div>
 </a></div>

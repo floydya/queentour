@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-
   cache:
     image: redis:alpine
     # Redis may be already installed on your machine, so default redis ports are changed
@@ -28,7 +27,7 @@ services:
       && python manage.py makemessages --all -e py,html,jinja
       && python manage.py runserver 0.0.0.0:8535"
     environment:
-      - DJANGO_DB_URL=psql://postgres:postgres@db:5432/db
+      - DJANGO_DB_URL=psql://postgres:postgres@db:5432/postgres
       - DJANGO_CACHE_URL=redis://cache:6379
       - CELERY_BROKER_URL=redis://cache:6379
     ports:

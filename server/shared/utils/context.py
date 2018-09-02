@@ -1,4 +1,5 @@
-from apps.core.models import IndexSettings, Country
+from apps.core.models import IndexSettings
+from apps.locations.models import Country
 
 
 def context_settings(request):

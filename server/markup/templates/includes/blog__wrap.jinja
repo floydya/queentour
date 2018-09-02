@@ -1,23 +1,35 @@
-<div class="blog__wrap"><a href="#" class="blog__wrap-link">
-    <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size"/>
-        <div class="blog__hover">
-            <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt beatae
-                repellat animi corporis maiores quos suscipit sint ipsa hic aperiam omnis, eaque accusantium esse!
-                Mollitia explicabo dolor blanditiis tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi
-                magni consequatur hic
+<div class="blog__left-part clearfix">
+{% for rand_item in object_list %}
+<div class="blog__wrap">
+    <a href="{{ rand_item.get_absolute_url() }}" class="blog__wrap-link">
+        <div class="blog__picture">
+            <img src="{{ rand_item.images.first().image.url }}" class="blog__picture--size">
+            <div class="blog__hover">
+                <div class="blog__hover-text">
+                    {{ rand_item.body|striptags|truncate(200) }}
+                </div>
+                <div class="blog__hover-rating">
+                    <span class="blog__hover-span">Рейтинг:</span>
+                    {% for star in range(rand_item.stars) %}
+                        <img src="{{ static('img/stars3.svg') }}" class="blog__hover-img">
+                    {% endfor %}
+                </div>
+                <div class="blog__hover-rating">
+                    <span class="blog__hover-span">Просмотров:</span>
+                    <span class="blog__hover-span2">{{ rand_item.views }}</span>
+                </div>
+                <a href="{{ rand_item.get_absolute_url() }}" class="blog__hover-button">Узнать больше </a>
             </div>
-            <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img src="../img/stars3.svg"
-                                                                                               class="blog__hover-img"/><img
-                    src="../img/stars3.svg" class="blog__hover-img"/><img src="../img/stars3.svg"
-                                                                          class="blog__hover-img"/><img
-                    src="../img/stars3.svg" class="blog__hover-img"/><img src="../img/stars3.svg"
-                                                                          class="blog__hover-img"/></div>
-            <div class="blog__hover-rating"><span class="blog__hover-span">Просмотров:</span><span
-                    class="blog__hover-span2">214</span></div>
-            <a href="#" class="blog__hover-button">Узнать больше </a></div>
-    </div>
-    <div class="blog__text">
-        <div class="blog__date">6 мая 2016 / Акции</div>
-        <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-    </div>
-</a></div>
+        </div>
+        <div class="blog__text">
+            <div class="blog__date">{{ rand_item.date.strftime("%d %B") }} / {{ rand_item.heading.name }}</div>
+            <div class="blog__news">{{ rand_item.title }}</div>
+        </div>
+    </a>
+</div>
+{% endfor %}
+</div>
+
+{% if request.resolver_match.url_name == 'article-list' %}
+    {% include 'includes/switches.jinja' %}
+{% endif %}

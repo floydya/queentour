@@ -6,38 +6,42 @@
                     <li class="footer__item"><a href="tour.html" class="footer__link">Туры</a></li>
                     <li class="footer__item"><a href="country.html" class="footer__link">Страны</a></li>
                     <li class="footer__item"><a href="hotels.html" class="footer__link">Отели</a></li>
-                    <li class="footer__item"><a href="search-tour.html" class="footer__link">Найти тур</a></li>
-                    <li class="footer__item"><a href="avia.html" class="footer__link">Авиабилеты</a></li>
+                    <li class="footer__item"><a href="{{ url('search-tour') }}" class="footer__link">Найти тур</a></li>
+                    <li class="footer__item"><a href="{{ url('search-avia') }}" class="footer__link">Авиабилеты</a></li>
                 </ul>
             </div>
             <div class="footer__block footer__none">
                 <ul class="footer__list">
-                    <li class="footer__item"><a href="company.html" class="footer__link">О компании</a></li>
-                    <li class="footer__item"><a href="sertificate.html" class="footer__link">Подарочный сертификат</a>
+                    <li class="footer__item"><a href="{{ url('about') }}" class="footer__link">О компании</a></li>
+                    <li class="footer__item"><a href="{{ url('sertificate') }}" class="footer__link">Подарочный сертификат</a>
                     </li>
-                    <li class="footer__item"><a href="documents.html" class="footer__link">Визы и паспорта</a></li>
-                    <li class="footer__item"><a href="blog.html" class="footer__link">Новостьи и статьи</a></li>
-                    <li class="footer__item"><a href="reviews.html" class="footer__link">Отзывы</a></li>
+                    <li class="footer__item"><a href="{{ url('documents') }}" class="footer__link">Визы и паспорта</a></li>
+                    <li class="footer__item"><a href="{{ url('article-list') }}" class="footer__link">Новостьи и статьи</a></li>
+                    <li class="footer__item"><a href="{{ url('comments') }}" class="footer__link">Отзывы</a></li>
                 </ul>
             </div>
             <div class="footer__block footer__none">
-                <div class="footer__about"><p>+38 (044) 2235 838,</p>
-                    <p>+38 (067) 6594 950,</p>
-                    <p>+38 (066) 0808 478</p>
-                    <p>г. Киев, ул.</p>
-                    <p>Гоголевская 10, оф. 1а</p></div>
+                <div class="footer__about">
+                    {% for i in global_settings.phone_numbers.all() %}
+                    <p>+38 ({{ i.phone.split(" ")[0] }}) {{ i.phone.split(" ")[1] }} {{ i.phone.split(" ")[2] }}
+                        {% if not loop.last %},{% endif %}</p>
+                    {% endfor %}
+                    {% for a in global_settings.address.split("  ") %}
+                    <p>{{ a }}</p>
+                    {% endfor %}
+                </div>
             </div>
             <div class="footer__mobile-block"><p>Queen Tour Voyage</p>
                 <p>Лучшие туры, 2016</p>
-                <div class="footer__mobile-adr">г. Киев, ул. Гоголевская 10, оф. 1а</div>
+                <div class="footer__mobile-adr">{{ global_settings.address }}</div>
             </div>
             <div class="footer__block">
                 <div class="footer__soc-name footer__none">Мы в социальных сетях:</div>
-                <div class="footer__soc-part clearfix footer__none"><a href="#">
+                <div class="footer__soc-part clearfix footer__none"><a href="{{ global_settings.instagram }}">
                     <div class="footer__soc-block footer__inst"></div>
-                </a><a href="#">
+                </a><a href="{{ global_settings.facebook }}">
                     <div class="footer__soc-block footer__fb"></div>
-                </a><a href="#">
+                </a><a href="{{ global_settings.vk }}">
                     <div class="footer__soc-block footer__vk"></div>
                 </a></div>
                 <div class="footer__slogan">Проект разработан в студии интернет-маркетинга с душой и стилем</div>

@@ -5,8 +5,8 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 from postie.shortcuts import send_mail
 
-from apps.core.models import Country
-from apps.core.models.tours import TourDatePair, Tour
+from apps.locations.models import Country
+from apps.tours.models import TourDatePair, Tour
 
 
 class Call(models.Model):

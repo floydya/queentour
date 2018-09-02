@@ -1,304 +1,50 @@
 {% extends 'base.jinja' %}
 
+{% block title %}Новости{% endblock %}
+
+
 {% block head %}
     <script type="text/javascript" src="{{ static('js/scrollto.js') }}"></script>
     <script type="text/javascript" src="{{ static('js/fixed.js') }}"></script>
 {% endblock %}
 {% block content %}
-<div class="blog">
-    <div class="wrapper-inner">
-        <div class="blog__title">Новости и статьи</div>
-        <div class="heading">Рубрики</div>
-        <div class="blog__content">
-            <div class="blog__part clearfix">
-                <div class="blog__left">
-                    <div class="blog__left-part clearfix">
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
-                        <div class="blog__wrap"><a href="#" class="blog__wrap-link">
-                            <div class="blog__picture"><img src="../img/blog1.png" class="blog__picture--size">
-                                <div class="blog__hover">
-                                    <div class="blog__hover-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Incidunt beatae repellat animi corporis maiores quos suscipit sint ipsa
-                                        hic aperiam omnis, eaque accusantium esse! Mollitia explicabo dolor blanditiis
-                                        tempore, quo nesciunt, dolorem minima quis, reiciendis quidem sequi magni
-                                        consequatur hic
-                                    </div>
-                                    <div class="blog__hover-rating"><span class="blog__hover-span">Рейтинг:</span><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"><img src="../img/stars3.svg"
-                                                                                                 class="blog__hover-img"><img
-                                            src="../img/stars3.svg" class="blog__hover-img"></div>
-                                    <div class="blog__hover-rating"><span
-                                            class="blog__hover-span">Просмотров:</span><span class="blog__hover-span2">214</span>
-                                    </div>
-                                    <a href="#" class="blog__hover-button">Узнать больше </a></div>
-                            </div>
-                            <div class="blog__text">
-                                <div class="blog__date">6 мая 2016 / Акции</div>
-                                <div class="blog__news">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-                            </div>
-                        </a></div>
+    <div class="blog">
+        <div class="wrapper-inner">
+            <div class="blog__title">Новости и статьи</div>
+            <div class="heading">Рубрики</div>
+            <div class="blog__content">
+                <div class="blog__part clearfix">
+                    <div class="blog__left">
+                        {% include 'includes/blog__wrap.jinja' %}
                     </div>
-                    <div class="tour__switches">
-                        <ul class="tour__list clearfix">
-                            <li class="tour__item"><a href="#" class="tour__link tour__link-active">1</a></li>
-                            <li class="tour__item"><a href="#" class="tour__link">2</a></li>
-                            <li class="tour__item"><a href="#" class="tour__link">3</a></li>
-                        </ul>
-                        <a href="#" class="tour__transition-next"></a><a href="#" class="tour__transition-prev"></a>
-                    </div>
-                </div>
-                <div class="blog__right">
-                    <div class="blog__form">
-                        {% include 'includes/block__heading.jinja' %}
-                        <div class="blog__delivery">
-                            <form name="heading" id="news-heading">
-                                <div class="blog__form-title">Подпишитесь</div>
-                                <div class="blog__form-decs">на рассылку и получайте первыми горящие туры на свой
-                                    e-mail
-                                </div>
-                                <div class="blog__form-evidence"><input type="email" name="email-for-heading"
-                                                                        id="email-heading"
-                                                                        placeholder="Ведите Ваш e-mail"
-                                                                        class="blog__form-email">
-                                    <div class="rest__help">E-mail введен неверно!</div>
-                                    <input type="submit" value="Подписаться" class="blog__form-submit"></div>
-                            </form>
+                    <div class="blog__right">
+                        <div class="blog__form">
+                            {% include 'includes/block__heading.jinja' %}
+                            <div class="blog__delivery">
+                                <form name="heading" id="news-heading">
+                                    <div class="blog__form-title">Подпишитесь</div>
+                                    <div class="blog__form-decs">
+                                        на рассылку и получайте первыми горящие туры на свой e-mail
+                                    </div>
+                                    <div class="blog__form-evidence">
+                                        <input type="email" name="email-for-heading" id="email-heading"
+                                               placeholder="Ведите Ваш e-mail" class="blog__form-email">
+                                        <div class="rest__help">E-mail введен неверно!</div>
+                                        <input type="submit" value="Подписаться" class="blog__form-submit">
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="blog__popular">
-                        <div class="depiction__name">Lorem ipsum</div>
-                        {% include 'includes/blog__popular-block.jinja' %}{% include 'includes/blog__popular-block.jinja' %}{% include 'includes/blog__popular-block.jinja' %}
+                        <div class="blog__popular">
+                            <div class="depiction__name">Случайные новости</div>
+                            {% for rand_item in random %}
+                                {% include 'includes/blog__popular-block.jinja' %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<a id="menu3" href="#header" class="button-top default3 scrollto"></a>
+    <a id="menu3" href="#header" class="button-top default3 scrollto"></a>
 {% endblock %}

@@ -8,5 +8,6 @@ def environment(**options):
     options['cache_size'] = 0
 
     env = Environment(**options)
-
+    env.globals.update(list=list)
+    env.globals.update(zip=zip)
     return env

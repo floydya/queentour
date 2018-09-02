@@ -2,17 +2,17 @@ from django.contrib import admin
 from django.contrib.admin import DateFieldListFilter
 
 from apps.core.admin import ImageInlineAdmin
-from apps.core.models import tours
+from apps.tours import models
 
 
-@admin.register(tours.Tour)
+@admin.register(models.Tour)
 class TourAdmin(admin.ModelAdmin):
     list_display = ('type', 'hotel', 'cost', 'stars')
     list_filter = ('type', 'hotel', 'cost', 'stars')
     search_fields = ('type__name', 'hotel__name')
 
 
-@admin.register(tours.TourXcludes)
+@admin.register(models.TourXcludes)
 class XCludesAdmin(admin.ModelAdmin):
     list_display = ('type', 'name')
     list_display_links = ('name', )
@@ -20,7 +20,7 @@ class XCludesAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-@admin.register(tours.TourDatePair)
+@admin.register(models.TourDatePair)
 class DatePairAdmin(admin.ModelAdmin):
     list_filter = (
         ('start', DateFieldListFilter),
@@ -28,7 +28,7 @@ class DatePairAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(tours.TourType)
+@admin.register(models.TourType)
 class TourTypeAdmin(admin.ModelAdmin):
     search_fields = ('name', )
     inlines = [ImageInlineAdmin]

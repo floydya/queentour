@@ -1,98 +1,38 @@
 <div id="header" class="header">
     <div class="wrapper-inner">
         <div class="header__content clearfix">
-            <div class="header__logo"><a href="index.html"><img src="{{ static('img/logo.png') }}" alt="Логотип"
-                                                                class="header__logo--size"></a></div>
+            <div class="header__logo"><a href="/">
+                <img src="{{ static('img/logo.png') }}" alt="Логотип" class="header__logo--size">
+            </a></div>
             <div class="header__menu header__none">
                 <nav class="header__nav">
                     <ul class="header__list">
-                        <li class="header__item"><a href="sertificate.html" class="header__link">Подарочный
+                        <li class="header__item"><a href="{{ url('sertificate') }}" class="header__link">Подарочный
                             сертификат</a></li>
-                        <li class="header__item"><a href="documents.html" class="header__link">Визы и паспорта</a></li>
-                        <li class="header__item"><a href="blog.html" class="header__link">Новостьи и статьи</a></li>
-                        <li class="header__item"><a href="reviews.html" class="header__link">Отзывы</a></li>
+                        <li class="header__item"><a href="{{ url('documents') }}" class="header__link">Визы и паспорта</a></li>
+                        <li class="header__item"><a href="{{ url('article-list') }}" class="header__link">Новости и статьи</a></li>
+                        <li class="header__item"><a href="{{ url('comments') }}" class="header__link">Отзывы</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="header__call header__none">
-                <div class="header__number"><img src="{{ static('img/tel1.svg') }}" class="header__number--tel"><img
-                        src="{{ static('img/strel1.png') }}" class="header__number--strel"><span class="header__number--span">044 2235 838</span>
+                <div class="header__number">
+                    <img src="{{ static('img/tel1.svg') }}" class="header__number--tel">
+                    <img src="{{ static('img/strel1.png') }}" class="header__number--strel">
+                    <span class="header__number--span">{{ global_settings.phone_numbers.first() }}</span>
                 </div>
                 <div class="header__button header__button-click">Заказать звонок</div>
                 <div class="header__telephone">
-                    <div class="header__tel">068 6594 950</div>
-                    <div class="header__tel">066 0808 478</div>
+                    {% for phone in global_settings.phone_numbers.all() %}
+                        {% if not loop.first %}
+                            <div class="header__tel">068 6594 950</div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="header__adaptive-icon"><img src="{{ static('img/mob-menu.svg') }}"></div>
             <div class="header__adaptive-icon--hover"><img src="{{ static('img/mob-menu.svg') }}"></div>
-            <div class="header-mobile">
-                <div class="header-mobile__block">
-                    <div class="header-mobile__navigation">
-                        <div class="header-mobile__list">
-                            <ul class="header-mobile__ul clearfix">
-                                <li class="header-mobile__li header-mobile__left"><a href="tour.html"
-                                                                                     class="header-mobile__a">Туры</a>
-                                </li>
-                                <li class="header-mobile__li header-mobile__left"><a href="country.html"
-                                                                                     class="header-mobile__a">Страны</a>
-                                </li>
-                                <li class="header-mobile__li header-mobile__left"><a href="hotels.html"
-                                                                                     class="header-mobile__a">Отели</a>
-                                </li>
-                                <li class="header-mobile__li header-mobile__left"><a href="search-tour.html"
-                                                                                     class="header-mobile__a">Найти
-                                    тур</a></li>
-                                <li class="header-mobile__li header-mobile__left"><a href="avia.html"
-                                                                                     class="header-mobile__a">Авиабилеты</a>
-                                </li>
-                                <li class="header-mobile__li header-mobile__left"><a href="company.html"
-                                                                                     class="header-mobile__a">О
-                                    компании </a></li>
-                                <li class="header-mobile__li header-mobile__left"><a href="contact.html"
-                                                                                     class="header-mobile__a">Контакты</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-mobile__block">
-                    <div class="header-mobile__list">
-                        <ul class="header-mobile__ul">
-                            <li class="header-mobile__li"><a href="sertificate.html"
-                                                             class="header__link header-mobile__font">Подарочный
-                                сертификат</a></li>
-                            <li class="header-mobile__li"><a href="documents.html"
-                                                             class="header__link header-mobile__font">Визы и
-                                паспорта</a></li>
-                            <li class="header-mobile__li"><a href="blog.html" class="header__link header-mobile__font">Новости
-                                и статьи</a></li>
-                            <li class="header-mobile__li"><a href="reviews.html"
-                                                             class="header__link header-mobile__font">Отзывы</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="header-mobile__block">
-                    <div class="header-mobile__contact clearfix">
-                        <div class="header-mobile__telephone">
-                            <div class="header__number"><img src="{{ static('img/tel1.svg') }}" class="header__number--tel"><span
-                                    class="header-mobile__span">044 2235 838</span></div>
-                            <div class="header__number"><img src="{{ static('img/tel1.svg') }}" class="header__number--tel"><span
-                                    class="header-mobile__span">068 6594 950</span></div>
-                            <div class="header__number"><img src="{{ static('img/tel1.svg') }}" class="header__number--tel"><span
-                                    class="header-mobile__span">066 0808 478</span></div>
-                        </div>
-                        <div class="header-mobile__button">
-                            <div class="header__button header__button-click">Заказать звонок</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-mobile__block header-mobile__ots"><span class="header-mobile__soc">Мы в социальных сетях:</span><a
-                        href="#"><img src="{{ static('img/inst.svg') }}" class="header-mobile__soc-img"></a><a href="#"><img
-                        src="{{ static('img/fb.svg') }}" class="header-mobile__soc-img"></a><a href="#"><img src="{{ static('img/vk.svg') }}"
-                                                                                                class="header-mobile__soc-img"></a>
-                </div>
-            </div>
+            {% include 'includes/header-mobile.jinja' %}
         </div>
     </div>
 </div>
@@ -103,10 +43,10 @@
                 <li class="navigation__li"><a href="tour.html" class="navigation__a">Туры</a></li>
                 <li class="navigation__li"><a href="country.html" class="navigation__a">Страны</a></li>
                 <li class="navigation__li"><a href="hotels.html" class="navigation__a">Отели</a></li>
-                <li class="navigation__li"><a href="search-tour.html" class="navigation__a">Найти тур</a></li>
-                <li class="navigation__li"><a href="avia.html" class="navigation__a">Авиабилеты</a></li>
-                <li class="navigation__li"><a href="company.html" class="navigation__a">О компании</a></li>
-                <li class="navigation__li"><a href="contact.html" class="navigation__a">Контакты</a></li>
+                <li class="navigation__li"><a href="{{ url('search-tour') }}" class="navigation__a">Найти тур</a></li>
+                <li class="navigation__li"><a href="{{ url('search-avia') }}" class="navigation__a">Авиабилеты</a></li>
+                <li class="navigation__li"><a href="{{ url('about') }}" class="navigation__a">О компании</a></li>
+                <li class="navigation__li"><a href="{{ url('contact') }}" class="navigation__a">Контакты</a></li>
             </ul>
         </nav>
     </div>

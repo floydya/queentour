@@ -1,6 +1,10 @@
 from ckeditor.fields import RichTextField
+from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
+
+from apps.core.models import Image
 from shared.utils.slugger import slugger
 
 
@@ -34,13 +38,20 @@ class Article(models.Model):
     stars = models.PositiveSmallIntegerField(choices=((0, 0), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5)),
                                              verbose_name=_("Stars"), default=0)
 
+    images = GenericRelation(Image)
+
     def __str__(self):
         return self.title
 
     class Meta:
+        ordering = ['-date']
         verbose_name = _("Article")
         verbose_name_plural = _("Articles")
 
     def save(self, *args, **kwargs):
-        self.slug = slugger(self.title, Article)
+        if not self.slug:
+            self.slug = slugger(self.title, Article)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=[self.heading.slug, self.slug])

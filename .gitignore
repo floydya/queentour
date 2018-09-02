@@ -50,12 +50,6 @@ htmlcov
 .vscode
 .mypy_cache
 
-server/app/uploads/
-server/app/locale/
-server/uploads/
-server/static/
-server/apps/temporary/
-
 docs/build/
 
 # Files to ignore
@@ -64,8 +58,3 @@ docs/build/
 npm-debug.log
 yarn-error.log
 pip-log.txt
-
-# Environment files
-.env
-
-server/app/settings/local.py

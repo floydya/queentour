@@ -3,12 +3,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.staticfiles.urls import static
 from des import urls as des_urls
-
+from django.urls import path
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^django-des/', include(des_urls)),
     url(r'^forms/', include('apps.reports.urls')),
+    path('', include('apps.core.urls')),
+    path('', include('apps.blog.urls')),
 ]
 
 if 'rosetta' in settings.INSTALLED_APPS:
