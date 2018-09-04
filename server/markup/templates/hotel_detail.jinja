@@ -1,243 +1,143 @@
 {% extends 'base.jinja' %}
 {% block head %}
-    <script type="text/javascript" src="../js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="../js/bx-slider.js"></script>
+    <script type="text/javascript" src="{{ static('js/jquery.bxslider.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static('js/bx-slider.js') }}"></script>
 {% endblock %}
 
 {% block content %}
-<div class="top-hotels-one">
-    <div class="wrapper-inner">
-        <div class="tour__name tour__name2">Akka Alinda Hotel</div>
-        <div class="top-hotels-one__stars"><img src="../img/stars.png" class="top-hotels-one__size"><img
-                src="../img/stars.png" class="top-hotels-one__size"><img src="../img/stars.png"
-                                                                         class="top-hotels-one__size"><img
-                src="../img/stars.png" class="top-hotels-one__size"></div>
-        <div class="top-about__nav">
-            <nav class="nav-block">
-                <ul class="nav-block__ul clearfix">
-                    <li class="nav-block__li"><a href="index.html" class="nav-block__a">Lorem</a></li>
-                    <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                    <li class="nav-block__li"><a href="country.html" class="nav-block__a"> Lorem ipsum</a></li>
-                    <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                    <li class="nav-block__li"><a href="country.html" class="nav-block__a"> Lorem ipsum</a></li>
-                    <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                    <li class="nav-block__li"><span class="nav-block__span">Lorem ipsum dolor</span></li>
-                </ul>
-            </nav>
-        </div>
-        {% include 'includes/galery.jinja' %}
-    </div>
-</div>
-<div class="hotels-one">
-    <div class="wrapper-inner">
-        <div class="depiction__wrap clearfix">
-            <div class="hotels-one__content">
-                <div class="hotels-one__text">
-                    <table class="hotels-one__table">
-                        <tr class="hotels-one__tr">
-                            <td class="hotels-one__td1">Страна:</td>
-                            <td class="hotels-one__td2"><a href="#" class="hotels-one__a">Испания</a></td>
-                        </tr>
-                        <tr class="hotels-one__tr">
-                            <td class="hotels-one__td1">Город:</td>
-                            <td class="hotels-one__td2"><a href="#" class="hotels-one__a">Ла Молина</a></td>
-                        </tr>
-                        <tr class="hotels-one__tr">
-                            <td class="hotels-one__td1">Тип:</td>
-                            <td class="hotels-one__td2"><a href="#" class="hotels-one__a">горнолыжный</a></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="hotels-one__text">
-                    <div class="depiction__name">Lorem ipsum</div>
-                    <div class="hotels-one__description">Lorem:</div>
-                    <div class="hotels-one__more"><p>Отель находится на самом берегу моря, в курортном поселке Кириш, в
-                        7 км от центра г. Кемер и в 65 км от аэропорта г. Анталия. Общая площадь отеля - 32 000 кв.м.
-                        Вместимость - 970 гостей. Дата открытия - 1995 год, дата последнего ремонта - 2011 год.</p>
-                    </div>
-                    <div class="hotels-one__description">Lorem: <span class="hotels-one__span">Moscov.com.ua</span>
-                    </div>
-                </div>
-                <div class="hotels-one__text">
-                    <div class="depiction__name">Lorem ipsum</div>
-                    <div class="hotels-one__p">Завтраки</div>
-                </div>
-                <div class="hotels-one__text">
-                    <div class="depiction__name">Lorem ipsum</div>
-                    <div class="hotels-one__list-part clearfix">
-                        <div class="hotels-one__list-block">
-                            <ul class="hotels-one__list">
-                                <li class="hotels-one__item hotels-one__item2">Lorem ipsum dolor
-                                    <div class="hotels-one__plus-icon"></div>
-                                    <div class="hotels-one__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                        <p>- Экскурсии в Табе</p>
-                                        <p>- Экскурсии в Дахабе</p>
-                                        <p>- Экскурсии в Нувейбе</p></div>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                            </ul>
-                        </div>
-                        <div class="hotels-one__list-block">
-                            <ul class="hotels-one__list">
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="hotels-one__text">
-                    <div class="depiction__name">Lorem ipsum</div>
-                    <div class="hotels-one__list-part clearfix">
-                        <div class="hotels-one__list-block">
-                            <div class="hotels-one__description">Lorem:</div>
-                            <ul class="hotels-one__list">
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                            </ul>
-                        </div>
-                        <div class="hotels-one__list-block">
-                            <div class="hotels-one__description">Lorem:</div>
-                            <ul class="hotels-one__list">
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum dolor sit amet, consectetur)</span>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum dolor sit amet)</span>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="hotels-one__text">
-                    <div class="depiction__name">Lorem ipsum</div>
-                    <div class="hotels-one__list-part clearfix">
-                        <div class="hotels-one__list-block">
-                            <ul class="hotels-one__list">
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum dolor)</span>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="hotels-one__list-block">
-                            <ul class="hotels-one__list">
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum dolor sit amet, consectetur)</span>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum dolor sit amet)</span>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum dolor sit amet)</span>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum)</span>
-                                </li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor</li>
-                                <li class="hotels-one__item">Lorem ipsum dolor <span class="hotels-one__span2">(Lorem ipsum dolor sit amet)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <div class="top-hotels-one">
+        <div class="wrapper-inner">
+            <div class="tour__name tour__name2">{{ object.name }}</div>
+            <div class="top-hotels-one__stars">
+                {% for i in range(object.stars) %}
+                    <img src="{{ static('img/stars.png') }}" class="top-hotels-one__size">
+                {% endfor %}
             </div>
-            <div class="city__side-bar">
-                <div class="depiction__name">Lorem ipsum</div>
-                <div class="city__part">
-                    <div class="city__block clearfix">
-                        <div class="city__picture"><img src="../img/c1.png" class="city__picture--size"></div>
-                        <div class="city__version">
-                            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-                            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                                <p>Дней / ночей: 7 / 7</p>
-                                <p>Отель: Назвиние отеля 5*</p></div>
-                            <div class="city__version-bottom">
-                                <div class="city__price"><span class="city__span2">47 500 </span><span
-                                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a>
-                                </div>
-                            </div>
+            <div class="top-about__nav">
+                <nav class="nav-block">
+                    <ul class="nav-block__ul clearfix">
+                        <li class="nav-block__li"><a href="/" class="nav-block__a">Главная</a></li>
+                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                        <li class="nav-block__li"><a href="{{ url('country-detail', slug=object.resort.country.slug) }}"
+                                                     class="nav-block__a"> {{ object.resort.country.name }}</a></li>
+                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                        <li class="nav-block__li"><a href="{{ url('resort-detail', slug=object.resort.slug) }}"
+                                                     class="nav-block__a"> {{ object.resort.name }}</a></li>
+                        <li class="nav-block__li"><span class="nav-block__a">/</span></li>
+                        <li class="nav-block__li"><span class="nav-block__span">{{ object.name }}</span></li>
+                    </ul>
+                </nav>
+            </div>
+            {% include 'includes/galery.jinja' %}
+        </div>
+    </div>
+    <div class="hotels-one">
+        <div class="wrapper-inner">
+            <div class="depiction__wrap clearfix">
+                <div class="hotels-one__content">
+                    <div class="hotels-one__text">
+                        <table class="hotels-one__table">
+                            <tr class="hotels-one__tr">
+                                <td class="hotels-one__td1">Страна:</td>
+                                <td class="hotels-one__td2">
+                                    <a href="{{ url('country-detail', slug=object.resort.country.slug) }}"
+                                       class="hotels-one__a">
+                                        {{ object.resort.country.name }}
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="hotels-one__tr">
+                                <td class="hotels-one__td1">Город:</td>
+                                <td class="hotels-one__td2">
+                                    <a href="{{ url('resort-detail', slug=object.resort.slug) }}" class="hotels-one__a">
+                                        {{ object.resort.name }}
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="hotels-one__tr">
+                                <td class="hotels-one__td1">Тип:</td>
+                                <td class="hotels-one__td2"><a class="hotels-one__a">{{ object.type.name }}</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="hotels-one__text">
+                        <div class="depiction__name">Описание</div>
+                        <div class="hotels-one__more">
+                            {{ object.description|safe }}
+                        </div>
+                        {% if object.website %}
+                            <div class="hotels-one__description">Web-site: <span
+                                    class="hotels-one__span">{{ object.website }}</span></div>
+                        {% endif %}
+                    </div>
+                    <div class="hotels-one__text">
+                        <div class="depiction__name">Завтраки</div>
+                        <div class="hotels-one__p">
+                            {{ object.breakfasts|safe }}
                         </div>
                     </div>
-                    <div class="city__block clearfix">
-                        <div class="city__picture"><img src="../img/c2.png" class="city__picture--size"></div>
-                        <div class="city__version">
-                            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-                            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                                <p>Дней / ночей: 7 / 7</p>
-                                <p>Отель: Назвиние отеля 5*</p></div>
-                            <div class="city__version-bottom">
-                                <div class="city__price"><span class="city__span2">47 500 </span><span
-                                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="city__block clearfix">
-                        <div class="city__picture"><img src="../img/c3.png" class="city__picture--size"></div>
-                        <div class="city__version">
-                            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-                            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                                <p>Дней / ночей: 7 / 7</p>
-                                <p>Отель: Назвиние отеля 5*</p></div>
-                            <div class="city__version-bottom">
-                                <div class="city__price"><span class="city__span2">47 500 </span><span
-                                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="city__block clearfix">
-                        <div class="city__picture"><img src="../img/c4.png" class="city__picture--size"></div>
-                        <div class="city__version">
-                            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-                            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                                <p>Дней / ночей: 7 / 7</p>
-                                <p>Отель: Назвиние отеля 5*</p></div>
-                            <div class="city__version-bottom">
-                                <div class="city__price"><span class="city__span2">47 500 </span><span
-                                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="city__block-more">
-                        <div class="city__icon-one"><a href="#"><img src="../img/left2.svg"
-                                                                     class="city__icon-one--size"></a></div>
-                        <div class="city__icon-two"><a href="#"><img src="../img/right2.svg"
-                                                                     class="city__icon-one--size"></a></div>
-                    </div>
+                </div>
+                <div class="city__side-bar">
+                    {% if object.tours.filter(dates__start__gte=datetime.date.today()).distinct() %}
+                    <div class="depiction__name">Туры этого отеля</div>
+                    <div id="partContent"></div>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="hotels-one">
-    <div class="wrapper-inner">
-        <div class="hotels-one__map-content">
-            <div class="depiction__name">Lorem ipsum</div>
-            <div class="hotels-one__map">
-                <div class="hotels-one__dis"></div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.539996706753!2d30.494990051401956!3d50.4496683952014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce8aa9bb9209%3A0xc72981c5592768cf!2z0LLRg9C7LiDQk9C-0LPQvtC70ZbQstGB0YzQutCwLCAxMCwg0JrQuNGX0LI!5e0!3m2!1sru!2sua!4v1466690698639"
-                        style="border:0" allowfullscreen="" frameborder="0" class="hotels-one__iframe"></iframe>
+    <div class="hotels-one">
+        <div class="wrapper-inner">
+            <div class="hotels-one__map-content">
+                <div class="depiction__name">Местоположение</div>
+                <div class="hotels-one__map">
+                    <div class="hotels-one__dis"></div>
+                    <iframe src="https://maps.google.com/maps?q={{ object.address|urlencode }}&t=&z=19&ie=UTF8&iwloc=&output=embed"
+                            style="border: 0;" allowfullscreen="" frameborder="0" class="hotels-one__iframe"></iframe>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '{{ url('get-tours-list-four') }}',
+                type: 'get',
+                data: {
+                    'hotel': '{{ object.slug }}'
+                },
+                success: function (response) {
+                    $('#partContent').html(response);
+                }
+            })
+        });
+        $('#partContent').bind("DOMSubtreeModified", function () {
+            $('#prevPage').click(function () {
+                $.ajax({
+                    url: '{{ url('get-tours-list-four') }}',
+                    type: 'get',
+                    data: {
+                        'hotel': '{{ object.slug }}',
+                        'page': $('#prevPage').attr('page')
+                    },
+                    success: function (response) {
+                        $('#partContent').html(response);
+                    }
+                })
+            });
+            $('#nextPage').click(function () {
+                $.ajax({
+                    url: '{{ url('get-tours-list-four') }}',
+                    type: 'get',
+                    data: {
+                        'hotel': '{{ object.slug }}',
+                        'page': $('#nextPage').attr('page')
+                    },
+                    success: function (response) {
+                        $('#partContent').html(response);
+                    }
+                })
+            });
+        });
+    </script>
 {% endblock %}

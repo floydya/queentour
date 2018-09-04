@@ -12,6 +12,7 @@ urlpatterns = [
     path('', include('apps.core.urls')),
     path('', include('apps.blog.urls')),
     path('', include('apps.locations.urls')),
+    path('', include('apps.tours.urls')),
 ]
 
 if 'rosetta' in settings.INSTALLED_APPS:

@@ -1,161 +1,30 @@
 <div class="hot__part clearfix">
-    <div class="hot__block"><a href="about.html" class="hot__block-link">
-        <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"/></div>
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t1.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
+    {% for object in object_list %}
+    <div class="hot__block">
+        <a href="{{ url('tour-detail', pk=object.pk) }}" class="hot__block-link">
+            {% if object.dates.filter(hot=True).exists() %}
+            <div class="hot__icon-one">
+                <img src="{{ static('img/icon-1.png') }}" class="hot__icon-one--size"/>
             </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
+            {% endif %}
+            <div class="hot__icon-two">
+                {{ object.dates.order_by('cost').first().uah_cost }} <span class="hot__icon-two--span">UAH</span>
             </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"/></div>
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t2.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
+            <div class="hot__picture">
+                <img src="{{ object.hotel.preview_image.url }}" class="hot__picture--size"/>
             </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
+            <div class="hot__description">
+                <div class="hot__desc-top">
+                    <div class="hot__desc-title">{{ object.hotel.name }} {{ object.stars }}*</div>
+                </div>
+                <div class="hot__desc-more"><p>Отель: {{ object.hotel.name }} {{ object.hotel.stars }}*</p>
+                    <p>Страна: {{ object.hotel.resort.country }}</p>
+                    <div class="hot__desc-button">Узнать больше</div>
+                </div>
             </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t3.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t4.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t5.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t6.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t7.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t8.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t9.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t10.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"/></div>
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t11.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
-    <div class="hot__block"><a href="#" class="hot__block-link">
-        <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-        <div class="hot__picture"><img src="../img/t12.png" class="hot__picture--size"/></div>
-        <div class="hot__description">
-            <div class="hot__desc-top">
-                <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-            </div>
-            <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                <p>Страна: Китай</p>
-                <div class="hot__desc-button">Узнать больше</div>
-            </div>
-        </div>
-    </a></div>
+        </a>
+    </div>
+    {% else %}
+    Подходящие туры не найдены.
+    {% endfor %}
 </div>

@@ -1,58 +1,36 @@
 <div class="city__part">
+    {% for item in object_list %}
     <div class="city__block clearfix">
-        <div class="city__picture"><img src="../img/c1.png" class="city__picture--size"/></div>
+        <div class="city__picture"><img src="{{ item.hotel.preview_image.url }}" class="city__picture--size"/></div>
         <div class="city__version">
-            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                <p>Дней / ночей: 7 / 7</p>
-                <p>Отель: Назвиние отеля 5*</p></div>
+            <div class="city__version-name">{{ item.hotel.name }} {{ item.stars }}*</div>
+            <div class="city__version-description"><p>Дата: {{ item.dates.first() }}</p>
+                <p>Дней / ночей: {{ item.duration_days }} / {{ item.duration_nights }}</p>
+                <p>Отель: {{ item.hotel.name }} {{ item.hotel.stars }}*</p></div>
             <div class="city__version-bottom">
-                <div class="city__price"><span class="city__span2">47 500 </span><span
-                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a></div>
+                <div class="city__price"><span class="city__span2">{{ item.low_cost().uah_cost }} </span><span
+                        class="depiction__span3">uan </span><a href="{{ url('tour-detail', pk=item.pk) }}" class="city__version-link">Подробнее</a></div>
             </div>
         </div>
     </div>
-    <div class="city__block clearfix">
-        <div class="city__picture"><img src="../img/c2.png" class="city__picture--size"/></div>
-        <div class="city__version">
-            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                <p>Дней / ночей: 7 / 7</p>
-                <p>Отель: Назвиние отеля 5*</p></div>
-            <div class="city__version-bottom">
-                <div class="city__price"><span class="city__span2">47 500 </span><span
-                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="city__block clearfix">
-        <div class="city__picture"><img src="../img/c3.png" class="city__picture--size"/></div>
-        <div class="city__version">
-            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                <p>Дней / ночей: 7 / 7</p>
-                <p>Отель: Назвиние отеля 5*</p></div>
-            <div class="city__version-bottom">
-                <div class="city__price"><span class="city__span2">47 500 </span><span
-                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="city__block clearfix">
-        <div class="city__picture"><img src="../img/c4.png" class="city__picture--size"/></div>
-        <div class="city__version">
-            <div class="city__version-name">Dreams Vacation Resort 5*</div>
-            <div class="city__version-description"><p>Дата: 12.06.15-17.06.15</p>
-                <p>Дней / ночей: 7 / 7</p>
-                <p>Отель: Назвиние отеля 5*</p></div>
-            <div class="city__version-bottom">
-                <div class="city__price"><span class="city__span2">47 500 </span><span
-                        class="depiction__span3">uan </span><a href="#" class="city__version-link">Побробнее</a></div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
+    {% if page_obj and page_obj.has_other_pages() %}
     <div class="city__block-more">
-        <div class="city__icon-one"><a href="#"><img src="{{ static('img/left2.svg') }}" class="city__icon-one--size"/></a></div>
-        <div class="city__icon-two"><a href="#"><img src="{{ static('img/right2.svg') }}" class="city__icon-one--size"/></a></div>
+        {% if page_obj.has_previous() %}
+        <div class="city__icon-one">
+            <a id='prevPage' page="{{ page_obj.previous_page_number() }}">
+                <img src="{{ static('img/left2.svg') }}" class="city__icon-one--size"/>
+            </a>
+        </div>
+        {% endif %}
+        {% if page_obj.has_next() %}
+        <div class="city__icon-two">
+            <a id='nextPage' page="{{ page_obj.next_page_number() }}">
+                <img src="{{ static('img/right2.svg') }}" class="city__icon-one--size"/>
+            </a>
+        </div>
+        {% endif %}
+        <input type='hidden' name='page' value='{{ page_obj.num }}'>
     </div>
+    {% endif %}
 </div>

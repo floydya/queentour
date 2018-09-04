@@ -55,3 +55,13 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('article-detail', args=[self.heading.slug, self.slug])
+
+    @classmethod
+    def generate_random(cls):
+        for i in range(20):
+            import random
+            heading = Heading.objects.get(pk=random.randint(1, 6))
+            cls.objects.create(title=f"Article {i}",
+                               body=f"Body {i}",
+                               heading=heading)
+        print("that's all")

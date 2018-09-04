@@ -1,8 +1,10 @@
 from ckeditor.fields import RichTextField
+from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from solo.models import SingletonModel
 from django.utils.translation import gettext_lazy as _
 
+from apps.core.models import Image
 from apps.locations.models import Hotel
 from shared.utils.pathrename import path_and_rename
 
@@ -13,6 +15,10 @@ class PhoneNumbers(models.Model):
     def __str__(self):
         return self.phone
 
+    class Meta:
+        verbose_name = _("Phone Number")
+        verbose_name_plural = _("Phone Numbers")
+
 
 class IndexSettings(SingletonModel):
     phone_numbers = models.ManyToManyField(PhoneNumbers, verbose_name=_("Phone Numbers"))
@@ -20,6 +26,8 @@ class IndexSettings(SingletonModel):
     instagram = models.URLField(default='http://instagram.com/', verbose_name=_("Instagram.com"))
     facebook = models.URLField(default='http://facebook.com/', verbose_name=_("Facebook.com"))
     vk = models.URLField(default='http://vk.com/', verbose_name=_("vk.com"))
+
+    images = GenericRelation(Image)
 
     class Meta:
         verbose_name = _("Site Configuration")
@@ -43,6 +51,15 @@ class Comment(models.Model):
     datetime = models.DateField(verbose_name=_("Date"))
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='comments', verbose_name=_("Hotel"))
 
-    comment = RichTextField(blank=True, null=True)
+    comment = RichTextField(blank=True, null=True, verbose_name=_("Comment"),
+                            help_text="При добавлении текста - отзыв будет помещен в раздел `Текстовые отзывы` ")
     youtube = models.URLField(verbose_name=_("YouTube Video URL"), blank=True, null=True,
                               help_text=_("Use embed link"))
+
+    class Meta:
+        verbose_name_plural = _('Comments')
+        verbose_name = _('Comment')
+
+
+class EmailDispatch(models.Model):
+    email = models.EmailField()

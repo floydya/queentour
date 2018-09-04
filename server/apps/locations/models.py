@@ -1,9 +1,14 @@
+import datetime
+
 from ckeditor.fields import RichTextField
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.db.models import Min
+from django.urls import reverse
+
 from apps.tours.models import Tour
 from apps.core.models import Image
+from shared.utils.pathrename import path_and_rename
 from shared.utils.slugger import slugger
 from django.utils.translation import gettext_lazy as _
 
@@ -13,12 +18,14 @@ class Country(models.Model):
     slug = models.SlugField(db_index=True, editable=False)
     name = models.CharField(max_length=50, unique=True, verbose_name=_("Name"))
 
-    about = RichTextField()
-    holidays = RichTextField()
-    to_visit = RichTextField()
-    customs = RichTextField()
+    about = RichTextField(verbose_name=_("Description"))
+    holidays = RichTextField(verbose_name=_("Holidays"))
+    to_visit = RichTextField(verbose_name=_("To visit"))
+    customs = RichTextField(verbose_name=_("Customs"))
 
-    images = GenericRelation(Image)
+    preview_image = models.ImageField(upload_to=path_and_rename, verbose_name=_("Preview Image"))
+
+    images = GenericRelation(Image, verbose_name=_("Image Gallery"))
 
     class Meta:
         verbose_name = _("Country")
@@ -33,11 +40,14 @@ class Country(models.Model):
 
     @property
     def tours(self):
-        return Tour.objects.filter(hotel__resort__country=self)
+        return Tour.objects.filter(hotel__resort__country=self, dates__start__gte=datetime.date.today())
 
     def low_cost(self):
-        cost = self.tours.annotate(Min('cost')).order_by('cost')
-        return cost[0].cost if cost else 0
+        cost = self.tours.annotate(Min('dates__cost')).order_by('dates__cost')
+        return cost[0].dates.filter(start__gte=datetime.date.today()).order_by('cost').first().uah_cost if cost else 0
+
+    def get_absolute_url(self):
+        return reverse('country-detail', args=[self.slug])
 
 
 class Resort(models.Model):
@@ -47,10 +57,12 @@ class Resort(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE,
                                 related_name='resorts', verbose_name=_("Resort's Country"))
 
-    about = RichTextField()
-    sights = RichTextField()
+    about = RichTextField(verbose_name=_("Description"))
+    sights = RichTextField(verbose_name=_("Sights"))
 
-    images = GenericRelation(Image)
+    preview_image = models.ImageField(upload_to=path_and_rename, verbose_name=_("Preview Image"))
+
+    images = GenericRelation(Image, verbose_name=_("Image Gallery"))
 
     class Meta:
         verbose_name = _("Resort")
@@ -65,11 +77,14 @@ class Resort(models.Model):
 
     @property
     def tours(self):
-        return Tour.objects.filter(hotel__resort=self)
+        return Tour.objects.filter(hotel__resort=self, dates__start__gte=datetime.date.today())
 
     def low_cost(self):
-        cost = self.tours.annotate(Min('cost')).order_by('cost')
-        return cost[0].cost if cost else 0
+        cost = self.tours.annotate(Min('dates__cost')).order_by('dates__cost')
+        return cost[0].dates.filter(start__gte=datetime.date.today()).order_by('cost')[0].uah_cost if cost else 0
+
+    def get_absolute_url(self):
+        return reverse('resort-detail', args=[self.slug])
 
 
 class HotelType(models.Model):
@@ -103,9 +118,11 @@ class Hotel(models.Model):
     description = RichTextField(default='', verbose_name=_("Description"))
     breakfasts = RichTextField(default='', verbose_name=_("Breakfasts"))
 
-    images = GenericRelation(Image)
+    preview_image = models.ImageField(upload_to=path_and_rename, verbose_name=_("Preview Image"))
 
-    address = models.CharField(max_length=144, default='')
+    images = GenericRelation(Image, verbose_name=_("Image Gallery"))
+
+    address = models.CharField(max_length=144, verbose_name=_("Address"))
 
     class Meta:
         verbose_name = _("Hotel")
@@ -117,3 +134,6 @@ class Hotel(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugger(self.name)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('hotel-detail', args=[self.slug])

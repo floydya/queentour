@@ -12,7 +12,7 @@
 {% block content %}
     <div class="region">
         <div class="wrapper-inner">
-            <div class="tour__name tour__name2">Австрия</div>
+            <div class="tour__name tour__name2">{{ object.name }}</div>
             <div class="top-about__nav">
                 <nav class="nav-block">
                     <ul class="nav-block__ul clearfix">
@@ -20,41 +20,11 @@
                         <li class="nav-block__li"><span class="nav-block__a">/</span></li>
                         <li class="nav-block__li"><a href="{{ url('country-list') }}" class="nav-block__a">Страны</a></li>
                         <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                        <li class="nav-block__li"><span class="nav-block__span">Австрия</span></li>
+                        <li class="nav-block__li"><span class="nav-block__span">{{ object.name }}</span></li>
                     </ul>
                 </nav>
             </div>
-            <div class="top-about__galery">
-                <div id="steps" class="steps-galery2">
-                    <div class="main-galery">
-                        <div class="bx-wrapper-galery2">
-                            <div class="bx-viewport">
-                                <div class="items-galery">
-                                    {% for image in object.images.all() %}
-                                        <div class="item-galery bx-clone">
-                                            <div class="item-galery__img">
-                                                <a href="#">
-                                                    <img src="{{ image.image.url }}" class="item-galery__size">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="link-galery animation-block galery-preview clearfix">
-                            {% for image in object.images.all() %}
-                                <a href="#" class="animate-me animated galery-preview-open__a">
-                                    <img src="{{ image.image.url }}" class="galery-icon icon-2">
-                                </a>
-                            {% endfor %}
-                            <div class="galery__show clearfix">показать все</div>
-                        </div>
-                        <div class="anchor__none"></div>
-                    </div>
-                </div>
-            </div>
+            {% include 'includes/galery.jinja' %}
         </div>
     </div>
     <div id="menu2" class="anchor default2">
@@ -65,7 +35,7 @@
                     <li class="anchor__li"><a href="#top2" class="anchor__a scrollto">Праздники</a></li>
                     <li class="anchor__li"><a href="#top3" class="anchor__a scrollto">Стоит посетить</a></li>
                     <li class="anchor__li"><a href="#top4" class="anchor__a scrollto">Таможенные правила</a></li>
-                    <li class="anchor__li"><a href="#top5" class="anchor__a scrollto">Туры в Австрию</a></li>
+                    <li class="anchor__li"><a href="#top5" class="anchor__a scrollto">Туры в {{ object.name }}</a></li>
                 </ul>
             </div>
         </div>
@@ -118,9 +88,10 @@
                     </div>
                 </div>
                 <div class="depiction__side-bar">
+                    {% if object.resorts.filter(hotels__tours__dates__start__gte=datetime.date.today()).distinct() %}
                     <div class="depiction__name">Курорты</div>
                     <ul class="depiction__list">
-                        {% for resort in object.resorts.all() %}
+                        {% for resort in object.resorts.filter(hotels__tours__dates__start__gte=datetime.date.today()).distinct() %}
                             <li class="depiction__item">
                                 <a href="{{ url('resort-detail', slug=resort.slug) }}" class="depiction__link clearfix">
                                     <div class="depiction__city">{{ resort.name }}</div>
@@ -135,6 +106,7 @@
                             </li>
                         {% endfor %}
                     </ul>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -143,19 +115,19 @@
             <div class="wrapper-inner">
                 <div class="hot__content">
                     <div class="rest__name">Туры в {{ object.name }}</div>
-                    <div class="depiction__serch">Найдено {{ object.tours.count() }} туров от
+                    <div class="depiction__serch">Найдено {{ object.tours.distinct().count() }} туров от
                         <span class="tour__cena">{{ object.low_cost() }} </span>
                         <span class="tour__valuta">uaн</span>
                     </div>
                     <div class="hot__part clearfix">
-                        {% for tour in object.tours %}
+                        {% for tour in object.tours.distinct() %}
                         <div class="hot__block">
-                            <a href="about.html" class="hot__block-link">
+                            <a href="{{ url('tour-detail', pk=tour.pk) }}" class="hot__block-link">
                                 <div class="hot__icon-one">
                                     <img src="{{ static('img/icon-1.png') }}" class="hot__icon-one--size">
                                 </div>
                                 <div class="hot__icon-two">
-                                    {{ tour.cost }} <span class="hot__icon-two--span">UAH</span>
+                                    {{ tour.low_cost().uah_cost }} <span class="hot__icon-two--span">UAH</span>
                                 </div>
                                 <div class="hot__picture">
                                     <img src="{{ tour.hotel.images.first().image.url }}" class="hot__picture--size">

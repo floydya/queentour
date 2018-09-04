@@ -4,148 +4,24 @@
             <div class="bx-wrapper-galery2">
                 <div class="bx-viewport">
                     <div class="items-galery">
+                        {% for item in object.images.all() %}
                         <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
+                            <div class="item-galery__img">
+                                <a href="{{ item.image.url }}">
+                                    <img src="{{ item.image.url }}" class="item-galery__size"/>
+                                </a>
+                            </div>
                         </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/reg-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
-                        <div class="item-galery bx-clone">
-                            <div class="item-galery__img"><a href="#"><img src="../img/big-main.png"
-                                                                           class="item-galery__size"/></a></div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            <div class="link-galery animation-block galery-preview clearfix"><a href="#"
-                                                                                class="animate-me animated galery-preview__a"><img
-                    src="../img/reg1.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                             class="animate-me animated galery-preview__a"><img
-                    src="../img/reg2.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                             class="animate-me animated galery-preview__a"><img
-                    src="../img/reg3.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                             class="animate-me animated galery-preview__a"><img
-                    src="../img/reg4.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                             class="animate-me animated galery-preview__a"><img
-                    src="../img/reg5.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                             class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b2.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b3.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b4.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b5.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b2.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b3.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b4.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b5.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b2.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b3.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b4.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b5.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b2.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b3.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b4.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b5.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b4.png" class="galery-icon icon-2"/></a><a href="#"
-                                                                           class="animate-me animated galery-preview-open__a"><img
-                    src="../img/b5.png" class="galery-icon icon-2"/></a>
+            <div class="link-galery animation-block galery-preview clearfix">
+                {% for item in object.images.all() %}
+                <a href="#" class="animate-me animated galery-preview__a">
+                    <img src="{{ item.image.url }}" class="galery-icon icon-2"/>
+                </a>
+                {% endfor %}
                 <div class="galery__show clearfix">показать все</div>
             </div>
             <div class="anchor__none"></div>

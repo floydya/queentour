@@ -2,7 +2,7 @@
     <div class="hotels__side-position">
         <div class="hotels__side-hide"><img src="{{ static('img/close1.svg') }}"/></div>
         <div class="hotels__side-form">
-            <form name="hotels" id="serch-hotels">
+            <form name="hotels" id="search-hotels" action="{{ url('hotel-list') }}" method="get">
                 <div class="hotels__form">
                     <div class="hotels__division hotels__division-mobile">
                         <div class="hotels__title">Страна</div>
@@ -11,7 +11,7 @@
                         <div class="hotels__meaning">
                             {% for country in countries %}
                             <div class="hotels__choice">
-                                <input type="checkbox" name="{{ country.slug }}" id="country{{ country.pk }}"
+                                <input type="checkbox" name="country" value="{{ country.slug }}" id="country{{ country.pk }}"
                                                                class="hotels__input"/>
                                 <label for="country{{ country.pk }}" class="hotels__label">{{ country.name }}</label>
                             </div>
@@ -27,7 +27,7 @@
                         <div class="hotels__meaning">
                             {% for resort in resorts %}
                             <div class="hotels__choice">
-                                <input type="checkbox" name="{{ resort.slug }}" id="resort{{ resort.pk }}" class="hotels__input"/>
+                                <input type="checkbox" name="resort" id="resort{{ resort.pk }}" value="{{ resort.slug }}" class="hotels__input"/>
                                 <label for="resort{{ resort.pk }}" class="hotels__label">
                                     {{ resort.name }}
                                 </label>
@@ -43,23 +43,23 @@
                         <div class="hotels__close"></div>
                         <div class="hotels__meaning">
                             <div class="hotels__choice">
-                                <input type="checkbox" name="star1" id="star1" class="hotels__input"/>
+                                <input type="checkbox" name="star" id="star1" class="hotels__input" value="1"/>
                                 <label for="star1" class="hotels__label">1</label>
                             </div>
                             <div class="hotels__choice">
-                                <input type="checkbox" name="star2" id="star2" class="hotels__input"/>
+                                <input type="checkbox" name="star" id="star2" class="hotels__input" value="2"/>
                                 <label for="star2" class="hotels__label">2</label>
                             </div>
                             <div class="hotels__choice">
-                                <input type="checkbox" name="star3" id="star3" class="hotels__input"/>
+                                <input type="checkbox" name="star" id="star3" class="hotels__input" value="3"/>
                                 <label for="star3" class="hotels__label">3</label>
                             </div>
                             <div class="hotels__choice">
-                                <input type="checkbox" name="star4" id="star4" class="hotels__input"/>
+                                <input type="checkbox" name="star" id="star4" class="hotels__input" value="4"/>
                                 <label for="star4" class="hotels__label">4</label>
                             </div>
                             <div class="hotels__choice">
-                                <input type="checkbox" name="star5" id="star5" class="hotels__input"/>
+                                <input type="checkbox" name="star" id="star5" class="hotels__input" value="5"/>
                                 <label for="star5" class="hotels__label">5</label>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                         <div class="hotels__meaning">
                             {% for type in hotel_types %}
                             <div class="hotels__choice">
-                                <input type="checkbox" name="{{ type.slug }}" id="hotel-type{{ type.pk }}" class="hotels__input"/>
+                                <input type="checkbox" name="type" value="{{ type.slug }}" id="hotel-type{{ type.pk }}" class="hotels__input"/>
                                 <label for="hotel-type{{ type.pk }}" class="hotels__label">{{ type.name }}</label>
                             </div>
                             {% endfor %}
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="hotels__block-submit">
-                        <input type="submit" value="Фильтровать" class="hotels__submit"/>
+                        <button type="submit" class="hotels__submit">Фильтровать</button>
                     </div>
                 </div>
             </form>

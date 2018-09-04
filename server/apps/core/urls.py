@@ -10,4 +10,5 @@ urlpatterns = [
     path('pages/search-avia/', views.SearchAviaView.as_view(), name='search-avia'),
     path('pages/about/', views.AboutView.as_view(), name='about'),
     path('pages/contact/', views.ContactView.as_view(), name='contact'),
+    path('', views.IndexView.as_view(), name='index')
 ]

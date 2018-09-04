@@ -12,7 +12,7 @@
                         <div class="country__block">
                             <a href="{{ url('country-detail', slug=object.slug) }}" class="country__block-link">
                                 <div class="country__picture">
-                                    <img src="{{ object.images.all().first().image.url }}" class="country__picture--size">
+                                    <img src="{{ object.preview_image.url }}" class="country__picture--size">
                                 </div>
                                 <div class="country__eclipse">
                                     <div class="country__title">{{ object.name }}</div>

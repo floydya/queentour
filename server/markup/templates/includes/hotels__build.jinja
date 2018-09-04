@@ -7,13 +7,12 @@
                 <div class="hotels__search-form">
                     <div class="hotels__search-position">
 
-                        <form name="forma-hotels-search" id="forma-hotels-search"
-                              action="{{ url('hotel-list') }}" method="get">
+                        <form name="forma-hotels-search" id="forma-hotels-search" method="get">
 
-                            <input name="search" id="hotels-search" type="search" value="{{ request.GET.get('search') }}"
+                            <input name="search" id="hotels-search" type="search" value="{% if request.GET['search'] %}{{ request.GET.get('search') }}{% endif %}"
                                    placeholder="Поиск отеля" class="hotels__inp-serch">
 
-                            <input type="submit" class="hotels__inp-sub">
+                            <div class="hotels__inp-sub"></div>
                         </form>
 
                     </div>
@@ -22,30 +21,30 @@
         </div>
         <div class="sub-two"></div>
     </div>
-
+<!--
     <div class="hotels__sort clearfix">
         <div class="hotels__sort-label">Выводить по:</div>
         <ul class="hotels__sort-ul">
             <li class="hotels__sort-li">
-                <a id="paginate_by15" href="#" class="hotels__sort-a {% if 'paginate_by' not in request.GET or request.GET.paginate_by == '15' %}hotels__sort-a-active{% endif %}">15</a>
+                <a get_pagination="15" id="paginate_by15" class="hotels__sort-a {% if 'paginate_by' not in request.GET or request.GET.paginate_by == '15' %}hotels__sort-a-active{% endif %}">15</a>
             </li>
             <li class="hotels__sort-li">
-                <a id="paginate_by30" href="#" class="hotels__sort-a {% if request.GET.paginate_by == '30' %}hotels__sort-a-active{% endif %}">30</a>
+                <a get_pagination="30" id="paginate_by30" class="hotels__sort-a {% if request.GET.paginate_by == '30' %}hotels__sort-a-active{% endif %}">30</a>
             </li>
             <li class="hotels__sort-li">
-                <a id="paginate_by45" href="#" class="hotels__sort-a {% if request.GET.paginate_by == '45' %}hotels__sort-a-active{% endif %}">45</a>
+                <a get_pagination="45" id="paginate_by45" class="hotels__sort-a {% if request.GET.paginate_by == '45' %}hotels__sort-a-active{% endif %}">45</a>
             </li>
         </ul>
     </div>
-
+-->
 </div>
 
 <div class="hotels__part clearfix">
     {% for hotel in object_list %}
         <div class="hotels__build">
-            <a href="#" class="hotels__build-link">
+            <a href="{{ url('hotel-detail', slug=hotel.slug) }}" class="hotels__build-link">
                 <div class="hotels__build-picture">
-                    <img src="{{ hotel.images.first().image.url }}" class="hotels__build-picture--size"/>
+                    <img src="{{ hotel.preview_image.url }}" class="hotels__build-picture--size"/>
                     {% if hotel.hot %}
                         <div class="hotels__build-icon">
                             <img src="{{ static('img/icon-1.png') }}" class="hot__icon-one--size"/>

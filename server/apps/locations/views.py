@@ -22,12 +22,22 @@ class ResortView(generic.DetailView):
 class HotelList(generic.ListView):
     template_name = 'hotel_list.jinja'
     model = Hotel
-    paginate_by = 15
+    paginate_by = 6
 
     def get_queryset(self):
         queryset = super().get_queryset()
         if 'search' in self.request.GET:
             queryset = queryset.filter(name__icontains=self.request.GET['search'])
+        if 'star' in self.request.GET:
+            queryset = queryset.filter(stars__in=self.request.GET.getlist('star'))
+        if 'country' in self.request.GET:
+            queryset = queryset.filter(resort__country__slug__in=self.request.GET.getlist('country'))
+        if 'resort' in self.request.GET:
+            queryset = queryset.filter(resort__slug__in=self.request.GET.getlist('resort'))
+        if 'type' in self.request.GET:
+            queryset = queryset.filter(type__slug__in=self.request.GET.getlist('type'))
+        if 'hot' in self.request.GET:
+            queryset = queryset.filter(hot=True)
         return queryset
 
     def get_paginate_by(self, queryset):
@@ -52,3 +62,8 @@ class HotelList(generic.ListView):
             return render_to_response('includes/hotels__build.jinja', context=data)
         else:
             return super().get(request, *args, **kwargs)
+
+
+class HotelDetail(generic.DetailView):
+    template_name = 'hotel_detail.jinja'
+    model = Hotel

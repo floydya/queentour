@@ -21,13 +21,14 @@
                         <div class="blog__form">
                             {% include 'includes/block__heading.jinja' %}
                             <div class="blog__delivery">
-                                <form name="heading" id="news-heading">
+                                <form name="heading" id="news-heading" method="post">
                                     <div class="blog__form-title">Подпишитесь</div>
                                     <div class="blog__form-decs">
                                         на рассылку и получайте первыми горящие туры на свой e-mail
                                     </div>
                                     <div class="blog__form-evidence">
-                                        <input type="email" name="email-for-heading" id="email-heading"
+                                        <input type="text" hidden name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                                        <input type="email" name="email" id="email-heading"
                                                placeholder="Ведите Ваш e-mail" class="blog__form-email">
                                         <div class="rest__help">E-mail введен неверно!</div>
                                         <input type="submit" value="Подписаться" class="blog__form-submit">

@@ -8,49 +8,53 @@
 {% block content %}
 <div class="top-about">
     <div class="wrapper-inner">
-        <div class="tour__name tour__name2">Египет</div>
+        <div class="tour__name tour__name2">{{ object.hotel.resort.country.name }}</div>
         <div class="top-about__nav">
             <nav class="nav-block">
                 <ul class="nav-block__ul clearfix">
-                    <li class="nav-block__li"><a href="index.html" class="nav-block__a">Главная</a></li>
+                    <li class="nav-block__li"><a href="/" class="nav-block__a">Главная</a></li>
                     <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                    <li class="nav-block__li"><a href="tour.html" class="nav-block__a">Туры</a></li>
+                    <li class="nav-block__li"><a href="{{ url('tour-list') }}" class="nav-block__a">Туры</a></li>
                     <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                    <li class="nav-block__li"><a href="tour.html" class="nav-block__a">Египет</a></li>
+                    <li class="nav-block__li"><a href="{{ url('country-detail', slug=object.hotel.resort.country.slug) }}" class="nav-block__a">{{ object.hotel.resort.country.name }}</a></li>
                     <li class="nav-block__li"><span class="nav-block__a">/</span></li>
-                    <li class="nav-block__li"><span class="nav-block__span">Dream Vacation Resort 5*</span></li>
+                    <li class="nav-block__li"><span class="nav-block__span">{{ object.hotel.name }} {{ object.stars }}*</span></li>
                 </ul>
             </nav>
         </div>
-        {% include 'includes/galery.jinja' %}
+        <!-- gallery -->
     </div>
 </div>
 <div id="menu" class="fixed-menu default">
     <div class="wrapper-inner">
         <div class="fixed-menu__content clearfix">
             <div class="fixed-menu__block clearfix">
-                <div class="fixed-menu__picture"><img src="../img/pl1.svg"></div>
-                <div class="fixed-menu__description"><a href="#"
-                                                        class="fixed-menu__link">ШАРМ-ЭЛЬ-ШЕЛЬХ,</a><span> </span><a
-                        href="#" class="fixed-menu__link">Египет</a>
-                    <div class="fixed-menu__label">21 июня - 25 июля</div>
+                <div class="fixed-menu__picture">
+                    <img src="{{ static('img/pl1.svg') }}">
+                </div>
+                <div class="fixed-menu__description">
+                    <a href="{{ url('resort-detail', slug=object.hotel.resort.slug) }}" class="fixed-menu__link">{{ object.hotel.resort.name }},
+                    </a><span> </span>
+                    <a href="{{ url('country-detail', slug=object.hotel.resort.country.slug) }}" class="fixed-menu__link">{{ object.hotel.resort.country.name }}</a>
+                    <div class="fixed-menu__label">{{ object.dates.first() }}</div>
                 </div>
             </div>
             <div class="fixed-menu__block clearfix">
-                <div class="fixed-menu__picture"><img src="../img/pl2.svg"></div>
-                <div class="fixed-menu__description"><a href="#" class="fixed-menu__link">Dreams Vacation Resort
-                    5*</a>
-                    <div class="fixed-menu__label">питание</div>
+                <div class="fixed-menu__picture">
+                    <img src="{{ static('img/pl2.svg') }}">
+                </div>
+                <div class="fixed-menu__description">
+                    <a href="{{ url('hotel-detail', slug=object.hotel.slug) }}" class="fixed-menu__link">{{ object.hotel.name }} {{ object.hotel.stars }}*</a>
                 </div>
             </div>
             <div class="fixed-menu__block clearfix">
-                <div class="fixed-menu__picture"><img src="../img/pl3.svg"></div>
+                <div class="fixed-menu__picture"><img src="{{ static('img/pl3.svg') }}"></div>
                 <div class="fixed-menu__description">
                     <div class="fixed-menu__label2">Вылет из:</div>
-                    <a href="#" class="fixed-menu__link fixed-menu__link2">Киев</a></div>
+                    <a class="fixed-menu__link fixed-menu__link2">{{ object.sending_from }}</a></div>
             </div>
             <div class="fixed-menu__block">
-                <div class="fixed-menu__price">47 500 <span class="fixed-menu__price--span">uan</span></div>
+                <div class="fixed-menu__price">{{ object.date_from_now().first().uah_cost }} <span class="fixed-menu__price--span">uan</span></div>
             </div>
             <div class="fixed-menu__block">
                 <div class="forma__submit fixed-menu__submit fixed-menu__submit-push">Забронировать тур</div>
@@ -68,81 +72,45 @@
                         <tr class="about__tr">
                             <td class="about__td1">ID тура:</td>
                             <td class="about__td2"></td>
-                            <td class="about__td3">458963</td>
+                            <td class="about__td3">{{ object.pk }}</td>
                         </tr>
                         <tr class="about__tr">
                             <td class="about__td1">Тип тура:</td>
                             <td class="about__td2"></td>
-                            <td class="about__td3"><a href="#" class="about__link">Египет</a></td>
+                            <td class="about__td3"><a class="about__link">{{ object.type.name }}</a></td>
                         </tr>
                         <tr class="about__tr">
                             <td class="about__td1">Страна:</td>
                             <td class="about__td2"></td>
-                            <td class="about__td3"><a href="#" class="about__link">Египет</a></td>
+                            <td class="about__td3"><a href="{{ url('country-detail', slug=object.hotel.resort.country.slug) }}" class="about__link">{{ object.hotel.resort.country.name }}</a></td>
                         </tr>
                         <tr class="about__tr">
                             <td class="about__td1">Курорт:</td>
                             <td class="about__td2"></td>
-                            <td class="about__td3"><a href="#" class="about__link">Шарм-эль-шельх</a></td>
+                            <td class="about__td3"><a href="{{ url('resort-detail', slug=object.hotel.resort.slug) }}" class="about__link">{{ object.hotel.resort.name }}</a></td>
                         </tr>
                         <tr class="about__tr">
                             <td class="about__td1">Отель:</td>
                             <td class="about__td2"></td>
-                            <td class="about__td3"><a href="#" class="about__link">Dreams vacation resort 5*</a>
+                            <td class="about__td3"><a href="{{ url('hotel-detail', slug=object.hotel.slug) }}" class="about__link">{{ object.hotel.name }} {{ object.hotel.stars }}*</a>
                             </td>
                         </tr>
                         <tr class="about__tr">
                             <td class="about__td1">Отправка из:</td>
                             <td class="about__td2"></td>
-                            <td class="about__td3 about__td3-upper">Киев</td>
+                            <td class="about__td3 about__td3-upper">{{ object.sending_from }}</td>
                         </tr>
                         <tr class="about__tr">
                             <td class="about__td1">Продолжительность (д/н):</td>
                             <td class="about__td2"></td>
-                            <td class="about__td3">7/7</td>
+                            <td class="about__td3">{{ object.duration_days }}/{{ object.duration_nights }}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="about__desc">Описание отеля:</div>
-                <div class="about__text-all"><p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх - курортный город
-                    Египта
-                    на побережье Красного моря, на самой оконечности Синая. Не первый десяток лет считающися местом
-                    всеобщего расслабления, царство шведских столов, валяния на пляже, необузданного шоппинга и
-                    многого
-                    другого, так милого сердцу неискушенного туриста.</p>
-                    <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
-                        занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
-                        даже
-                        тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
-                        если
-                        быть точным Шарм-эш-Шейх - курортный город Египта на побережье <span
-                                class="about__text-span1">Красного моря, на самой оконечности Синая. Не первый</span><span
-                                class="about__text-span2">десяток лет считающися местом всеобщего расслабления, царство шведских столов, </span><span
-                                class="about__text-span3">валяния на пляже, необузданного шоппинга и многого другого, </span><span
-                                class="about__text-span4">так милого сердцу неискушенного туриста.</span></p></div>
-                <div class="about__text-all about__text-hide"><p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх -
-                    курортный город Египта на побережье Красного моря, на самой оконечности Синая. Не первый десяток
-                    лет
-                    считающися местом всеобщего расслабления, царство шведских столов, валяния на пляже,
-                    необузданного
-                    шоппинга и многого другого, так милого сердцу неискушенного туриста.</p>
-                    <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
-                        занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
-                        даже
-                        тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
-                        если
-                        быть точным Шарм-эш-Шейх - курортный город Египта на побережье</p>
-                    <p>Шарм-эль-Шейх, а если быть точным Шарм-эш-Шейх - курортный город Египта на побережье Красного
-                        моря, на самой оконечности Синая. Не первый десяток лет считающися местом всеобщего
-                        расслабления, царство шведских столов, валяния на пляже, необузданного шоппинга и многого
-                        другого, так милого сердцу неискушенного туриста.</p>
-                    <p>Город, ставший для нас одним из первых в зарубежных набегах на рынки, после падения железного
-                        занавеса. А так ли мы много о нем знаем? Таким ли он является на самом деле? Убеждены, что
-                        даже
-                        тот, кто ездит в Египет чаще, чем к себе на дачу, до конца не знает его. Шарм-эль-Шейх, а
-                        если
-                        быть точным Шарм-эш-Шейх - курортный город Египта на побережье</p></div>
-                <div class="about__more">Подбробнее</div>
+                <div class="about__text-all">
+                    {{ object.hotel.description|safe }}
+                </div>
             </div>
             <div class="about__right">
                 <div class="about__forma">
@@ -151,72 +119,57 @@
                             <div class="about__date">
                                 <div class="about__desc">Дата тура:</div>
                             </div>
-                            <div class="about__change"><select size="1" name="about-date" required
-                                                               class="about__change-select">
-                                <option value="about-date1">21 июня - 25 июля</option>
-                                <option value="about-date1">18 июня - 5 июля</option>
-                                <option value="about-date1">16 июня - 2 июля</option>
-                                <option value="about-date1">2 июня - 30 июля</option>
-                                <option value="about-date1">9 июня - 9 июля</option>
-                            </select></div>
+                            <div class="about__change">
+                                <select size="1" id="tourDate" name="about-date" required class="about__change-select">
+                                    {% for dates in object.date_from_now() %}
+                                        <option value="{{ dates.pk }}">{{ dates }} {% if dates.hot %}*HOT*{% endif %}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
                         </div>
                         <div class="about__bottom clearfix">
                             <div class="about__text">
                                 <div class="about__desc">Стоимость тура:</div>
                                 <div class="about__people">на одного человека</div>
-                                <div class="about__kol">45 500 <span class="about__kol--span">UAH</span></div>
+                                <div class="about__kol"><div id="cost">{{ object.date_from_now().first().uah_cost }}</div> <span class="about__kol--span">UAH</span></div>
                             </div>
                             <div class="about__push">
                                 <div class="fixed-menu__submit-push forma__submit">Забронировать тур</div>
                             </div>
                         </div>
                         <div class="about__part-list clearfix">
+                            {% if object.includes.exists() %}
                             <div class="about__part-block">
                                 <div class="about__desc">В стоимость входит:</div>
                                 <ul class="about__plus-ul">
-                                    <li class="about__plus-li">Перелет
+                                    {% for item in object.includes.all() %}
+                                    <li class="about__plus-li">{{ item.name }}{% if item.description %}
                                         <div class="about__plus-icon"></div>
-                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                            <p>- Экскурсии в Табе</p>
-                                            <p>- Экскурсии в Дахабе</p>
-                                            <p>- Экскурсии в Нувейбе</p></div>
+                                        <div class="about__hint">{{ item.description|safe }}</div>{% endif %}
                                     </li>
-                                    <li class="about__plus-li">Питание
-                                        <div class="about__plus-icon"></div>
-                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                            <p>- Экскурсии в Табе</p>
-                                            <p>- Экскурсии в Дахабе</p>
-                                            <p>- Экскурсии в Нувейбе</p></div>
-                                    </li>
-                                    <li class="about__plus-li">Виза
-                                        <div class="about__plus-icon"></div>
-                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                            <p>- Экскурсии в Табе</p>
-                                            <p>- Экскурсии в Дахабе</p>
-                                            <p>- Экскурсии в Нувейбе</p></div>
-                                    </li>
-                                    <li class="about__plus-li">Страховка</li>
+                                    {% endfor %}
                                 </ul>
                             </div>
+                            {% endif %}
+                            {% if object.excludes.exists() %}
                             <div class="about__part-block">
                                 <div class="about__desc">В стоимость не входит:</div>
                                 <ul class="about__plus-ul">
-                                    <li class="about__plus-li about__min-li">Экскурсии
+                                    {% for item in object.excludes.all() %}
+                                    <li class="about__plus-li about__min-li">{{ item.name }}{% if item.description %}
                                         <div class="about__plus-icon"></div>
-                                        <div class="about__hint"><p>- Экскурсии в Шарм Ель Шейхе</p>
-                                            <p>- Экскурсии в Табе</p>
-                                            <p>- Экскурсии в Дахабе</p>
-                                            <p>- Экскурсии в Нувейбе</p></div>
+                                        <div class="about__hint">{{ item.description|safe }}</div>{% endif %}
                                     </li>
-                                    <li class="about__plus-li about__min-li">Трансфер</li>
+                                    {% endfor %}
                                 </ul>
                             </div>
+                            {% endif %}
                         </div>
                     </form>
                 </div>
                 <div class="about__consult clearfix">
-                    <div class="about__consult-picture"><img src="../img/girls.png" class="about__consult-size">
-                        <div class="about__consult-icon"><img src="../img/yell.svg"></div>
+                    <div class="about__consult-picture"><img src="{{ static('img/girls.png') }}" class="about__consult-size">
+                        <div class="about__consult-icon"><img src="{{ static('img/yell.svg') }}"></div>
                     </div>
                     <div class="about__consult-desc">
                         <div class="about__consult-text">Не подошла дата или возникли трудности с подбором и/или
@@ -238,55 +191,25 @@
 </div>
 <div class="supply">
     <div class="wrapper-inner">
-        <div class="rest__name">Похожие предложения</div>
+        <div class="rest__name">Другие предложения</div>
         <div class="hot__content">
-            <div class="hot__part clearfix">
-                <div class="hot__block"><a href="#" class="hot__block-link">
-                    <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
-                    <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-                    <div class="hot__picture"><img src="../img/hot-1.png" class="hot__picture--size"></div>
-                    <div class="hot__description">
-                        <div class="hot__desc-top">
-                            <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-                        </div>
-                        <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                            <p>Страна: Китай</p>
-                            <div class="hot__desc-button">Узнать больше</div>
-                        </div>
-                    </div>
-                </a></div>
-                <div class="hot__block"><a href="#" class="hot__block-link">
-                    <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
-                    <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-                    <div class="hot__picture"><img src="../img/hot-2.png" class="hot__picture--size"></div>
-                    <div class="hot__description">
-                        <div class="hot__desc-top">
-                            <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-                        </div>
-                        <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                            <p>Страна: Китай</p>
-                            <div class="hot__desc-button">Узнать больше</div>
-                        </div>
-                    </div>
-                </a></div>
-                <div class="hot__block"><a href="#" class="hot__block-link">
-                    <div class="hot__icon-one"><img src="../img/icon-1.png" class="hot__icon-one--size"></div>
-                    <div class="hot__icon-two">999 999 <span class="hot__icon-two--span">UAH</span></div>
-                    <div class="hot__picture"><img src="../img/hot-3.png" class="hot__picture--size"></div>
-                    <div class="hot__description">
-                        <div class="hot__desc-top">
-                            <div class="hot__desc-title">Dreams Vacation Resort 5*</div>
-                        </div>
-                        <div class="hot__desc-more"><p>Отель: Dreams Vacation Resort 5*</p>
-                            <p>Страна: Китай</p>
-                            <div class="hot__desc-button">Узнать больше</div>
-                        </div>
-                    </div>
-                </a></div>
-            </div>
-            <a href="#" class="hot__button">Показать еще</a></div>
+            {% include 'includes/hot__part.jinja' %}
+        </div>
     </div>
 </div>
 {% include 'includes/popup-tour.jinja' %}
 {% include 'includes/popup-assortment.jinja' %}
+    <script>
+    $('#tourDate').on('change input select', (e) => {
+        $.ajax({
+            url: '/utils/get-cost/'+$('#tourDate').val()+'/',
+            type: 'get',
+            success: function (re) {
+                $('#cost').html(re);
+            },
+            error: function (er) {
+            }
+        })
+    })
+    </script>
 {% endblock %}

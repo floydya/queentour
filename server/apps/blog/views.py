@@ -1,7 +1,8 @@
 from django.db.models import F
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.views import generic
 from apps.blog.models import Article, Heading
+from apps.core.models.core import EmailDispatch
 
 
 class ArticleDetail(generic.DetailView):
@@ -63,3 +64,8 @@ class ArticleList(generic.ListView):
                                       context=context)
         else:
             return super().get(request, *args, **kwargs)
+
+    def post(self, *args, **kwargs):
+        if 'email' in self.request.POST and self.request.POST['email']:
+            EmailDispatch.objects.get_or_create(email=self.request.POST['email'])
+            return redirect(self.request.META.get('HTTP_REFERER', '/'))

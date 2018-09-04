@@ -1,0 +1,374 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-04 06:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/settings/default.py:200 app/settings/default.py:206
+#: app/settings/default.py:226 app/settings/default.py:234
+msgid "First Name"
+msgstr ""
+
+#: app/settings/default.py:201 app/settings/default.py:216
+#: app/settings/default.py:227 app/settings/default.py:235
+#: apps/core/models/core.py:13 apps/core/models/core.py:19
+msgid "Phone Number"
+msgstr ""
+
+#: app/settings/default.py:202 app/settings/default.py:209
+#: app/settings/default.py:219 app/settings/default.py:230
+#: app/settings/default.py:236
+msgid "Sent From Link"
+msgstr ""
+
+#: app/settings/default.py:203 app/settings/default.py:210
+#: app/settings/default.py:220 app/settings/default.py:231
+#: app/settings/default.py:237 apps/blog/models.py:32
+#: apps/core/models/core.py:51
+msgid "Date"
+msgstr ""
+
+#: app/settings/default.py:207 app/settings/default.py:217
+#: app/settings/default.py:228
+msgid "Email"
+msgstr ""
+
+#: app/settings/default.py:208 app/settings/default.py:218
+#: app/settings/default.py:229
+msgid "Message"
+msgstr ""
+
+#: app/settings/default.py:213
+msgid "Tour Number"
+msgstr ""
+
+#: app/settings/default.py:214
+msgid "Tour Date"
+msgstr ""
+
+#: app/settings/default.py:215 apps/core/models/core.py:48
+msgid "Full Name"
+msgstr ""
+
+#: app/settings/default.py:223 apps/locations/models.py:31
+msgid "Country"
+msgstr ""
+
+#: app/settings/default.py:224
+msgid "Tour Duration"
+msgstr ""
+
+#: app/settings/default.py:225
+msgid "Number of persons"
+msgstr ""
+
+#: apps/blog/models.py:14 apps/locations/models.py:19
+#: apps/locations/models.py:56 apps/locations/models.py:93
+#: apps/locations/models.py:110 apps/tours/models.py:55 apps/tours/models.py:65
+msgid "Name"
+msgstr ""
+
+#: apps/blog/models.py:20 apps/blog/models.py:35
+msgid "Heading"
+msgstr ""
+
+#: apps/blog/models.py:21
+msgid "Headings"
+msgstr ""
+
+#: apps/blog/models.py:31 apps/core/models/core.py:38
+msgid "Title"
+msgstr ""
+
+#: apps/blog/models.py:33
+msgid "Body"
+msgstr ""
+
+#: apps/blog/models.py:39 apps/locations/models.py:112 apps/tours/models.py:81
+msgid "Stars"
+msgstr ""
+
+#: apps/blog/models.py:48
+msgid "Article"
+msgstr ""
+
+#: apps/blog/models.py:49
+msgid "Articles"
+msgstr ""
+
+#: apps/core/models/core.py:20 apps/core/models/core.py:24
+msgid "Phone Numbers"
+msgstr ""
+
+#: apps/core/models/core.py:25 apps/locations/models.py:125
+msgid "Address"
+msgstr ""
+
+#: apps/core/models/core.py:26
+msgid "Instagram.com"
+msgstr ""
+
+#: apps/core/models/core.py:27
+msgid "Facebook.com"
+msgstr ""
+
+#: apps/core/models/core.py:28
+msgid "vk.com"
+msgstr ""
+
+#: apps/core/models/core.py:33
+msgid "Site Configuration"
+msgstr ""
+
+#: apps/core/models/core.py:37 apps/core/models/utils.py:21
+msgid "Image"
+msgstr ""
+
+#: apps/core/models/core.py:39
+msgid "Column 1"
+msgstr ""
+
+#: apps/core/models/core.py:40
+msgid "Column 2"
+msgstr ""
+
+#: apps/core/models/core.py:43
+msgid "Certificate Configuration"
+msgstr ""
+
+#: apps/core/models/core.py:49
+msgid "Age"
+msgstr ""
+
+#: apps/core/models/core.py:50 apps/locations/models.py:21
+#: apps/locations/models.py:60 apps/locations/models.py:118
+msgid "Description"
+msgstr ""
+
+#: apps/core/models/core.py:52 apps/locations/models.py:128
+msgid "Hotel"
+msgstr ""
+
+#: apps/core/models/core.py:54 apps/core/models/core.py:61
+msgid "Comment"
+msgstr ""
+
+#: apps/core/models/core.py:56
+msgid "YouTube Video URL"
+msgstr ""
+
+#: apps/core/models/core.py:57
+msgid "Use embed link"
+msgstr ""
+
+#: apps/core/models/core.py:60
+msgid "Comments"
+msgstr ""
+
+#: apps/locations/models.py:22
+msgid "Holidays"
+msgstr ""
+
+#: apps/locations/models.py:23
+msgid "To visit"
+msgstr ""
+
+#: apps/locations/models.py:24
+msgid "Customs"
+msgstr ""
+
+#: apps/locations/models.py:26 apps/locations/models.py:63
+#: apps/locations/models.py:121 apps/tours/models.py:17
+msgid "Preview Image"
+msgstr ""
+
+#: apps/locations/models.py:28 apps/locations/models.py:65
+#: apps/locations/models.py:123
+msgid "Image Gallery"
+msgstr ""
+
+#: apps/locations/models.py:32
+msgid "Countries"
+msgstr ""
+
+#: apps/locations/models.py:58
+msgid "Resort's Country"
+msgstr ""
+
+#: apps/locations/models.py:61
+msgid "Sights"
+msgstr ""
+
+#: apps/locations/models.py:68
+msgid "Resort"
+msgstr ""
+
+#: apps/locations/models.py:69
+msgid "Resorts"
+msgstr ""
+
+#: apps/locations/models.py:96
+msgid "Hotel Type"
+msgstr ""
+
+#: apps/locations/models.py:97
+msgid "Hotel Types"
+msgstr ""
+
+#: apps/locations/models.py:111
+msgid "Hotel's Resort"
+msgstr ""
+
+#: apps/locations/models.py:113
+msgid "Hotel's Type"
+msgstr ""
+
+#: apps/locations/models.py:115
+msgid "Hot"
+msgstr ""
+
+#: apps/locations/models.py:115
+msgid "Standard"
+msgstr ""
+
+#: apps/locations/models.py:117
+msgid "Website"
+msgstr ""
+
+#: apps/locations/models.py:119
+msgid "Breakfasts"
+msgstr ""
+
+#: apps/locations/models.py:129
+msgid "Hotels"
+msgstr ""
+
+#: apps/reports/models.py:16 apps/reports/models.py:47
+#: apps/reports/models.py:81 apps/reports/models.py:118
+#: apps/reports/models.py:151
+msgid "Opened"
+msgstr ""
+
+#: apps/reports/models.py:16 apps/reports/models.py:47
+#: apps/reports/models.py:81 apps/reports/models.py:118
+#: apps/reports/models.py:151
+msgid "Closed"
+msgstr ""
+
+#: apps/reports/models.py:21
+msgid "Call"
+msgstr ""
+
+#: apps/reports/models.py:22
+msgid "Calls"
+msgstr ""
+
+#: apps/reports/models.py:51
+msgid "Report"
+msgstr ""
+
+#: apps/reports/models.py:52
+msgid "Reports"
+msgstr ""
+
+#: apps/reports/models.py:84
+msgid "Booked tour"
+msgstr ""
+
+#: apps/reports/models.py:85
+msgid "Booked tours"
+msgstr ""
+
+#: apps/reports/models.py:121
+msgid "Picking tour"
+msgstr ""
+
+#: apps/reports/models.py:122
+msgid "Picking tours"
+msgstr ""
+
+#: apps/reports/models.py:154
+msgid "Sertificate Apply"
+msgstr ""
+
+#: apps/reports/models.py:155
+msgid "Sertificate Applies"
+msgstr ""
+
+#: apps/tours/models.py:15
+msgid "Type Name"
+msgstr ""
+
+#: apps/tours/models.py:20
+msgid "Tour Type"
+msgstr ""
+
+#: apps/tours/models.py:21
+msgid "Tour Types"
+msgstr ""
+
+#: apps/tours/models.py:33
+msgid "Start Date"
+msgstr ""
+
+#: apps/tours/models.py:34
+msgid "End Date"
+msgstr ""
+
+#: apps/tours/models.py:39
+msgid "Tour Datepair"
+msgstr ""
+
+#: apps/tours/models.py:40
+msgid "Tour Datepairs"
+msgstr ""
+
+#: apps/tours/models.py:60 apps/tours/models.py:61
+msgid "Tour Includes"
+msgstr ""
+
+#: apps/tours/models.py:70 apps/tours/models.py:71
+msgid "Tour Excludes"
+msgstr ""
+
+#: apps/tours/models.py:76
+msgid "Tour's Type"
+msgstr ""
+
+#: apps/tours/models.py:77
+msgid "Tour's Hotel"
+msgstr ""
+
+#: apps/tours/models.py:78
+msgid "Sending from"
+msgstr ""
+
+#: apps/tours/models.py:79
+msgid "Days duration"
+msgstr ""
+
+#: apps/tours/models.py:80
+msgid "Night duration"
+msgstr ""
+
+#: apps/tours/models.py:84
+msgid "Tour"
+msgstr ""
+
+#: apps/tours/models.py:85
+msgid "Tours"
+msgstr ""

@@ -2,8 +2,8 @@
     <div class="reviews__client">
         <div class="reviews__client-name">{{ comment.name }}({{ comment.age }} лет)</div>
         <div class="reviews__status">{{ comment.description }}</div>
-        <div class="reviews__date"><span class="reviews__span">{{ comment.datetime.strftime("%m %B %Y") }}</span>
-            <a href="#" class="reviews__link">{{ comment.hotel }}</a>
+        <div class="reviews__date"><span class="reviews__span">{{ comment.datetime.strftime("%d %B %Y") }}</span>
+            <a href="{{ url('hotel-detail', slug=comment.hotel.slug) }}" class="reviews__link">{{ comment.hotel }}</a>
         </div>
     </div>
     {% if comment.comment %}

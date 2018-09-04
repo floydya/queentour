@@ -31,11 +31,9 @@
                                 <div class="blog__hover-rating">
                                     <span class="blog__hover-span">Рейтинг:</span>
                                     <div class="blog-one__images clearfix">
-                                        <a href="#" class="blog-one__images-star"></a>
-                                        <a href="#" class="blog-one__images-star"></a>
-                                        <a href="#" class="blog-one__images-star"></a>
-                                        <a href="#" class="blog-one__images-star"></a>
-                                        <a href="#" class="blog-one__images-star"></a>
+                                        {% for i in range(object.stars) %}
+                                            <a class="blog-one__images-star"></a>
+                                        {% endfor %}
                                     </div>
                                 </div>
                                 <div class="blog__hover-rating">

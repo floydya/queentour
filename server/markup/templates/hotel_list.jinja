@@ -25,8 +25,7 @@
     <a id="menu3" href="#header" class="button-top default3 scrollto"></a>
 
     <script>
-        $('#forma-hotels-search').submit(function () {
-            console.log()
+        $('#search-hotels').submit(function () {
             $.ajax({
                 url: $(this).attr('action'),
                 type: $(this).attr('method'),
@@ -34,13 +33,40 @@
                 success: function (response) {
                     $('#mainContent').html(response);
                     window.history.pushState('page2', 'Title', this.url);
-                },
-                error: function (err) {
-                    console.log(err);
                 }
             });
             return false;
         });
+
+        $('#hotels-search').on('change input', (e) => {
+            $.ajax({
+                url: window.location.href,
+                type: 'get',
+                data: {
+                    'search': $(this).val()
+                },
+                success: function (response) {
+                    $('#mainContent').html(response);
+                    window.history.pushState('page2', 'Title', this.url);
+                }
+            });
+        });
+
+       /* $('.hotels__sort-a').each(function () {
+            $(this).click(function () {
+                console.log($(this).attr('get_pagination'));
+                $.ajax({
+                url: window.location.href,
+                type: 'get',
+                data: {
+                    'paginate_by': $(this).attr('get_pagination')
+                },
+                success: function (response) {
+                    $('#mainContent').html(response);
+                }
+            });
+            })
+        })*/
     </script>
 
 {% endblock %}

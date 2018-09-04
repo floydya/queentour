@@ -12,7 +12,7 @@
     <div class="place">
         <div class="wrapper-inner">
             <div class="place__content">
-                <div class="tour__name tour__name2">Зальцбург</div>
+                <div class="tour__name tour__name2">{{ object.name }}</div>
                 <div class="top-about__nav">
                     <nav class="nav-block">
                         <ul class="nav-block__ul clearfix">
@@ -27,34 +27,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="top-about__galery">
-                <div id="steps" class="steps-galery2">
-                    <div class="main-galery">
-                        <div class="bx-wrapper-galery2">
-                            <div class="bx-viewport">
-                                <div class="items-galery">
-                                    {% for image in object.images.all() %}
-                                        <div class="item-galery bx-clone">
-                                            <div class="item-galery__img">
-                                                <a href="#">
-                                                    <img src="{{ image.image.url }}" class="item-galery__size">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="link-galery animation-block galery-preview clearfix">
-                            {% for image in object.images.all() %}
-                                <a href="#" class="animate-me animated galery-preview__a">
-                                    <img src="{{ image.image.url }}" class="galery-icon icon-2">
-                                </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include 'includes/galery.jinja' %}
         </div>
     </div>
     <div class="city">
@@ -76,10 +49,52 @@
                 </div>
                 <div class="city__side-bar">
                     <div class="depiction__name">Туры</div>
-                    {% include 'includes/city__part.jinja' %}
+                    <div id="partContent"></div>
                 </div>
             </div>
         </div>
     </div>
     {% include 'includes/questions.jinja' %}
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '{{ url('get-tours-list-four') }}',
+                type: 'get',
+                data: {
+                    'resort': '{{ object.slug }}'
+                },
+                success: function (response) {
+                    $('#partContent').html(response);
+                }
+            })
+        });
+        $('#partContent').bind("DOMSubtreeModified", function () {
+            $('#prevPage').click(function () {
+                $.ajax({
+                    url: '{{ url('get-tours-list-four') }}',
+                    type: 'get',
+                    data: {
+                        'resort': '{{ object.slug }}',
+                        'page': $('#prevPage').attr('page')
+                    },
+                    success: function (response) {
+                        $('#partContent').html(response);
+                    }
+                })
+            });
+            $('#nextPage').click(function () {
+                $.ajax({
+                    url: '{{ url('get-tours-list-four') }}',
+                    type: 'get',
+                    data: {
+                        'resort': '{{ object.slug }}',
+                        'page': $('#nextPage').attr('page')
+                    },
+                    success: function (response) {
+                        $('#partContent').html(response);
+                    }
+                })
+            });
+        });
+    </script>
 {% endblock %}
