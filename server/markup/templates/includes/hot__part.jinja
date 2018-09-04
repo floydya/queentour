@@ -8,7 +8,7 @@
             </div>
             {% endif %}
             <div class="hot__icon-two">
-                {{ object.dates.order_by('cost').first().uah_cost }} <span class="hot__icon-two--span">UAH</span>
+                {{ object.low_cost(request.GET.get('date', None), request.GET.get('price-from'), request.GET.get('price-to')) }} <span class="hot__icon-two--span">UAH</span>
             </div>
             <div class="hot__picture">
                 <img src="{{ object.hotel.preview_image.url }}" class="hot__picture--size"/>

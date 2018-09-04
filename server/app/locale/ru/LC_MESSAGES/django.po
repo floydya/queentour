@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-04 06:08+0000\n"
+"POT-Creation-Date: 2018-09-04 12:07+0000\n"
 "PO-Revision-Date: 2018-09-04 06:15+0000\n"
 "Last-Translator: b'adminqwerty12345  <xfloydya@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,71 +16,72 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.0\n"
 
-#: app/settings/default.py:200 app/settings/default.py:206
-#: app/settings/default.py:226 app/settings/default.py:234
+#: app/settings/default.py:201 app/settings/default.py:207
+#: app/settings/default.py:227 app/settings/default.py:235
 msgid "First Name"
 msgstr "Имя"
 
-#: app/settings/default.py:201 app/settings/default.py:216
-#: app/settings/default.py:227 app/settings/default.py:235
+#: app/settings/default.py:202 app/settings/default.py:217
+#: app/settings/default.py:228 app/settings/default.py:236
 #: apps/core/models/core.py:13 apps/core/models/core.py:19
 msgid "Phone Number"
 msgstr "Номер телефона"
 
-#: app/settings/default.py:202 app/settings/default.py:209
-#: app/settings/default.py:219 app/settings/default.py:230
-#: app/settings/default.py:236
+#: app/settings/default.py:203 app/settings/default.py:210
+#: app/settings/default.py:220 app/settings/default.py:231
+#: app/settings/default.py:237
 msgid "Sent From Link"
 msgstr "Отправлено с ссылки"
 
-#: app/settings/default.py:203 app/settings/default.py:210
-#: app/settings/default.py:220 app/settings/default.py:231
-#: app/settings/default.py:237 apps/blog/models.py:32
+#: app/settings/default.py:204 app/settings/default.py:211
+#: app/settings/default.py:221 app/settings/default.py:232
+#: app/settings/default.py:238 apps/blog/models.py:32
 #: apps/core/models/core.py:51
 msgid "Date"
 msgstr "Дата"
 
-#: app/settings/default.py:207 app/settings/default.py:217
-#: app/settings/default.py:228
+#: app/settings/default.py:208 app/settings/default.py:218
+#: app/settings/default.py:229
 msgid "Email"
 msgstr "Email"
 
-#: app/settings/default.py:208 app/settings/default.py:218
-#: app/settings/default.py:229
+#: app/settings/default.py:209 app/settings/default.py:219
+#: app/settings/default.py:230
 msgid "Message"
 msgstr "Сообщение"
 
-#: app/settings/default.py:213
+#: app/settings/default.py:214
 msgid "Tour Number"
 msgstr "Номер тура"
 
-#: app/settings/default.py:214
+#: app/settings/default.py:215
 msgid "Tour Date"
 msgstr "Дата тура"
 
-#: app/settings/default.py:215 apps/core/models/core.py:48
+#: app/settings/default.py:216 apps/core/models/core.py:48
 msgid "Full Name"
 msgstr "ФИО"
 
-#: app/settings/default.py:223 apps/locations/models.py:31
+#: app/settings/default.py:224 apps/locations/models.py:31
 msgid "Country"
 msgstr "Страна"
 
-#: app/settings/default.py:224
+#: app/settings/default.py:225
 msgid "Tour Duration"
 msgstr "Продолжительность тура"
 
-#: app/settings/default.py:225
+#: app/settings/default.py:226
 msgid "Number of persons"
 msgstr "Количество людей"
 
 #: apps/blog/models.py:14 apps/locations/models.py:19
 #: apps/locations/models.py:56 apps/locations/models.py:93
-#: apps/locations/models.py:110 apps/tours/models.py:55
-#: apps/tours/models.py:65
+#: apps/locations/models.py:110 apps/tours/models.py:70 apps/tours/models.py:80
 msgid "Name"
 msgstr "Имя"
 
@@ -100,7 +101,7 @@ msgstr "Заголовок"
 msgid "Body"
 msgstr "Содержимое"
 
-#: apps/blog/models.py:39 apps/locations/models.py:112 apps/tours/models.py:81
+#: apps/blog/models.py:39 apps/locations/models.py:112 apps/tours/models.py:103
 msgid "Stars"
 msgstr "Рейтинг"
 
@@ -194,7 +195,7 @@ msgid "Customs"
 msgstr "Таможня"
 
 #: apps/locations/models.py:26 apps/locations/models.py:63
-#: apps/locations/models.py:121 apps/tours/models.py:17
+#: apps/locations/models.py:121 apps/tours/models.py:20
 msgid "Preview Image"
 msgstr "Превью"
 
@@ -311,71 +312,74 @@ msgstr "Заявка на получение сертификата"
 msgid "Sertificate Applies"
 msgstr "Заявки на получение сертификата"
 
-#: apps/tours/models.py:15
+#: apps/tours/models.py:18
 msgid "Type Name"
 msgstr "Название типа"
 
-#: apps/tours/models.py:20
+#: apps/tours/models.py:23
 msgid "Tour Type"
 msgstr "Тип тура"
 
-#: apps/tours/models.py:21
+#: apps/tours/models.py:24
 msgid "Tour Types"
 msgstr "Типы туров"
 
-#: apps/tours/models.py:33
+#: apps/tours/models.py:36
 msgid "Start Date"
 msgstr "Начальная дата"
 
-#: apps/tours/models.py:34
+#: apps/tours/models.py:37
 msgid "End Date"
 msgstr "Конечная дата"
 
-#: apps/tours/models.py:39
+#: apps/tours/models.py:45
 msgid "Tour Datepair"
 msgstr "Пара дат для тура"
 
-#: apps/tours/models.py:40
+#: apps/tours/models.py:46
 msgid "Tour Datepairs"
 msgstr "Пары дат для туров"
 
-#: apps/tours/models.py:60 apps/tours/models.py:61
-#| msgid "Tour Xcludes"
+#: apps/tours/models.py:75 apps/tours/models.py:76
 msgid "Tour Includes"
 msgstr "В туры включено"
 
-#: apps/tours/models.py:70 apps/tours/models.py:71
-#| msgid "Tour Xcludes"
+#: apps/tours/models.py:85 apps/tours/models.py:86
 msgid "Tour Excludes"
 msgstr "В туры не включено"
 
-#: apps/tours/models.py:76
+#: apps/tours/models.py:91
 msgid "Tour's Type"
 msgstr "Тип тура"
 
-#: apps/tours/models.py:77
-msgid "Tour's Hotel"
-msgstr "Отель тура"
+#: apps/tours/models.py:93
+#, fuzzy
+#| msgid "Resort's Country"
+msgid "Tour's Country"
+msgstr "Страна курорта"
 
-#: apps/tours/models.py:78
+#: apps/tours/models.py:100
 msgid "Sending from"
 msgstr "Отправка из"
 
-#: apps/tours/models.py:79
+#: apps/tours/models.py:101
 msgid "Days duration"
 msgstr "Продолжительность(дней)"
 
-#: apps/tours/models.py:80
+#: apps/tours/models.py:102
 msgid "Night duration"
 msgstr "Продолжительность(ночей)"
 
-#: apps/tours/models.py:84
+#: apps/tours/models.py:106
 msgid "Tour"
 msgstr "Тур"
 
-#: apps/tours/models.py:85
+#: apps/tours/models.py:107
 msgid "Tours"
 msgstr "Туры"
+
+#~ msgid "Tour's Hotel"
+#~ msgstr "Отель тура"
 
 #~ msgid "Includes"
 #~ msgstr "Включает"

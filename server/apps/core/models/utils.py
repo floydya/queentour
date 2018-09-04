@@ -10,6 +10,8 @@ from django.utils.translation import ugettext_lazy as _
 class Image(models.Model):
     image = models.ImageField(upload_to=path_and_rename)
 
+    link = models.URLField(null=True, blank=True)
+
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, related_name='images')
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')

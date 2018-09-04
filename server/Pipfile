@@ -1,5 +1,4 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
@@ -8,7 +7,6 @@ name = "pypi"
 python_version = '3.7'
 
 [dev-packages]
-
 django-debug-toolbar = "*"
 freezegun = "*"
 coverage = "*"
@@ -20,7 +18,6 @@ pydocstyle = "*"
 ipython = "*"
 
 [packages]
-
 pillow = "*"
 "psycopg2" = "*"
 "jinja2" = "*"
@@ -38,3 +35,4 @@ django-composable-views = {git = "https://gitlab.com/preusx/django-composable-vi
 django-environ = "*"
 gunicorn = {version = "*", sys_platform = "== 'linux'"}
 gevent = {version = "*", sys_platform = "== 'linux'"}
+django-smart-selects = {ref = "js-unlinting-fixes", git = "https://github.com/digi604/django-smart-selects.git"}

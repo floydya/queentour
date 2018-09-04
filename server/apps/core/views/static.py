@@ -1,6 +1,6 @@
 from django.views import generic
 
-from apps.core.models import SertificateSettings, Comment
+from apps.core.models import SertificateSettings, Comment, AboutSettings, DocumentsSettings
 
 
 class SertificateView(generic.TemplateView):
@@ -15,6 +15,11 @@ class SertificateView(generic.TemplateView):
 class DocumentsView(generic.TemplateView):
     template_name = 'documents.jinja'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['doc_settings'] = DocumentsSettings.objects.get()
+        return context
+
 
 class CommentView(generic.TemplateView):
     template_name = 'reviews.jinja'
@@ -22,8 +27,9 @@ class CommentView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['object_list'] = Comment.objects.all()
-        context['youtube_list'] = Comment.objects.filter(youtube__isnull=False)
-        context['text_list'] = Comment.objects.filter(comment__isnull=False, youtube__isnull=True)
+        context['youtube_list'] = Comment.objects.filter(type=3)
+        context['text_list'] = Comment.objects.filter(type=1)
+        context['image_list'] = Comment.objects.filter(type=2)
         return context
 
 
@@ -37,6 +43,11 @@ class SearchAviaView(generic.TemplateView):
 
 class AboutView(generic.TemplateView):
     template_name = 'company.jinja'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['about_settings'] = AboutSettings.objects.get()
+        return context
 
 
 class ContactView(generic.TemplateView):

@@ -14,13 +14,16 @@ class CountryAdmin(admin.ModelAdmin):
 @admin.register(models.Resort)
 class ResortAdmin(admin.ModelAdmin):
     list_display = ('name', 'country')
-    search_fields = ('name', 'country__name')
+    search_fields = ('name',)
+    autocomplete_fields = ('country', )
     inlines = [ImageInlineAdmin]
 
 
 @admin.register(models.Hotel)
 class HotelAdmin(admin.ModelAdmin):
     list_display = ('name', 'resort', 'stars', 'type', 'hot')
+    search_fields = ('name',)
+    autocomplete_fields = ('type', 'resort')
     inlines = [ImageInlineAdmin]
 
 

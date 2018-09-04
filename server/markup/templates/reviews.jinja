@@ -15,6 +15,9 @@
                         <a href="#" class="documents__button reviews__button">
                             Текстовые отзывы
                         </a>
+                        <a href="#" class="documents__button reviews__button">
+                            Отзывы из соц. сетей
+                        </a>
                     </div>
                 </div>
             <div class="tabs__content activated">
@@ -40,14 +43,14 @@
                 <div class="reviews__part clearfix">
                     <div class="reviews__left">
                         {% for comment in youtube_list %}
-                            {% if loop.cycle('odd', 'even') == 'odd' and not comment.comment %}
+                            {% if loop.cycle('odd', 'even') == 'odd' %}
                                 {% include 'includes/reviews__client.jinja' %}
                             {% endif %}
                         {% endfor %}
                     </div>
                     <div class="reviews__left">
                         {% for comment in youtube_list %}
-                            {% if loop.cycle('odd', 'even') == 'even' and not comment.comment %}
+                            {% if loop.cycle('odd', 'even') == 'even' %}
                                 {% include 'includes/reviews__client.jinja' %}
                             {% endif %}
                         {% endfor %}
@@ -59,14 +62,33 @@
                 <div class="reviews__part clearfix">
                     <div class="reviews__left">
                         {% for comment in text_list %}
-                            {% if loop.cycle('odd', 'even') == 'odd' and not comment.youtube %}
+                            {% if loop.cycle('odd', 'even') == 'odd' %}
                                 {% include 'includes/reviews__client.jinja' %}
                             {% endif %}
                         {% endfor %}
                     </div>
                     <div class="reviews__left">
                         {% for comment in text_list %}
-                            {% if loop.cycle('odd', 'even') == 'even' and not comment.youtube %}
+                            {% if loop.cycle('odd', 'even') == 'even' %}
+                                {% include 'includes/reviews__client.jinja' %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabs__content">
+                <div class="reviews__part clearfix">
+                    <div class="reviews__left">
+                        {% for comment in image_list %}
+                            {% if loop.cycle('odd', 'even') == 'odd' %}
+                                {% include 'includes/reviews__client.jinja' %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="reviews__left">
+                        {% for comment in image_list %}
+                            {% if loop.cycle('odd', 'even') == 'even' %}
                                 {% include 'includes/reviews__client.jinja' %}
                             {% endif %}
                         {% endfor %}

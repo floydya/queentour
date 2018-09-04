@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="city__side-bar">
-                    {% if object.tours.filter(dates__start__gte=datetime.date.today()).distinct() %}
+                    {% if object.tour_set.filter(dates__start__gte=datetime.date.today()).distinct() %}
                     <div class="depiction__name">Туры этого отеля</div>
                     <div id="partContent"></div>
                     {% endif %}

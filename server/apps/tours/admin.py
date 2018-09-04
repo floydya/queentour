@@ -2,13 +2,13 @@ from django.contrib import admin
 from apps.tours import models
 
 
-class TourInclude(admin.StackedInline):
+class TourInclude(admin.TabularInline):
     model = models.TourIncludes
     fk_name = 'tour'
     extra = 1
 
 
-class TourExclude(admin.StackedInline):
+class TourExclude(admin.TabularInline):
     model = models.TourExcludes
     fk_name = 'tour'
     extra = 1
@@ -24,9 +24,8 @@ class AdminTourDatePair(admin.TabularInline):
 @admin.register(models.Tour)
 class TourAdmin(admin.ModelAdmin):
     list_display = ('type', 'hotel', 'stars')
-    list_filter = ('type', 'hotel', 'stars')
-    search_fields = ('type__name', 'hotel__name')
-
+    list_filter = ('type', 'stars')
+    search_fields = ('type__name', )
     inlines = [TourInclude, TourExclude, AdminTourDatePair]
 
 

@@ -46,6 +46,7 @@ INSTALLED_APPS = PROJECT_APPS + [
     'parler',
     'codemirror2',
     'solo',
+    'smart_selects',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -247,3 +248,4 @@ CELERY_BROKER_URL = env.str('CELERY_BROKER_URL')
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_SCHEME', 'https')
 
 handler404 = 'apps.core.views.handler404'
+#

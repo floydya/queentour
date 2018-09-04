@@ -31,7 +31,7 @@
                                 <div class="blog__hover-rating">
                                     <span class="blog__hover-span">Рейтинг:</span>
                                     <div class="blog-one__images clearfix">
-                                        {% for i in range(object.stars) %}
+                                        {% for i in range(5) %}
                                             <a class="blog-one__images-star"></a>
                                         {% endfor %}
                                     </div>
@@ -76,9 +76,10 @@
                             Подпишитесь на рассылку и получайте первыми горящие туры на свой E-mail
                         </div>
                         <div class="rest__forma clearfix">
-                            <form name="blog-distribution" id="distribution-tour">
+                            <form name="blog-distribution" id="distribution-tour" method="post">
                                 <div class="rest__part-form blog-one__part-form">
-                                    <input name="telephone" type="email" required
+                                    <input type="text" hidden name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                                    <input name="email" type="email" required
                                            placeholder="Введите Ваш E-mail" class="rest__input rest__fon">
                                     <div class="rest__help">E-mail телефона введен неверно!</div>
                                 </div>
@@ -96,14 +97,6 @@
                     </div>
                 </div>
                 <div class="blog-one__right clearfix">
-                    <div class="blog-one__baner">
-                        <div class="blog-one__baner-text">
-                            Каждый год собираетесь в отпуск, но обстоятельства складываются иначе? Подберите себе
-                            <span class="blog-one__baner-span1">горящий тур </span>
-                            <span class="blog-one__baner-span2">прямо сейчас!</span>
-                        </div>
-                        <a href="#" class="blog-one__baner-button">Посмотреть горящие туры</a>
-                    </div>
 
                     {% include 'includes/block__heading.jinja' %}
 

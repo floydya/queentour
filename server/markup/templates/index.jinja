@@ -126,7 +126,7 @@
                             class="rest__name--span">Горящие туры</span>
                     </div>
                     {% include 'includes/hot__part.jinja' %}
-                    <a href="{{ url('tour-list') }}" class="hot__button">Показать еще</a></div>
+                    <a href="{{ url('tour-list') }}" class="hot__button">Показать все туры</a></div>
             </div>
         </div>
     {% endif %}
@@ -184,7 +184,7 @@
                 <div id="owl-demo-one" class="owl-carousel">
                     {% for image in global_settings.images.all() %}
                         <div class="item">
-                            <div class="item-sert"><a href="#"><img src="{{ image.image.url }}" class="item-sert--img"></a>
+                            <div class="item-sert"><a {% if image.link %}href="{{ image.link }}"{% endif %}><img src="{{ image.image.url }}" class="item-sert--img"></a>
                             </div>
                         </div>
                     {% endfor %}

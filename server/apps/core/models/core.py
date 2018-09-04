@@ -43,6 +43,31 @@ class SertificateSettings(SingletonModel):
         verbose_name = _("Certificate Configuration")
 
 
+class AboutSettings(SingletonModel):
+    image = models.ImageField(upload_to=path_and_rename, verbose_name=_("Image"))
+    title = models.CharField(max_length=144, verbose_name=_("Title"))
+
+    column1_image = models.ImageField(upload_to=path_and_rename)
+    column1_title = models.CharField(max_length=40)
+    column1_body = RichTextField()
+
+    column2_image = models.ImageField(upload_to=path_and_rename)
+    column2_title = models.CharField(max_length=40)
+    column2_body = RichTextField()
+
+    column3_image = models.ImageField(upload_to=path_and_rename)
+    column3_title = models.CharField(max_length=40)
+    column3_body = RichTextField()
+
+    column4_image = models.ImageField(upload_to=path_and_rename)
+    column4_title = models.CharField(max_length=40)
+    column4_body = RichTextField()
+
+    body = RichTextField()
+
+    certificates = GenericRelation(Image)
+
+
 class Comment(models.Model):
 
     name = models.CharField(max_length=144, verbose_name=_("Full Name"))
@@ -51,10 +76,13 @@ class Comment(models.Model):
     datetime = models.DateField(verbose_name=_("Date"))
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='comments', verbose_name=_("Hotel"))
 
+    type = models.PositiveSmallIntegerField(choices=((1, "Text"), (2, "Image"), (3, "Video")), default=1)
+
     comment = RichTextField(blank=True, null=True, verbose_name=_("Comment"),
                             help_text="При добавлении текста - отзыв будет помещен в раздел `Текстовые отзывы` ")
     youtube = models.URLField(verbose_name=_("YouTube Video URL"), blank=True, null=True,
                               help_text=_("Use embed link"))
+    image = models.ImageField(upload_to=path_and_rename, blank=True, null=True)
 
     class Meta:
         verbose_name_plural = _('Comments')
@@ -63,3 +91,9 @@ class Comment(models.Model):
 
 class EmailDispatch(models.Model):
     email = models.EmailField()
+
+
+class DocumentsSettings(SingletonModel):
+    passport = RichTextField()
+    visa = RichTextField()
+

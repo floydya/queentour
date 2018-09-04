@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7625580fe40e69babec2bcb7c179b457e60702af3375a4280cc3dc7a17e5d5dd"
+            "sha256": "3d14e9cf69c42fa8c8b1937e87f325040d38a651487c6e6b8eb7913d9ea4ad66"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -144,6 +144,10 @@
             ],
             "index": "pypi",
             "version": "==0.9.0"
+        },
+        "django-smart-selects": {
+            "git": "https://github.com/digi604/django-smart-selects.git",
+            "ref": "1ceafd8ff63e5888d5c0bcb9ff6f5d4e03769fcf"
         },
         "django-solo": {
             "hashes": [

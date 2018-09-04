@@ -88,17 +88,17 @@
                     </div>
                 </div>
                 <div class="depiction__side-bar">
-                    {% if object.resorts.filter(hotels__tours__dates__start__gte=datetime.date.today()).distinct() %}
+                    {% if object.resorts.filter(tour__dates__start__gte=datetime.date.today()).distinct() %}
                     <div class="depiction__name">Курорты</div>
                     <ul class="depiction__list">
-                        {% for resort in object.resorts.filter(hotels__tours__dates__start__gte=datetime.date.today()).distinct() %}
+                        {% for resort in object.resorts.filter(tour__dates__start__gte=datetime.date.today()).distinct() %}
                             <li class="depiction__item">
                                 <a href="{{ url('resort-detail', slug=resort.slug) }}" class="depiction__link clearfix">
                                     <div class="depiction__city">{{ resort.name }}</div>
                                     <div class="depiction__price">
                                         <span class="depiction__span1">от </span>
                                         <span class="depiction__span2">
-                                            {{ resort.low_cost() }}
+                                            {{ resort.tours.first().low_cost() }}
                                         </span>
                                         <span class="depiction__span3">uaн</span>
                                     </div>
@@ -111,23 +111,24 @@
             </div>
         </div>
         <div id="top5"></div>
+        {% if object.tours.filter(dates__start__gte=datetime.date.today()).exists() %}
         <div class="hot">
             <div class="wrapper-inner">
                 <div class="hot__content">
                     <div class="rest__name">Туры в {{ object.name }}</div>
-                    <div class="depiction__serch">Найдено {{ object.tours.distinct().count() }} туров от
-                        <span class="tour__cena">{{ object.low_cost() }} </span>
+                    <div class="depiction__serch">Найдено {{ object.tours.filter(dates__start__gte=datetime.date.today()).distinct().count() }} туров от
+                        <span class="tour__cena">{{ object.tours.filter(dates__start__gte=datetime.date.today()).first().low_cost() }} </span>
                         <span class="tour__valuta">uaн</span>
                     </div>
                     <div class="hot__part clearfix">
-                        {% for tour in object.tours.distinct() %}
+                        {% for tour in object.tours.filter(dates__start__gte=datetime.date.today()).distinct() %}
                         <div class="hot__block">
                             <a href="{{ url('tour-detail', pk=tour.pk) }}" class="hot__block-link">
                                 <div class="hot__icon-one">
                                     <img src="{{ static('img/icon-1.png') }}" class="hot__icon-one--size">
                                 </div>
                                 <div class="hot__icon-two">
-                                    {{ tour.low_cost().uah_cost }} <span class="hot__icon-two--span">UAH</span>
+                                    {{ tour.low_cost() }} <span class="hot__icon-two--span">UAH</span>
                                 </div>
                                 <div class="hot__picture">
                                     <img src="{{ tour.hotel.images.first().image.url }}" class="hot__picture--size">
@@ -148,6 +149,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
     {% include 'includes/questions.jinja' %}
 {% endblock %}

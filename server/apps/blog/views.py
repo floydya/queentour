@@ -18,14 +18,24 @@ class ArticleDetail(generic.DetailView):
         random_articles_id_list = random.sample(list(valid_articles_id_list), min(valid_articles_id_list.count(), 4))
         context['object_list'] = Article.objects.filter(id__in=random_articles_id_list)
 
-        a = self.get_object()
-        a.views = F('views') + 1
-        a.save()
+        if not self.request.session.get(f'{self.kwargs["slug"]}-views', None):
+            a = self.get_object()
+            a.views = F('views') + 1
+            a.save()
+            self.request.session[f'{self.kwargs["slug"]}-views'] = True
 
         return context
 
     def get_object(self, queryset=None):
         return Article.objects.get(heading__slug=self.kwargs['heading'], slug=self.kwargs['slug'])
+
+    def post(self, *args, **kwargs):
+        if 'email' in self.request.POST and self.request.POST['email']:
+            EmailDispatch.objects.get_or_create(email=self.request.POST['email'])
+            return redirect(self.request.META.get('HTTP_REFERER', '/'))
+        if 'rating' in self.request.POST:
+            if not self.request.session.get(f'{self.kwargs["slug"]}-rating', None):
+                self.request.session[f'{self.kwargs["slug"]}-rating'] = True
 
 
 class ArticleList(generic.ListView):

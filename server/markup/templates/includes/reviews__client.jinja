@@ -16,4 +16,9 @@
             <iframe src="{{ comment.youtube }}" allowfullscreen="" frameborder="0" class="reviews__iframe"></iframe>
         </div>
     {% endif %}
+    {% if comment.image %}
+        <div class="reviews__soc">
+            <img src="{{ comment.image.url }}">
+        </div>
+    {% endif %}
 </div>

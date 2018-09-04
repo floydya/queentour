@@ -7,6 +7,7 @@ from django.urls import path
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^chaining/', include('smart_selects.urls')),
     url(r'^django-des/', include(des_urls)),
     url(r'^forms/', include('apps.reports.urls')),
     path('', include('apps.core.urls')),

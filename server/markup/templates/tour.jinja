@@ -54,7 +54,7 @@
                     <a class="fixed-menu__link fixed-menu__link2">{{ object.sending_from }}</a></div>
             </div>
             <div class="fixed-menu__block">
-                <div class="fixed-menu__price">{{ object.date_from_now().first().uah_cost }} <span class="fixed-menu__price--span">uan</span></div>
+                <div class="fixed-menu__price">{{ object.dates.filter(start__gte=datetime.date.today()).first().uah_cost }} <span class="fixed-menu__price--span">uan</span></div>
             </div>
             <div class="fixed-menu__block">
                 <div class="forma__submit fixed-menu__submit fixed-menu__submit-push">Забронировать тур</div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="about__change">
                                 <select size="1" id="tourDate" name="about-date" required class="about__change-select">
-                                    {% for dates in object.date_from_now() %}
+                                    {% for dates in object.dates.filter(start__gte=datetime.date.today()) %}
                                         <option value="{{ dates.pk }}">{{ dates }} {% if dates.hot %}*HOT*{% endif %}</option>
                                     {% endfor %}
                                 </select>
@@ -131,7 +131,7 @@
                             <div class="about__text">
                                 <div class="about__desc">Стоимость тура:</div>
                                 <div class="about__people">на одного человека</div>
-                                <div class="about__kol"><div id="cost">{{ object.date_from_now().first().uah_cost }}</div> <span class="about__kol--span">UAH</span></div>
+                                <div class="about__kol"><div id="cost">{{ object.dates.filter(start__gte=datetime.date.today()).first().uah_cost }}</div> <span class="about__kol--span">UAH</span></div>
                             </div>
                             <div class="about__push">
                                 <div class="fixed-menu__submit-push forma__submit">Забронировать тур</div>

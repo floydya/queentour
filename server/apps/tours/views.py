@@ -44,36 +44,44 @@ class TourList(generic.ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset().filter(dates__start__gte=datetime.date.today()).distinct()
-        if 'type' in self.request.GET and self.request.GET['type']:
-            queryset = queryset.filter(type__slug=self.request.GET['type'])
-        if 'country' in self.request.GET and self.request.GET['country']:
-            queryset = queryset.filter(hotel__resort__country__slug=self.request.GET['country'])
-        if 'price-from' in self.request.GET and self.request.GET['price-from']:
-            queryset = queryset.filter(dates__cost__gte=(self.request.GET['price-from']))
-        if 'price-to' in self.request.GET and self.request.GET['price-to']:
-            queryset = queryset.filter(dates__cost__lte=(self.request.GET['price-to']))
-        if 'days' in self.request.GET and self.request.GET['days']:
-            queryset = queryset.filter(duration_days=int(self.request.GET['days']))
-        if 'nights' in self.request.GET and self.request.GET['nights']:
-            queryset = queryset.filter(duration_nights=int(self.request.GET['nights']))
-        if 'stars' in self.request.GET and self.request.GET['stars']:
-            queryset = queryset.filter(stars=int(self.request.GET['stars']))
         if 'date' in self.request.GET and self.request.GET['date']:
             matching = re.findall(r'(\d{2,})', unquote(self.request.GET['date']))
             if matching:
                 matching = [int(match) for match in matching]
                 start_date = datetime.date(year=matching[2], day=matching[0], month=matching[1])
                 end_date = datetime.date(year=matching[5], month=matching[4], day=matching[3])
-                queryset = queryset.filter(dates__start=start_date, dates__end=end_date)
+                queryset = queryset.filter(dates__start__gte=start_date, dates__end__lte=end_date)
+
+        if 'type' in self.request.GET and self.request.GET['type']:
+            queryset = queryset.filter(type__slug=self.request.GET['type'])
+
+        if 'country' in self.request.GET and self.request.GET['country']:
+            queryset = queryset.filter(hotel__resort__country__slug=self.request.GET['country'])
+
+        if 'price-from' in self.request.GET and self.request.GET['price-from']:
+            queryset = queryset.filter(dates__uah_cost__gte=self.request.GET['price-from'])
+        if 'price-to' in self.request.GET and self.request.GET['price-to']:
+            queryset = queryset.filter(dates__uah_cost__lte=self.request.GET['price-to'])
+
+        if 'days' in self.request.GET and self.request.GET['days']:
+            queryset = queryset.filter(duration_days=int(self.request.GET['days']))
+        if 'nights' in self.request.GET and self.request.GET['nights']:
+            queryset = queryset.filter(duration_nights=int(self.request.GET['nights']))
+        if 'stars' in self.request.GET and self.request.GET['stars']:
+            queryset = queryset.filter(stars=int(self.request.GET['stars']))
         return queryset
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        cost = self.get_queryset().annotate(Min('dates__cost')).order_by('dates__cost')
-        context['tour_count'] = self.get_queryset().count()
-        context['min_cost'] = cost[0].dates.all().order_by('cost')[0].uah_cost if cost else 0
+        context['min_cost'] = min([object.low_cost(
+            self.request.GET.get('date', None),
+            self.request.GET.get('price-from', None),
+            self.request.GET.get('price-to', None)
+        ) for object in self.get_queryset()])
+
         context['tour_types'] = TourType.objects.all()
         context['country_list'] = Country.objects.all()
+        context['tour_count'] = self.get_queryset().count()
         return context
 
 

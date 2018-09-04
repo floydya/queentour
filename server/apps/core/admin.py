@@ -8,7 +8,7 @@ from .models import utils, core
 class ImageInlineAdmin(GenericTabularInline):
 
     model = utils.Image
-    fields = ('image_tag', 'image')
+    fields = ('image_tag', 'image', 'link')
     readonly_fields = ('image_tag', )
 
 
@@ -35,3 +35,12 @@ class SertificateAdmin(SingletonModelAdmin):
 @admin.register(core.Comment)
 class CommentAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(core.AboutSettings)
+class AboutAdmin(SingletonModelAdmin):
+    inlines = [ImageInlineAdmin]
+
+
+admin.site.register(core.EmailDispatch)
+admin.site.register(core.DocumentsSettings, SingletonModelAdmin)

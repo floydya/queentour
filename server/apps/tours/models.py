@@ -1,8 +1,11 @@
 import datetime
+import re
+from urllib.parse import unquote
 
 from ckeditor.fields import RichTextField
 from django.db import models
 from django.urls import reverse
+from smart_selects.db_fields import ChainedForeignKey
 
 from shared.utils.pathrename import path_and_rename
 from shared.utils.slugger import slugger
@@ -41,6 +44,7 @@ class TourDatePair(models.Model):
     class Meta:
         verbose_name = _("Tour Datepair")
         verbose_name_plural = _("Tour Datepairs")
+        ordering = ['uah_cost']
 
     def __str__(self):
         return f'{self.start} — {self.end}'
@@ -85,7 +89,14 @@ class TourExcludes(models.Model):
 class Tour(models.Model):
 
     type = models.ForeignKey(TourType, on_delete=models.CASCADE, related_name='tours', verbose_name=_("Tour's Type"))
-    hotel = models.ForeignKey('locations.Hotel', on_delete=models.CASCADE, related_name='tours', verbose_name=_("Tour's Hotel"))
+    country = models.ForeignKey('locations.Country', on_delete=models.CASCADE,
+                                related_name='tours', verbose_name=_("Tour's Country"))
+    resort = ChainedForeignKey('locations.Resort', chained_field='country',
+                               chained_model_field='country', show_all=False,
+                               auto_choose=True, sort=True)
+    hotel = ChainedForeignKey('locations.Hotel', chained_field='resort',
+                              chained_model_field='resort', show_all=False,
+                              auto_choose=True, sort=True)
     sending_from = models.CharField(max_length=50, verbose_name=_("Sending from"))
     duration_days = models.PositiveSmallIntegerField(verbose_name=_("Days duration"))
     duration_nights = models.PositiveSmallIntegerField(verbose_name=_("Night duration"))
@@ -98,8 +109,17 @@ class Tour(models.Model):
     def get_absolute_url(self):
         return reverse('tour-detail', args=[self.pk])
 
-    def date_from_now(self):
-        return self.dates.filter(start__gte=datetime.date.today())
-
-    def low_cost(self):
-        return self.date_from_now().order_by('cost').first()
+    def low_cost(self, date=None, from_=None, to_=None):
+        qs = self.dates.filter(start__gte=datetime.date.today()).distinct()
+        if from_:
+            qs = qs.filter(uah_cost__gte=from_).distinct()
+        if to_:
+            qs = qs.filter(uah_cost__lte=to_).distinct()
+        if date:
+            matching = re.findall(r'(\d{2,})', unquote(date))
+            if matching:
+                matching = [int(match) for match in matching]
+                start_date = datetime.date(year=matching[2], day=matching[0], month=matching[1])
+                end_date = datetime.date(year=matching[5], month=matching[4], day=matching[3])
+                qs = qs.filter(start__gte=start_date, end__lte=end_date).distinct()
+        return qs.order_by('uah_cost').first().uah_cost if qs else 0

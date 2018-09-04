@@ -8,7 +8,7 @@
                 <p>Дней / ночей: {{ item.duration_days }} / {{ item.duration_nights }}</p>
                 <p>Отель: {{ item.hotel.name }} {{ item.hotel.stars }}*</p></div>
             <div class="city__version-bottom">
-                <div class="city__price"><span class="city__span2">{{ item.low_cost().uah_cost }} </span><span
+                <div class="city__price"><span class="city__span2">{{ item.low_cost() }} </span><span
                         class="depiction__span3">uan </span><a href="{{ url('tour-detail', pk=item.pk) }}" class="city__version-link">Подробнее</a></div>
             </div>
         </div>
